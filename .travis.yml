@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "8.0"
+  - "7.0"
+script:
+  - cd ./templates
+  - yarn
+  - npm t
+  - npm run build
+  - cd ./server
+  - yarn
+  - npm run build
