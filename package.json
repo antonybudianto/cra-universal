@@ -1,10 +1,10 @@
 {
-  "name": "create-react-app-universal-cli",
-  "version": "1.0.0",
+  "name": "cra-universal",
+  "version": "0.1.0",
   "description": "Create React App Universal CLI",
   "main": "src/index.js",
   "bin": {
-    "create-react-app-universal": "./src/index.js"
+    "cra-universal": "./src/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
