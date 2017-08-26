@@ -1,0 +1,19 @@
+{
+  "name": "create-react-app-universal-cli",
+  "version": "1.0.0",
+  "description": "Create React App Universal CLI",
+  "main": "src/index.js",
+  "bin": {
+    "create-react-app-universal": "./src/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Antony Budianto <antonybudianto@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "commander": "^2.11.0",
+    "fs-extra": "^4.0.1"
+  }
+}
