@@ -4,6 +4,12 @@
 
 Simple express server for your Create React App projects with Server-side rendering and Code-splitting
 
+Why you must use this?
+- No [eject](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-run-eject) needed!
+- **Server-side rendering** for your SEO
+- **Code-splitting** that works universally
+- Server code is given to you, no black-box
+
 ## Installation
 ```sh
 # Install global CLI
