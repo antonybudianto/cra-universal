@@ -1,5 +1,7 @@
 # Create React App Universal CLI
 
+[![npm version](https://badge.fury.io/js/cra-universal.svg)](https://badge.fury.io/js/cra-universal)
+
 Simple express server for your Create React App projects with Server-side rendering and Code-splitting
 
 ## How to use
