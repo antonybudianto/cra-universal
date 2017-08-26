@@ -4,7 +4,8 @@
   "description": "Create React App Universal CLI",
   "main": "src/index.js",
   "bin": {
-    "cra-universal": "./src/index.js"
+    "cra-universal": "./src/index.js",
+    "cra-universal-init": "./src/index-init.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
