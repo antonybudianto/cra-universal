@@ -7,13 +7,10 @@ Simple express server for your Create React App projects with Server-side render
 ## How to use
 ```sh
 # Install global CLI
-npm install -g create-react-app cra-universal
+npm install -g cra-universal
 
-# Init CRA
-create-react-app my-app
-
-# Init CRA server
-cd my-app/
+# Change dir to your app and init CRA server
+cd ./my-create-react-app
 cra-universal init
 
 # Bundle your client
@@ -23,7 +20,6 @@ npm run build
 cd ./server
 npm install
 npm start
-
 ```
 
 ## License
