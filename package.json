@@ -1,6 +1,6 @@
 {
   "name": "cra-universal",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Create React App Universal CLI",
   "main": "src/index.js",
   "bin": {
@@ -11,6 +11,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Antony Budianto <antonybudianto@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antonybudianto/cra-universal.git"
+  },
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.1.0",
