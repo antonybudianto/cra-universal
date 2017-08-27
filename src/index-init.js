@@ -14,7 +14,7 @@ try {
   * CRA server initialized at ${chalk.bgBlue(dest)}!
 
   * ${chalk.underline('Next steps:')}
-  * - npm run build
+  * - npm start
   * - cd ./server
   * - npm install
   * - npm start

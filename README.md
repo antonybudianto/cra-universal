@@ -32,10 +32,8 @@ npm install
 npm start
 
 # or you can run dev server when developing server side
-## build client first
-npm run build
-
-## change dir to server
+## make sure you've started CRA client
+## then change dir to server
 cd ./server
 
 ## start server, you can open http://localhost:3001

@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var nodeExternals = require('webpack-node-externals');
+var NodemonPlugin = require('nodemon-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -24,6 +25,7 @@ module.exports = {
         options: {
           presets: ['env', 'react-app'],
           plugins: [
+            'dynamic-import-node',
             [require.resolve('babel-plugin-import-inspector'), {
               serverSideRequirePath: true,
               webpackRequireWeakId: true
@@ -37,7 +39,9 @@ module.exports = {
       }
     ],
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin()
-  ]
+  plugins: process.env.NODE_ENV === 'production' ? [
+      new webpack.optimize.UglifyJsPlugin()
+    ] : [
+      new NodemonPlugin()
+    ]
 }
