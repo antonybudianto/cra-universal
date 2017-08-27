@@ -23,8 +23,6 @@
     "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
-    "create-react-app-express": "^0.6.0",
-    "react": "^15.6.1",
-    "react-router-dom": "^4.2.2"
+    "create-react-app-express": "^0.6.0"
   }
 }
