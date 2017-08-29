@@ -33,7 +33,7 @@ npm start
 
 # or you can run dev server when developing server side
 ## make sure you've started CRA client
-## then change dir to server
+## then change directory to server
 cd ./server
 
 ## start server, you can open http://localhost:3001
@@ -42,23 +42,16 @@ npm start
 
 ## Production
 ```sh
-# Build your CRA client
-npm run build
+# Change directory to your project root first, and run:
+cra-universal build
 
-# Build your CRA server
-cd ./server
-npm run build
-
-# Test drive your CRA server build
-cd ./server
-npm run start:prod
+# This command will build both client and server and put them into `./dist`
 ```
 
 ## Deployment
-1. After you build both CRA and CRA server, you need to copy `/build` and `/server` into your server (Note: They **must be** side-to-side).
-   As for `/server`, actually you only need to copy `/server/build` and `/server/package.json`, the rest is not needed.
-2. Since the bundle used [Webpack Node Externals](https://www.npmjs.com/package/webpack-node-externals), you need to run `npm install --production` on the copied `/server`, but this time you don't need to install its `devDependencies`
-3. Use process manager like [PM2](https://github.com/Unitech/pm2) to run your server, your run target is ./server/build/bundle.js
+1. First, follow the Production guide above
+2. Since the bundle used [Webpack Node Externals](https://www.npmjs.com/package/webpack-node-externals), you need to run `npm install --production` on the copied `/dist/server`, but this time you don't need to install its `devDependencies`
+3. Use process manager like [PM2](https://github.com/Unitech/pm2) to run your server, your run target is ./dist/server/build/bundle.js
 
 ## Credit
 - Create React App https://github.com/facebookincubator/create-react-app
