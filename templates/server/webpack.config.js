@@ -12,7 +12,14 @@ module.exports = {
     filename: 'bundle.js'
   },
   target: 'node',
-  externals: [nodeExternals()],
+  externals: [
+    nodeExternals({
+      whitelist: [
+        'react',
+        'react-dom'
+      ]
+    })
+  ],
   node: {
     __dirname: false
   },
