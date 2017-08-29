@@ -22,8 +22,8 @@ console.log('Done building CRA server!');
 
 const srcClient = path.resolve(cwd, 'build');
 const destClient = path.resolve(cwd, 'dist', 'build');
-const srcServer = path.resolve(cwd, 'server', 'build', 'bundle.js');
-const destServer = path.resolve(cwd, 'dist', 'server', 'build', 'bundle.js');
+const srcServer = path.resolve(cwd, 'server', 'build');
+const destServer = path.resolve(cwd, 'dist', 'server', 'build');
 const srcServerPkg = path.resolve(cwd, 'server', 'package.json');
 const destServerPkg = path.resolve(cwd, 'dist', 'server', 'package.json');
 
