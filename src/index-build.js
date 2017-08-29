@@ -8,16 +8,22 @@ const chalk = require('chalk');
 const cwd = process.cwd();
 
 console.log(chalk.bgCyan('Building CRA client...'));
-spawnSync('npm', ['run', 'build'], {
+const clientBuildResult = spawnSync('npm', ['run', 'build'], {
   stdio: 'inherit'
 });
+if (clientBuildResult.status !== 0) {
+  throw 'Error building CRA client.'
+}
 console.log('Done building CRA client!\n');
 
 console.log(chalk.bgCyan('Building CRA server...'));
-spawnSync('npm', ['run', 'build'], {
+const serverBuildResult = spawnSync('npm', ['run', 'build'], {
   stdio: 'inherit',
   cwd: path.resolve(cwd, 'server')
 });
+if (serverBuildResult.status !== 0) {
+  throw 'Error building CRA server.'
+}
 console.log('Done building CRA server!');
 
 const srcClient = path.resolve(cwd, 'build');
