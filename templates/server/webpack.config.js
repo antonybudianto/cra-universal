@@ -2,6 +2,10 @@ var webpack = require('webpack');
 var nodeExternals = require('webpack-node-externals');
 var NodemonPlugin = require('nodemon-webpack-plugin');
 
+function isProd(valProd, valDev) {
+  return process.env.NODE_ENV === 'production' ? valProd : valDev;
+}
+
 module.exports = {
   entry: './src/index.js',
   resolve: {
@@ -10,7 +14,7 @@ module.exports = {
   output: {
     path: __dirname + '/build',
     filename: 'bundle.js',
-    chunkFilename: '[id].[hash].chunk.js'
+    chunkFilename: isProd('[id].[hash].chunk.js', '[id].chunk.js'),
   },
   target: 'node',
   externals: [
@@ -33,7 +37,6 @@ module.exports = {
         options: {
           presets: ['env', 'react-app'],
           plugins: [
-            'dynamic-import-node',
             [require.resolve('babel-plugin-import-inspector'), {
               serverSideRequirePath: true,
               webpackRequireWeakId: true
@@ -47,9 +50,9 @@ module.exports = {
       }
     ],
   },
-  plugins: process.env.NODE_ENV === 'production' ? [
+  plugins: isProd([
       new webpack.optimize.UglifyJsPlugin()
-    ] : [
+    ], [
       new NodemonPlugin()
-    ]
+    ])
 }

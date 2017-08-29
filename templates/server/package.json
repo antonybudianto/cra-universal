@@ -13,7 +13,6 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "babel-plugin-dynamic-import-node": "^1.0.2",
     "babel-plugin-import-inspector": "^2.0.0",
     "babel-preset-env": "^1.6.0",
     "import-inspector": "^2.0.0",
