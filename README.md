@@ -11,7 +11,7 @@ Why you must use this?
 - **Code-splitting** that works universally
 - Server code is given to you, no black-box
 
-> [Live Demo](https://create-react-app-server-yoknmkcuga.now.sh/) using [Now](https://zeit.co/)
+> [Live Demo](https://cra-universal.now.sh/) using [Now](https://zeit.co/)
 
 ## Installation
 ```sh
