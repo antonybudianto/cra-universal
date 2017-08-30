@@ -4,7 +4,7 @@ const React = require('react');
 const { createReactAppExpress, handleUniversalRender } = require('create-react-app-express');
 
 const {default: App} = require('../../src/App');
-const clientBuildPath = path.resolve(__dirname, '..', '..', 'build');
+const clientBuildPath = path.resolve(__dirname, 'client');
 const app = createReactAppExpress({
   clientBuildPath,
   universalRender: handleUniversalRender(<App />)

@@ -11,6 +11,8 @@ Why you must use this?
 - **Code-splitting** that works universally
 - Server code is given to you, no black-box
 
+> [Live Demo](https://create-react-app-server-yoknmkcuga.now.sh/) using [Now](https://zeit.co/)
+
 ## Installation
 ```sh
 # Install global CLI
@@ -50,8 +52,8 @@ cra-universal build
 
 ## Deployment
 1. First, follow the Production guide above
-2. Since the bundle used [Webpack Node Externals](https://www.npmjs.com/package/webpack-node-externals), you need to run `npm install --production` on the copied `/dist/server`, but this time you don't need to install its `devDependencies`
-3. Use process manager like [PM2](https://github.com/Unitech/pm2) to run your server, your run target is ./dist/server/build/bundle.js
+2. Since the bundle used [Webpack Node Externals](https://www.npmjs.com/package/webpack-node-externals), you need to run `npm install --production` on the copied `/dist`, but this time you don't need to install its `devDependencies`
+3. Use process manager like [PM2](https://github.com/Unitech/pm2) to run your server, your run target is ./dist/build/bundle.js
 
 ## Credit
 - Create React App https://github.com/facebookincubator/create-react-app
