@@ -1008,9 +1008,9 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-create-react-app-express@0.6.5:
-  version "0.6.5"
-  resolved "https://registry.yarnpkg.com/create-react-app-express/-/create-react-app-express-0.6.5.tgz#caffb9c993b13e384775cdd58e303f5331b24355"
+create-react-app-express@0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/create-react-app-express/-/create-react-app-express-0.7.0.tgz#c485f184396482e55ea761ba7d523c4bd971a080"
   dependencies:
     body-parser "^1.17.2"
     compression "^1.7.0"
