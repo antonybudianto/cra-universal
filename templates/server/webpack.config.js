@@ -18,12 +18,7 @@ module.exports = {
   },
   target: 'node',
   externals: [
-    nodeExternals({
-      whitelist: [
-        'react',
-        'react-dom'
-      ]
-    })
+    nodeExternals()
   ],
   node: {
     __dirname: false
