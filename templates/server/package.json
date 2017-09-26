@@ -1,6 +1,6 @@
 {
   "name": "create-react-app-server",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "Express server for Create React App",
   "main": "src/index.js",
   "license": "MIT",
@@ -22,6 +22,6 @@
     "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
-    "create-react-app-express": "0.7.0"
+    "create-react-app-express": "1.0.0"
   }
 }

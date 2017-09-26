@@ -27,6 +27,16 @@ cd ./server
 npm install
 ```
 
+## Client code change
+Please update your render method on `src/index.js`
+```js
+// before
+ReactDOM.render(...)
+
+// after
+ReactDOM.hydrate(...)
+```
+
 ## Development
 ```sh
 # Start your CRA client

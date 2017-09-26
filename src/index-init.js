@@ -14,6 +14,7 @@ try {
   * CRA server initialized at ${chalk.bgBlue(dest)}!
 
   * ${chalk.underline('Next steps:')}
+  * - Change your 'render' method into 'hydrate'
   * - npm start
   * - cd ./server
   * - npm install
