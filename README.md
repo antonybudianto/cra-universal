@@ -10,6 +10,7 @@ Why you must use this?
 - **Server-side rendering** for your SEO
 - **Code-splitting** that works universally
 - Server code is given to you, no black-box
+- The core middleware is fully unit-tested
 
 > [Live Demo](https://cra-universal.now.sh/) using [Now](https://zeit.co/)
 
