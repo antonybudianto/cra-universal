@@ -1,9 +1,19 @@
 #!/usr/bin/env node
 
-var program = require('commander');
+var yargs = require('yargs');
 
-program
-  .version('0.1.0')
-  .command('init', 'Initialize your CRA server')
-  .command('build', 'Build both client and server')
-  .parse(process.argv);
+yargs
+.command('init', 'Initialize your CRA server', () => {},  (argv) => {
+  require('./init');
+})
+.command('build', 'Build both client and server', () => {}, (argv) => {
+  require('./build');
+})
+.command('clean', 'Clean build result', () => {}, (argv) => {
+  require('./clean');
+})
+.demandCommand(1, 'Please choose your command')
+.epilog('CRA Universal CLI')
+.help()
+.strict()
+.argv;
