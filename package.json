@@ -9,7 +9,7 @@
   "scripts": {
     "clean": "rimraf templates/build templates/dist templates/server/build",
     "release": "np",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "author": "Antony Budianto <antonybudianto@gmail.com>",
   "repository": {
