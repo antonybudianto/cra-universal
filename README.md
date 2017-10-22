@@ -3,7 +3,8 @@
 [![npm version](https://badge.fury.io/js/cra-universal.svg)](https://badge.fury.io/js/cra-universal)
 [![Build Status](https://travis-ci.org/antonybudianto/cra-universal.svg?branch=master)](https://travis-ci.org/antonybudianto/cra-universal)
 
-Simple express server for your Create React App projects with Server-side rendering and Code-splitting
+Simple express server for your Create React App projects with Server-side rendering and Code-splitting.
+
 
 Why you must use this?
 - **No [eject](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-run-eject)** needed!
@@ -62,7 +63,7 @@ cra-universal build
 ```
 
 ## Deployment
-1. First, follow the Production guide above
+1. First, follow the Production guide mentioned above.
 2. Since the bundle used [Webpack Node Externals](https://www.npmjs.com/package/webpack-node-externals), you need to run `npm install --production` on the copied `/dist`, but this time you don't need to install its `devDependencies`
 3. Use process manager like [PM2](https://github.com/Unitech/pm2) to run your server, your run target is ./dist/build/bundle.js
 
