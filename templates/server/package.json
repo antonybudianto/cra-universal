@@ -22,6 +22,7 @@
     "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
-    "create-react-app-express": "1.0.1"
+    "create-react-app-express": "1.0.1",
+    "dotenv": "^4.0.0"
   }
 }
