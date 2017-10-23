@@ -1,4 +1,4 @@
-var  getCounter = require('./sample-module');
+var getCounter = require('./sample-module');
 
 describe('Sample Test', () => {
   test('getCounter test', () => {
