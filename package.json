@@ -9,7 +9,7 @@
   "scripts": {
     "clean": "rimraf templates/build templates/dist templates/server/build",
     "release": "np",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "cd src && jest --config jest-config.json --coverage --bail"
   },
   "author": "Antony Budianto <antonybudianto@gmail.com>",
   "repository": {
@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "np": "^2.16.0",
-    "rimraf": "2.6.2"
+    "rimraf": "2.6.2",
+    "jest": "^21.2.1"
   }
 }
