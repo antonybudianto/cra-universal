@@ -10,3 +10,4 @@ script:
   - cd ./server
   - yarn
   - npm run build
+  - npm run test
