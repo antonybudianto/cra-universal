@@ -3,6 +3,7 @@ node_js:
   - "8.0"
   - "7.0"
 script:
+  - npm t
   - cd ./templates
   - yarn
   - npm t
@@ -10,4 +11,3 @@ script:
   - cd ./server
   - yarn
   - npm run build
-  - npm run test
