@@ -21,11 +21,11 @@
     "chalk": "^2.2.0",
     "fs-extra": "4.0.2",
     "inquirer": "^3.3.0",
-    "jest": "^21.2.1",
     "yargs": "9.0.1"
   },
   "devDependencies": {
     "np": "^2.16.0",
-    "rimraf": "2.6.2"
+    "rimraf": "2.6.2",
+    "jest": "^21.2.1"
   }
 }
