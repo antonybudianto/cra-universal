@@ -6,6 +6,9 @@ yargs
 .command('init', 'Initialize your CRA server', () => {},  (argv) => {
   require('./init');
 })
+.command('start', 'Start both client and server', () => {},  (argv) => {
+  require('./start');
+})
 .command('build', 'Build both client and server', () => {}, (argv) => {
   require('./build');
 })
