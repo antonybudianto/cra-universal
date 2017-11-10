@@ -32,10 +32,7 @@ module.exports = {
         options: {
           presets: ['env', 'react-app'],
           plugins: [
-            [require.resolve('babel-plugin-import-inspector'), {
-              serverSideRequirePath: true,
-              webpackRequireWeakId: true
-            }]
+            require.resolve("babel-plugin-dynamic-import-node")
           ]
         }
       },

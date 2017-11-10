@@ -13,15 +13,14 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "babel-plugin-import-inspector": "^2.0.0",
     "babel-preset-env": "^1.6.1",
-    "import-inspector": "^2.0.0",
     "nodemon-webpack-plugin": "0.1.5",
     "null-loader": "^0.1.1",
     "webpack": "^3.8.1",
     "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
+    "babel-plugin-dynamic-import-node": "^1.1.0",
     "create-react-app-express": "1.0.1",
     "dotenv": "^4.0.0"
   }
