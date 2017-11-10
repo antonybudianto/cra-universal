@@ -5,8 +5,6 @@ const http = require('http');
 const CRA_CLIENT_PORT = process.env.CRA_CLIENT_PORT || 3000;
 
 function handleDevMode(req, res, options) {
-  // const { universalRender } = options;
-
   http.get(`http://localhost:${CRA_CLIENT_PORT}/index.html`, function (result) {
     result.setEncoding('utf8');
     let htmlData = '';
@@ -44,21 +42,14 @@ function universalMiddleware(options) {
   return universalLoader;
 }
 
-function replaceHtmlData (htmlData, map) {
-  let temp = htmlData
-  const keys = Object.keys(map)
-  const vals = Object.values(map)
-  keys.map((k, i) => {
-    temp = temp.replace(k, vals[i])
-  })
-  return temp
-}
-
-function handleStream(req, res, stream, htmlData) {
+function handleStream(req, res, stream, htmlData, options) {
   const segments = htmlData.split(`<div id="root">`);
   res.write(segments[0] + `<div id="root">`);
   stream.pipe(res, { end: false })
   stream.on('end', () => {
+    if (options.onEndReplace) {
+      segments[1] = options.onEndReplace(segments[1])
+    }
     res.write(segments[1]);
     res.end();
   });
@@ -67,7 +58,6 @@ function handleStream(req, res, stream, htmlData) {
 function processRequest(req, res, htmlData, options) {
   const { universalRender } = options
   const stream = universalRender(req, res);
-  htmlData = replaceHtmlData(htmlData, options.replaceMap || {})
 
   if (stream === undefined) {
     return;
@@ -78,12 +68,12 @@ function processRequest(req, res, htmlData, options) {
       if (stream === undefined) {
         return;
       }
-      handleStream(req, res, stream, htmlData);
+      handleStream(req, res, stream, htmlData, options);
     });
     return;
   }
 
-  handleStream(req, res, stream, htmlData);
+  handleStream(req, res, stream, htmlData, options);
 }
 
 module.exports = universalMiddleware;

@@ -23,7 +23,9 @@
     "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
+    "babel-plugin-dynamic-import-node": "^1.1.0",
     "create-react-app-express": "1.0.1",
-    "dotenv": "^4.0.0"
+    "dotenv": "^4.0.0",
+    "loadable-components": "0.3.0"
   }
 }

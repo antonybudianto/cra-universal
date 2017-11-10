@@ -1,7 +1,6 @@
 var webpack = require('webpack');
 var nodeExternals = require('webpack-node-externals');
 var NodemonPlugin = require('nodemon-webpack-plugin');
-const { ReactLoadablePlugin } = require('react-loadable/webpack');
 
 function isProd(valProd, valDev) {
   return process.env.NODE_ENV === 'production' ? valProd : valDev;
@@ -33,11 +32,7 @@ module.exports = {
         options: {
           presets: ['env', 'react-app'],
           plugins: [
-            // require.resolve("babel-plugin-dynamic-import-node-sync")
-            require.resolve("babel-plugin-syntax-dynamic-import"),
-            [require.resolve("babel-plugin-import-inspector"), {
-              "serverSideRequirePath": true
-            }]
+            require.resolve("babel-plugin-dynamic-import-node")
           ]
         }
       },

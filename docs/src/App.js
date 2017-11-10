@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router';
 import { Link } from 'react-router-dom';
-import L from 'react-loadable';
+import loadable from 'loadable-components'
+
 import HomeView from './pages/HomeView';
 import './App.css';
 
-const Loadable = opts => L({
-  loading: () => <div>Loading...</div>,
-  ...opts
-});
-
-const LoadableFeatView = Loadable({
-  loader: () => import('./pages/FeatureView')
-})
+const LoadableFeatView = loadable(() => import('./pages/FeatureView'));
 
 class App extends Component {
   render() {

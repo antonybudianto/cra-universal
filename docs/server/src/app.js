@@ -1,3 +1,4 @@
+import { getLoadableState } from 'loadable-components/server';
 const path = require('path');
 const React = require('react');
 const ReactDOMServer = require('react-dom/server');
@@ -9,6 +10,7 @@ const { createReactAppExpress } = require('./cra-express-custom');
 const {default: App} = require('../../src/App');
 const {default: reducer} = require('../../src/reducers');
 const clientBuildPath = path.resolve(__dirname, 'client');
+let tag = ''
 const preloadedState = {
   app: {
     appName: 'CRA Universal',
@@ -20,12 +22,11 @@ const preloadedState = {
 const app = createReactAppExpress({
   clientBuildPath,
   universalRender: handleUniversalRender,
-  replaceMap: {
-    '<!--{{SCRIPT}}-->': `
-      <script>
-        window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
-      </script>
-    `
+  onEndReplace(html) {
+    return html.replace('<!--{{SCRIPT}}-->', `${tag}<script>
+      window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+    </script>`
+    )
   }
 });
 
@@ -33,20 +34,17 @@ const store = createStore(reducer, preloadedState);
 
 function handleUniversalRender(req, res) {
   const context = {};
-  const stream = ReactDOMServer.renderToNodeStream(
+  const app = (
     <StaticRouter location={req.url} context={context}>
       <Provider store={store}>
         <App />
       </Provider>
     </StaticRouter>
-  );
-
-  if (context.url) {
-    res.redirect(301, context.url);
-    return;
-  }
-
-  return stream;
+  )
+  return getLoadableState(app).then(loadableState => {
+    tag = loadableState.getScriptTag();
+    return ReactDOMServer.renderToNodeStream(app);
+  });
 }
 
 module.exports = app;

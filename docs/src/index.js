@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { createStore } from 'redux'
+import { loadComponents } from 'loadable-components'
 
 import './index.css';
 import App from './App';
@@ -17,11 +18,13 @@ delete window.__PRELOADED_STATE__
 
 const store = createStore(reducer, preloadedState)
 
-ReactDOM.hydrate(
-  <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>
-, document.getElementById('root'));
-registerServiceWorker();
+loadComponents().then(() => {
+  ReactDOM.hydrate(
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  , document.getElementById('root'));
+  registerServiceWorker();
+});
