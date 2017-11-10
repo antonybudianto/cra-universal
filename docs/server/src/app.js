@@ -23,7 +23,7 @@ const app = createReactAppExpress({
   clientBuildPath,
   universalRender: handleUniversalRender,
   onEndReplace(html) {
-    return html.replace('<!--{{SCRIPT}}-->', `${tag}<script>
+    return html.replace('{{SCRIPT}}', `${tag}<script>
       window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
     </script>`
     )
