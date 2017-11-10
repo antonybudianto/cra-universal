@@ -4,7 +4,14 @@ node_js:
   - "7.0"
 script:
   - npm t
-  - cd ./templates
+  - cd ./docs
+  - yarn
+  - npm t
+  - npm run build
+  - cd ./server
+  - yarn
+  - npm run build
+  - cd ../../templates
   - yarn
   - npm t
   - npm run build
