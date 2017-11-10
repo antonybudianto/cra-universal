@@ -5,7 +5,7 @@ const ReactDOMServer = require('react-dom/server');
 const { Provider } = require('react-redux');
 const { StaticRouter } = require('react-router');
 const { createStore } = require('redux');
-const { createReactAppExpress } = require('./cra-express-custom');
+const { createReactAppExpress } = require('create-react-app-express');
 
 const {default: App} = require('../../src/App');
 const {default: reducer} = require('../../src/reducers');
