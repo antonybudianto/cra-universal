@@ -6,7 +6,9 @@ import loadable from 'loadable-components'
 import HomeView from './pages/HomeView';
 import './App.css';
 
-const LoadableFeatView = loadable(() => import('./pages/FeatureView'));
+const LoadableFeatView = loadable(() => import('./pages/FeatureView'), {
+  LoadingComponent: props => <div>Loading...</div>
+});
 
 class App extends Component {
   render() {
