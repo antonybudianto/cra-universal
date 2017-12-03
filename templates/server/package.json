@@ -21,7 +21,7 @@
     "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
-    "@cra-express/core": "^0.1.4",
+    "@cra-express/core": "^0.2.0",
     "babel-plugin-dynamic-import-node": "^1.2.0",
     "dotenv": "^4.0.0"
   }

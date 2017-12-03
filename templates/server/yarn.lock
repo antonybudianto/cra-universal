@@ -2,27 +2,27 @@
 # yarn lockfile v1
 
 
-"@cra-express/core@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@cra-express/core/-/core-0.1.4.tgz#f05a211d60bf0eaebafc8241297f5379feb2f8a3"
+"@cra-express/core@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@cra-express/core/-/core-0.2.0.tgz#2142518f34435448984040d0395448e58c221f6c"
   dependencies:
-    "@cra-express/static-loader" "^0.1.4"
-    "@cra-express/universal-loader" "^0.1.2"
+    "@cra-express/static-loader" "^0.2.0"
+    "@cra-express/universal-loader" "^0.2.0"
     express "4.16.2"
     react "^16.2.0"
     react-dom "^16.2.0"
 
-"@cra-express/static-loader@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@cra-express/static-loader/-/static-loader-0.1.4.tgz#c14a3c342e1c09cdcfbcf5dee93e1bc0eb3b12d3"
+"@cra-express/static-loader@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@cra-express/static-loader/-/static-loader-0.2.0.tgz#c6602e8d461ecec8a910d90870ca1a255862be1c"
   dependencies:
     body-parser "^1.18.2"
     compression "^1.7.1"
     morgan "^1.9.0"
 
-"@cra-express/universal-loader@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@cra-express/universal-loader/-/universal-loader-0.1.2.tgz#57808acb81f6c8590aa864718c88edd066fb3685"
+"@cra-express/universal-loader@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@cra-express/universal-loader/-/universal-loader-0.2.0.tgz#e630737f02a1d32912bc7a69f74bfb0da23779b6"
 
 abbrev@1:
   version "1.1.1"
