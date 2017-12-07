@@ -23,13 +23,13 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.3.0",
-    "fs-extra": "4.0.2",
-    "inquirer": "^3.3.0",
+    "fs-extra": "4.0.3",
+    "inquirer": "^4.0.1",
     "yargs": "10.0.3"
   },
   "devDependencies": {
     "jest": "^21.2.1",
-    "np": "^2.16.1",
+    "np": "^2.18.2",
     "rimraf": "2.6.2"
   }
 }
