@@ -7,8 +7,11 @@ const chalk = require('chalk');
 
 const cwd = process.cwd();
 
+const isWindows = process.platform === "win32";
+const npm = isWindows ? 'npm.cmd' : 'npm'
+
 console.log(chalk.bgCyan('Building CRA client...'));
-const clientBuildResult = spawnSync('npm', ['run', 'build'], {
+const clientBuildResult = spawnSync(npm, ['run', 'build'], {
   stdio: 'inherit'
 });
 if (clientBuildResult.status !== 0) {
@@ -17,7 +20,7 @@ if (clientBuildResult.status !== 0) {
 console.log('Done building CRA client!\n');
 
 console.log(chalk.bgCyan('Building CRA server...'));
-const serverBuildResult = spawnSync('npm', ['run', 'build'], {
+const serverBuildResult = spawnSync(npm, ['run', 'build'], {
   stdio: 'inherit',
   cwd: path.resolve(cwd, 'server')
 });
