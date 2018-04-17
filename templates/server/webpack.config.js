@@ -42,9 +42,7 @@ module.exports = {
       }
     ],
   },
-  plugins: isProd([
-      new webpack.optimize.UglifyJsPlugin()
-    ], [
+  plugins: isProd([], [
       new NodemonPlugin()
     ])
 }
