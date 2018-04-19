@@ -1,0 +1,6 @@
+{
+  "testEnvironment": "node",
+  "moduleFileExtensions": ["js"],
+  "collectCoverageFrom": ["src/**/*.{js}"],
+  "testRegex": "(src)/.*\\.spec\\.js$"
+}

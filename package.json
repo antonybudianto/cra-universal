@@ -3,17 +3,14 @@
   "version": "2.1.0",
   "description": "Create React App Universal CLI",
   "main": "src/index.js",
-  "files": [
-    "src",
-    "templates/server"
-  ],
+  "files": ["src", "templates/server"],
   "bin": {
     "cra-universal": "./src/index.js"
   },
   "scripts": {
     "clean": "rimraf templates/build templates/dist templates/server/build",
     "release": "np",
-    "test": "jest \"(src)/.*\\.spec\\.js$\" --coverage"
+    "test": "jest --config=jest-config.json --coverage"
   },
   "author": "Antony Budianto <antonybudianto@gmail.com>",
   "repository": {
