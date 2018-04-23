@@ -3,7 +3,10 @@
   "version": "2.1.0",
   "description": "Create React App Universal CLI",
   "main": "src/index.js",
-  "files": ["src", "templates/server"],
+  "files": [
+    "src",
+    "templates/server"
+  ],
   "bin": {
     "cra-universal": "./src/index.js"
   },

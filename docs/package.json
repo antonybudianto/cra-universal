@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "cra-universal": "^2.1.0",
     "prettier": "1.12.1",
     "react-scripts": "1.1.4"
   },
@@ -21,6 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "build:all": "cra-universal build",
     "prettier": "prettier --write \"{src,__{tests,mocks}__}/**/*.js\""
   }
 }
