@@ -1,6 +1,7 @@
 const initialState = {
   data: [],
   loading: false,
+  firstFetch: true,
   err: null
 }
 
@@ -13,13 +14,20 @@ export function fetchNews () {
     dispatch({
       type: FETCH_NEWS_BEGIN
     })
-    return Promise.resolve({
-      data: [
-        'Hi, this is news from server',
-        'The second news',
-        'The third'
-      ]
-    }).then(res => {
+
+    const promise = new Promise((res, rej) => {
+      setTimeout(() => {
+        res({
+          data: [
+            'Hi, this is news from server',
+            'The second news',
+            'The third'
+          ]
+        })
+      }, 2000)
+    })
+
+    return promise.then(res => {
       dispatch({
         type: FETCH_NEWS_SUCCESS,
         payload: res.data
@@ -40,6 +48,7 @@ export default function newsReducer (state = initialState, action) {
       return {
         ...state,
         err: null,
+        firstFetch: false,
         loading: true
       }
     }
