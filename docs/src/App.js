@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router';
-import { Link } from 'react-router-dom';
+import { NavLink as Link } from 'react-router-dom';
 
 import routes from './routes';
 import './App.css';
@@ -21,14 +21,14 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <h2>Welcome to React</h2>
-        </div>
-        <div>
-          <Link className="App-nav" to="/">
-            Home
-          </Link>
-          <Link className="App-nav" to="/feature">
-            Feature
-          </Link>
+          <div>
+            <Link exact className="App-nav" to="/" activeClassName="active">
+              Home
+            </Link>
+            <Link className="App-nav" to="/feature" activeClassName="active">
+              Feature
+            </Link>
+          </div>
         </div>
         <div className="App-content">
           <Switch>
