@@ -13,15 +13,14 @@ class FeatureView extends Component {
   render() {
     const { news } = this.props;
     return (
-      <div
-        style={{
-          width: '200px',
-          margin: 'auto',
-        }}
-      >
+      <div>
         <h1>Feature view</h1>
         {news.loading ? <div>Loading from client...</div> : null}
         <ul>{news.data.map((n, i) => <li key={i}>{n}</li>)}</ul>
+        <p>
+          View page source, you'll see the list is already rendered on the
+          server
+        </p>
       </div>
     );
   }

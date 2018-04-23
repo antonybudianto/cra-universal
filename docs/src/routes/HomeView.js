@@ -2,12 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const HomeView = ({ news }) => (
-  <div
-    style={{
-      width: '200px',
-      margin: 'auto',
-    }}
-  >
+  <div>
     <h1>Home view</h1>
     <div>
       Data from redux store: <br />
@@ -21,7 +16,7 @@ const HomeView = ({ news }) => (
 );
 
 const mapStateToProps = state => ({
-  news: state.app.news,
+  news: state.app.news
 });
 
 export default connect(mapStateToProps)(HomeView);

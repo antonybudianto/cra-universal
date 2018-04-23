@@ -22,12 +22,7 @@ class App extends Component {
         <div className="App-header">
           <h2>Welcome to React</h2>
         </div>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-          }}
-        >
+        <div>
           <Link className="App-nav" to="/">
             Home
           </Link>
