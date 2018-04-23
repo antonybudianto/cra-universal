@@ -7,6 +7,7 @@ import HomeView from './pages/HomeView';
 import './App.css';
 
 const LoadableFeatView = loadable(() => import('./pages/FeatureView'), {
+  modules: ['./pages/FeatureView'],
   LoadingComponent: props => <div>Loading...</div>
 });
 
