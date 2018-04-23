@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router';
 import { Link } from 'react-router-dom';
-import loadable from 'loadable-components'
 
-import HomeView from './pages/HomeView';
+import routes from './routes';
 import './App.css';
 
-const LoadableFeatView = loadable(() => import('./pages/FeatureView'), {
-  modules: ['./pages/FeatureView'],
-  LoadingComponent: props => <div>Loading...</div>
-});
+const RouteWithSubRoutes = route => (
+  <Route
+    path={route.path}
+    render={props => (
+      // pass the sub-routes down to keep nesting
+      <route.component {...props} routes={route.routes} />
+    )}
+  />
+);
 
 class App extends Component {
   render() {
@@ -27,8 +31,7 @@ class App extends Component {
         </div>
         <div className="App-content">
           <Switch>
-            <Route path="/" exact component={HomeView} />
-            <Route path="/feature" component={LoadableFeatView} />
+            { routes.map((route, i) => <RouteWithSubRoutes key={i} {...route} />) }
           </Switch>
         </div>
       </div>

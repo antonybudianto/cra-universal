@@ -20,7 +20,6 @@ const HomeView = ({ news }) => (
         </ul>
         )
       }
-
     </div>
   </div>
 )
