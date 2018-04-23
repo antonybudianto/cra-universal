@@ -22,16 +22,24 @@ class App extends Component {
         <div className="App-header">
           <h2>Welcome to React</h2>
         </div>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center'
-        }}>
-          <Link className="App-nav" to="/">Home</Link>
-          <Link className="App-nav" to="/feature">Feature</Link>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          <Link className="App-nav" to="/">
+            Home
+          </Link>
+          <Link className="App-nav" to="/feature">
+            Feature
+          </Link>
         </div>
         <div className="App-content">
           <Switch>
-            { routes.map((route, i) => <RouteWithSubRoutes key={i} {...route} />) }
+            {routes.map((route, i) => (
+              <RouteWithSubRoutes key={i} {...route} />
+            ))}
           </Switch>
         </div>
       </div>

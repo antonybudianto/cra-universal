@@ -1,23 +1,23 @@
-import React from 'react'
-import loadable from 'loadable-components'
+import React from 'react';
+import loadable from 'loadable-components';
 
-import HomeView from "./HomeView";
+import HomeView from './HomeView';
 
 const LoadableFeatView = loadable(() => import('./FeatureView'), {
   modules: ['./FeatureView'],
-  LoadingComponent: props => <div>Loading...</div>
+  LoadingComponent: props => <div>Loading...</div>,
 });
 
 const routes = [
   {
     path: '/',
     exact: true,
-    component: HomeView
+    component: HomeView,
   },
   {
     path: '/feature',
-    component: LoadableFeatView
-  }
-]
+    component: LoadableFeatView,
+  },
+];
 
-export default routes
+export default routes;
