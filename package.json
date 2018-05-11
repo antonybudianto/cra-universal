@@ -23,7 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.3.2",
-    "fs-extra": "5.0.0",
+    "fs-extra": "6.0.1",
     "inquirer": "^5.2.0",
     "yargs": "11.0.0"
   },
