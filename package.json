@@ -13,7 +13,7 @@
   "scripts": {
     "clean": "rimraf templates/build templates/dist templates/server/build",
     "release": "np",
-    "test": "cd src && jest --config jest-config.json --coverage --bail"
+    "test": "jest --config=jest-config.json --coverage"
   },
   "author": "Antony Budianto <antonybudianto@gmail.com>",
   "repository": {

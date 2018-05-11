@@ -5,19 +5,20 @@
 
 Simple express server for your Create React App projects with Server-side rendering and Code-splitting.
 
+Features:
 
-Why you must use this?
-- **No [eject](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-run-eject)** needed!
-- **Server-side rendering** for your SEO
-- **Code-splitting** that works universally
-- Server code is given to you, **no black-box**
-- The core middleware is fully **unit-tested**
+* **No [eject](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-run-eject)** needed!
+* **Server-side rendering** for your SEO
+* **Code-splitting** that works universally
+* Server code is given to you, **no black-box**
+* The core middleware is fully **unit-tested**
 
 > [Live Demo](https://cra-universal.now.sh/) using [Now](https://zeit.co/)
 
 ## Installation
+
 ```sh
-# Install global CLI
+# Install global CLI (also works as a package)
 npm install -g cra-universal
 
 # Change dir to your app and init CRA server
@@ -30,7 +31,9 @@ npm install
 ```
 
 ## Client code change
+
 Please update your render method on `src/index.js`
+
 ```js
 // before
 ReactDOM.render(...)
@@ -40,6 +43,7 @@ ReactDOM.hydrate(...)
 ```
 
 ## Development
+
 ```sh
 # Start your CRA client
 # Recommended when developing client side
@@ -55,6 +59,7 @@ npm start
 ```
 
 ## Production
+
 ```sh
 # Change directory to your project root first, and run:
 cra-universal build
@@ -63,13 +68,16 @@ cra-universal build
 ```
 
 ## Deployment
-1. First, follow the Production guide mentioned above.
-2. Since the bundle used [Webpack Node Externals](https://www.npmjs.com/package/webpack-node-externals), you need to run `npm install --production` on the copied `/dist`, but this time you don't need to install its `devDependencies`
-3. Use process manager like [PM2](https://github.com/Unitech/pm2) to run your server, your run target is ./dist/build/bundle.js
+
+1.  First, follow the Production guide mentioned above.
+2.  Since the bundle used [Webpack Node Externals](https://www.npmjs.com/package/webpack-node-externals), you need to run `npm install --production` on the copied `/dist`, but this time you don't need to install its `devDependencies`
+3.  Use process manager like [PM2](https://github.com/Unitech/pm2) to run your server, your run target is ./dist/build/bundle.js
 
 ## Credit
-- Create React App https://github.com/facebookincubator/create-react-app
-- Thanks for https://github.com/ayroblu/ssr-create-react-app-v2 for the base!
+
+* Create React App https://github.com/facebookincubator/create-react-app
+* Thanks for https://github.com/ayroblu/ssr-create-react-app-v2 for the base!
 
 ## License
+
 MIT

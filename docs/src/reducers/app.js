@@ -1,11 +1,11 @@
 const initialState = {
   appName: 'Hero',
-  news: []
-}
+  news: [],
+};
 
-export default function appReducer (state = initialState, action) {
+export default function appReducer(state = initialState, action) {
   switch (action.type) {
     default:
-      return state
+      return state;
   }
 }

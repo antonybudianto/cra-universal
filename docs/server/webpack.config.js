@@ -7,6 +7,7 @@ function isProd(valProd, valDev) {
 }
 
 module.exports = {
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   entry: './src/index.js',
   resolve: {
     extensions: ['.js', '.jsx']
@@ -32,6 +33,7 @@ module.exports = {
         options: {
           presets: ['env', 'react-app'],
           plugins: [
+            require.resolve("loadable-components/babel"),
             require.resolve("babel-plugin-dynamic-import-node")
           ]
         }
@@ -42,9 +44,7 @@ module.exports = {
       }
     ],
   },
-  plugins: isProd([
-      new webpack.optimize.UglifyJsPlugin()
-    ], [
+  plugins: isProd([], [
       new NodemonPlugin()
     ])
 }
