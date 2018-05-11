@@ -27,6 +27,6 @@
     "babel-plugin-dynamic-import-node": "^1.2.0",
     "@cra-express/core": "^2.1.1",
     "dotenv": "^5.0.1",
-    "loadable-components": "1.4.0"
+    "loadable-components": "2.0.0"
   }
 }
