@@ -41,8 +41,8 @@ function getInitialData(ctx, store, routes) {
         match
       }
     })
-    .filter(result => result.component.getInitialProps)
-    .map(result => result.component.getInitialProps({
+    .filter(result => result.component.loadData)
+    .map(result => result.component.loadData({
       ctx,
       store,
       match: result.match
