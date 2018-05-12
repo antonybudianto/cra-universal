@@ -8,6 +8,7 @@ const ReactDOMServer = require('react-dom/server');
 const { Provider } = require('react-redux');
 const { StaticRouter } = require('react-router');
 const { matchPath } = require('react-router-dom');
+const { matchRoutes } = require('react-router-config')
 const { createStore, applyMiddleware } = require('redux');
 
 const { default: App } = require('../../src/App');
@@ -33,12 +34,20 @@ const app = createReactAppExpress({
 });
 
 function getInitialData(ctx, store, routes) {
-  const promises = routes
-    .filter(route => matchPath(ctx.req.url, route))
-    .map(route => route.component)
-    .filter(component => component.getInitialProps)
-    .map(component => component.getInitialProps(ctx, store));
-  return Promise.all(promises);
+  const promises = matchRoutes(routes, ctx.req.path)
+    .map(({ route, match }) => {
+      return {
+        component: route.component,
+        match
+      }
+    })
+    .filter(result => result.component.getInitialProps)
+    .map(result => result.component.getInitialProps({
+      ctx,
+      store,
+      match: result.match
+    }))
+  return Promise.all(promises)
 }
 
 function handleUniversalRender(req, res) {

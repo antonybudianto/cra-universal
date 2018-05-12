@@ -24,9 +24,10 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
-    "babel-plugin-dynamic-import-node": "^1.2.0",
     "@cra-express/core": "^2.1.1",
+    "babel-plugin-dynamic-import-node": "^1.2.0",
     "dotenv": "^5.0.1",
-    "loadable-components": "1.4.0"
+    "loadable-components": "1.4.0",
+    "react-router-config": "^1.0.0-beta.4"
   }
 }

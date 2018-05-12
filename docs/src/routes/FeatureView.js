@@ -33,7 +33,7 @@ class FeatureView extends Component {
   }
 }
 
-FeatureView.getInitialProps = (ctx, store) => {
+FeatureView.getInitialProps = ({ ctx, store }) => {
   return store.dispatch(fetchNews());
 };
 
