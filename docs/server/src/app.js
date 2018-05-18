@@ -1,6 +1,7 @@
 import { getLoadableState } from 'loadable-components/server';
 import thunk from 'redux-thunk';
 import { createReactAppExpress } from '@cra-express/core';
+import { getInitialData } from '@cra-express/redux-prefetcher'
 import routes from '../../src/routes';
 const path = require('path');
 const React = require('react');
@@ -8,6 +9,7 @@ const ReactDOMServer = require('react-dom/server');
 const { Provider } = require('react-redux');
 const { StaticRouter } = require('react-router');
 const { matchPath } = require('react-router-dom');
+const { matchRoutes } = require('react-router-config')
 const { createStore, applyMiddleware } = require('redux');
 
 const { default: App } = require('../../src/App');
@@ -31,15 +33,6 @@ const app = createReactAppExpress({
     );
   }
 });
-
-function getInitialData(ctx, store, routes) {
-  const promises = routes
-    .filter(route => matchPath(ctx.req.url, route))
-    .map(route => route.component)
-    .filter(component => component.getInitialProps)
-    .map(component => component.getInitialProps(ctx, store));
-  return Promise.all(promises);
-}
 
 function handleUniversalRender(req, res) {
   const context = {};
