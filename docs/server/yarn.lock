@@ -12,6 +12,12 @@
     react "^16.2.0"
     react-dom "^16.2.0"
 
+"@cra-express/redux-prefetcher@^2.2.2-0":
+  version "2.2.2-0"
+  resolved "https://registry.yarnpkg.com/@cra-express/redux-prefetcher/-/redux-prefetcher-2.2.2-0.tgz#cb00efa43812dbf533c7654aa224da3cfb89b423"
+  dependencies:
+    react-router-config "^1.0.0-beta.4"
+
 "@cra-express/static-loader@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@cra-express/static-loader/-/static-loader-2.1.1.tgz#33cebde5213a00335fee717539b870257a44f157"

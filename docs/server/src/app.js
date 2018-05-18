@@ -1,6 +1,7 @@
 import { getLoadableState } from 'loadable-components/server';
 import thunk from 'redux-thunk';
 import { createReactAppExpress } from '@cra-express/core';
+import { getInitialData } from '@cra-express/redux-prefetcher'
 import routes from '../../src/routes';
 const path = require('path');
 const React = require('react');
@@ -32,23 +33,6 @@ const app = createReactAppExpress({
     );
   }
 });
-
-function getInitialData(ctx, store, routes) {
-  const promises = matchRoutes(routes, ctx.req.path)
-    .map(({ route, match }) => {
-      return {
-        component: route.component,
-        match
-      }
-    })
-    .filter(result => result.component.loadData)
-    .map(result => result.component.loadData({
-      ctx,
-      store,
-      match: result.match
-    }))
-  return Promise.all(promises)
-}
 
 function handleUniversalRender(req, res) {
   const context = {};

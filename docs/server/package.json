@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@cra-express/core": "^2.1.1",
+    "@cra-express/redux-prefetcher": "^2.2.2-0",
     "babel-plugin-dynamic-import-node": "^1.2.0",
     "dotenv": "^5.0.1",
     "loadable-components": "1.4.0",
