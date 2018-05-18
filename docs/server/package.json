@@ -28,7 +28,6 @@
     "@cra-express/redux-prefetcher": "^2.2.2-0",
     "babel-plugin-dynamic-import-node": "^1.2.0",
     "dotenv": "^5.0.1",
-    "loadable-components": "1.4.0",
-    "react-router-config": "^1.0.0-beta.4"
+    "loadable-components": "1.4.0"
   }
 }
