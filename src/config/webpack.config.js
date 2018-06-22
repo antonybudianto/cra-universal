@@ -64,7 +64,11 @@ let config = {
         }
       },
       {
-        test: /\.(css|svg)?$/,
+        test: /\.(png|jpe?g|gif|bmp|svg)?$/,
+        loaders: 'url-loader'
+      },
+      {
+        test: /\.(css|sass|scss)?$/,
         loaders: 'null-loader'
       }
     ]
