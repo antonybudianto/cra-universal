@@ -102,14 +102,17 @@ const config = {
       }
     ]
   },
-  plugins: isProd(
-    [],
-    [
-      new StartServerPlugin({
-        bundleName: 'bundle.js'
-      })
-    ]
-  )
+  plugins: [
+    ...isProd(
+      [],
+      [
+        new StartServerPlugin({
+          bundleName: 'bundle.js'
+        })
+      ]
+    ),
+    ...crauConfig.webpackPlugins
+  ]
 };
 
 let finalConfig = config;
