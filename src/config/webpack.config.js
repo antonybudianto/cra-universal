@@ -1,10 +1,15 @@
 const fs = require('fs');
 const nodeExternals = require('webpack-node-externals');
 const StartServerPlugin = require('start-server-webpack-plugin');
+const chalk = require('chalk');
 const { resolveCwd, resolveDir, pcwd } = require('../util/path');
 
 console.log('> cwd: ', resolveCwd(''));
 console.log('> cli: ', resolveDir(''));
+
+function log(...args) {
+  console.log(chalk.bgCyan(' crau > '), chalk.cyan(...args));
+}
 
 function isProd(valProd, valDev) {
   return process.env.NODE_ENV === 'production' ? valProd : valDev;
@@ -15,12 +20,10 @@ function loadConfigOnBase(fileName) {
   const defaultConfig = resolveDir('../config', fileName);
 
   if (fs.existsSync(configOnBase)) {
-    console.log(`> "${fileName}" exists. cra-universal will use this one.`);
+    log(`"${fileName}" found, will use this one.`);
     return configOnBase;
   }
-  console.log(
-    `> "${fileName}" doesn't exist. cra-universal will use default config.`
-  );
+  log(`"${fileName}" not found, will use default config.`);
   return defaultConfig;
 }
 
@@ -30,7 +33,7 @@ function loadConfigOnBase(fileName) {
 let ctx = resolveDir('../config');
 if (fs.existsSync(resolveCwd('./server'))) {
   ctx = pcwd;
-  console.log('> "server" folder found on CRA client, will use this one');
+  log('"server" folder found on CRA client, will use this one');
 }
 
 /**
@@ -42,7 +45,7 @@ let crauDefaultConfig = {
 let crauConfig = crauDefaultConfig;
 const crauPath = resolveCwd('crau.config.js');
 if (fs.existsSync(crauPath)) {
-  console.log('> crau.config.js exists. Configuration applied.');
+  log('crau.config.js exists. Configuration applied.');
   const crauUserConfig = require(crauPath);
   crauConfig = Object.assign({}, crauDefaultConfig, crauUserConfig);
 }
@@ -50,7 +53,7 @@ if (fs.existsSync(crauPath)) {
 /**
  * Load 3rd party config
  */
-const babelPath = loadConfigOnBase('.babelrc');
+const babelPath = loadConfigOnBase('./server/.babelrc');
 
 const config = {
   context: ctx,
@@ -126,9 +129,9 @@ let finalConfig = config;
 if (crauConfig.modifyWebpack) {
   const webpackConfig = crauConfig.modifyWebpack(config);
   if (!webpackConfig) {
-    console.warn('> modifyWebpack should return config.');
+    log('modifyWebpack should return config.');
   } else {
-    console.log('> Webpack modify is applied.');
+    log('Webpack modify is applied.');
     finalConfig = webpackConfig;
   }
 }
