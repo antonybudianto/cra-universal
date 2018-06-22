@@ -1,5 +1,7 @@
 const path = require('path');
 const fs = require('fs');
+const nodeExternals = require('webpack-node-externals');
+const StartServerPlugin = require('start-server-webpack-plugin');
 
 const cwd = process.cwd();
 
@@ -16,19 +18,17 @@ function resolveDir(name) {
 console.log('>', resolveCwd(''));
 console.log('>', resolveDir(''));
 
-var webpack = require('webpack');
-var nodeExternals = require('webpack-node-externals');
-var StartServerPlugin = require('start-server-webpack-plugin');
-
 function isProd(valProd, valDev) {
   return process.env.NODE_ENV === 'production' ? valProd : valDev;
 }
 
+// Defaults to use default server
 let ctx = resolveDir('');
 
+// If 'server' folder found on user, use that
 if (fs.existsSync(resolveCwd('./server'))) {
-  // ctx = resolveCwd('');
-  console.log('> server folder detected on CRA client, will use this one');
+  ctx = pcwd;
+  console.log('> "server" folder found on CRA client, will use this one');
 }
 
 let config = {
@@ -73,7 +73,7 @@ let config = {
     [],
     [
       new StartServerPlugin({
-        name: 'bundle.js'
+        bundleName: 'bundle.js'
       })
     ]
   )
