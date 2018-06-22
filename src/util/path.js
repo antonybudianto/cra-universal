@@ -8,8 +8,8 @@ function resolveCwd(name) {
   return path.resolve(cwd, name);
 }
 
-function resolveDir(name) {
-  return path.resolve(__dirname, name);
+function resolveDir(...args) {
+  return path.resolve(__dirname, ...args);
 }
 
 module.exports = {
