@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/cra-universal.svg)](https://badge.fury.io/js/cra-universal)
 [![Build Status](https://travis-ci.org/antonybudianto/cra-universal.svg?branch=master)](https://travis-ci.org/antonybudianto/cra-universal)
 
-Simple express server for your Create React App projects with Server-side rendering and Code-splitting.
+Create React App companion for universal app. No eject, zero config, supports string and node stream API
 
 Please also visit [create-react-app-express](https://github.com/antonybudianto/create-react-app-express) monorepo for the core and addons packages.
 
@@ -12,6 +12,7 @@ Please also visit [create-react-app-express](https://github.com/antonybudianto/c
 ## Features:
 
 * **No [eject](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-run-eject)** needed!
+* **Zero config** by default and customizable
 * **Server-side rendering** for your SEO
 * **Code-splitting** that works universally
 * Server code is given to you, **no black-box**
@@ -22,14 +23,6 @@ Please also visit [create-react-app-express](https://github.com/antonybudianto/c
 ```sh
 # Install global CLI (also works as a package)
 npm install -g cra-universal
-
-# Change dir to your app and init CRA server
-cd ./my-create-react-app
-cra-universal init
-
-# Install server dependencies
-cd ./server
-npm install
 ```
 
 ## Client code change
@@ -48,16 +41,10 @@ ReactDOM.hydrate(...)
 
 ```sh
 # Start your CRA client
-# Recommended when developing client side
 npm start
 
-# or you can run dev server when developing server side
-## make sure you've started CRA client
-## then change directory to server
-cd ./server
-
-## start server, you can open http://localhost:3001
-npm start
+## Start CRA server, then you can open http://localhost:3001
+cra-universal start
 ```
 
 ## Production
@@ -73,7 +60,7 @@ cra-universal build
 
 1.  First, follow the Production guide mentioned above.
 2.  Since the bundle used [Webpack Node Externals](https://www.npmjs.com/package/webpack-node-externals), you need to run `npm install --production` on the copied `/dist`, but this time you don't need to install its `devDependencies`
-3.  Use process manager like [PM2](https://github.com/Unitech/pm2) to run your server, your run target is ./dist/build/bundle.js
+3.  Use process manager like [PM2](https://github.com/Unitech/pm2) to run your server, your run target is ./dist/server/bundle.js
 
 ## Credit
 

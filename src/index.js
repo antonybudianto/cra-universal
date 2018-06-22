@@ -5,7 +5,7 @@ var yargs = require('yargs');
 yargs
   .command(
     'start',
-    'Start both client and server',
+    'Start CRA server',
     () => {},
     argv => {
       require('./cli/start');
@@ -13,7 +13,7 @@ yargs
   )
   .command(
     'build',
-    'Build both client and server',
+    'Build CRA server',
     () => {},
     argv => {
       require('./cli/build');
