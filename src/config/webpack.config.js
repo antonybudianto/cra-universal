@@ -3,8 +3,8 @@ const nodeExternals = require('webpack-node-externals');
 const StartServerPlugin = require('start-server-webpack-plugin');
 const { resolveCwd, resolveDir, pcwd } = require('../util/path');
 
-console.log('>', resolveCwd(''));
-console.log('>', resolveDir(''));
+console.log('> cwd: ', resolveCwd(''));
+console.log('> cli: ', resolveDir(''));
 
 function isProd(valProd, valDev) {
   return process.env.NODE_ENV === 'production' ? valProd : valDev;
@@ -54,6 +54,9 @@ const babelPath = loadConfigOnBase('.babelrc');
 
 const config = {
   context: ctx,
+  resolveLoader: {
+    modules: [resolveDir('../../node_modules'), 'node_modules']
+  },
   resolve: {
     alias: {
       appbase: resolveCwd('')
