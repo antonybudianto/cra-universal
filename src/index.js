@@ -4,17 +4,6 @@ var yargs = require('yargs');
 
 yargs
   .command(
-    'init',
-    'Initialize your CRA server',
-    () => {},
-    argv => {
-      require('./init');
-    }
-  )
-  // .command('start', 'Start both client and server', () => {},  (argv) => {
-  //   require('./start');
-  // })
-  .command(
     'start',
     'Start both client and server',
     () => {},
@@ -35,7 +24,7 @@ yargs
     'Clean build result',
     () => {},
     argv => {
-      require('./clean');
+      require('./cli/clean');
     }
   )
   .demandCommand(1, 'Please choose your command')
