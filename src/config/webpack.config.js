@@ -68,8 +68,16 @@ let config = {
         loaders: 'url-loader'
       },
       {
-        test: /\.(css|sass|scss)?$/,
-        loaders: 'null-loader'
+        test: /\.css$/,
+        use: [
+          'isomorphic-style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true
+            }
+          }
+        ]
       }
     ]
   },
