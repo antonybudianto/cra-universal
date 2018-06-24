@@ -1,3 +1,5 @@
+process.env.NODE_ENV = process.env.NODE_ENV || 'production';
+
 const path = require('path');
 const { spawnSync } = require('child_process');
 const fs = require('fs-extra');

@@ -4,9 +4,6 @@ const StartServerPlugin = require('start-server-webpack-plugin');
 const chalk = require('chalk');
 const { resolveCwd, resolveDir, pcwd } = require('../util/path');
 
-console.log('> cwd: ', resolveCwd(''));
-console.log('> cli: ', resolveDir(''));
-
 function log(...args) {
   console.log(chalk.bgCyan(' crau > '), chalk.cyan(...args));
 }
@@ -26,6 +23,8 @@ function loadConfigOnBase(fileName) {
   log(`"${fileName}" not found, will use default config.`);
   return defaultConfig;
 }
+
+log(`NODE_ENV is "${process.env.NODE_ENV}"`);
 
 /**
  * Context resolver

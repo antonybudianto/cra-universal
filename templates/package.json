@@ -22,10 +22,7 @@
   },
   "betterScripts": {
     "crau:start": {
-      "command": "cra-universal start",
-      "env": {
-        "NODE_ENV": "development"
-      }
+      "command": "cra-universal start"
     },
     "crau:build": {
       "command": "cra-universal build",

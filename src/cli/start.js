@@ -1,3 +1,5 @@
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
 const webpack = require('webpack');
 
 const config = require('../config/webpack.config');
