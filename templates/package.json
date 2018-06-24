@@ -12,20 +12,18 @@
     "react-dom": "^16.4.1"
   },
   "scripts": {
-    "crau:start": "better-npm-run crau:start",
-    "crau:build": "better-npm-run crau:build",
+    "crau:start": "cra-universal start",
+    "crau:build": "cra-universal build",
     "crau:clean": "cra-universal clean",
+    "start:prod": "better-npm-run start:prod",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "betterScripts": {
-    "crau:start": {
-      "command": "cra-universal start"
-    },
-    "crau:build": {
-      "command": "cra-universal build",
+    "start:prod": {
+      "command": "node ./server/bundle",
       "env": {
         "NODE_ENV": "production"
       }
