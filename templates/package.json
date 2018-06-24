@@ -3,16 +3,35 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "better-npm-run": "^0.1.0",
+    "cra-universal": "next",
     "react-scripts": "1.1.4"
   },
   "dependencies": {
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
   },
   "scripts": {
+    "crau:start": "better-npm-run crau:start",
+    "crau:build": "better-npm-run crau:build",
+    "crau:clean": "cra-universal clean",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "betterScripts": {
+    "crau:start": {
+      "command": "cra-universal start",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "crau:build": {
+      "command": "cra-universal build",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
   }
 }
