@@ -7,7 +7,7 @@ Create React App companion for universal app. No eject, zero config with custom,
 
 Please also visit [create-react-app-express](https://github.com/antonybudianto/create-react-app-express) monorepo for the core and addons packages.
 
-> [Live Demo](https://cra-universal.now.sh/) using [Now](https://zeit.co/)
+> [Live Demo](https://cra-universal.now.sh/), hosted by [Now](https://zeit.co/)
 
 ## Features:
 
