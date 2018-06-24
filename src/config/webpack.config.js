@@ -83,7 +83,6 @@ const config = {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules/,
         loaders: 'babel-loader',
         options: {
           babelrc: false,
