@@ -11,7 +11,7 @@ script:
   - npm t
   - npm run build
   - npm run crau:build
-  - cd ../../templates
+  - cd ../templates
   - yarn
   - npm link cra-universal
   - npm t
