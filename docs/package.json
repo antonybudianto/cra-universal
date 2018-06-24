@@ -24,6 +24,7 @@
     "crau:build": "better-npm-run crau:build",
     "crau:clean": "better-npm-run crau:clean",
     "start": "react-scripts start",
+    "start:prod": "better-npm-run start:prod",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
@@ -31,6 +32,12 @@
     "prettier": "prettier --write \"{src,__{tests,mocks}__}/**/*.js\""
   },
   "betterScripts": {
+    "start:prod": {
+      "command": "node ./server/bundle",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
     "crau:start": {
       "command": "cra-universal start",
       "env": {
