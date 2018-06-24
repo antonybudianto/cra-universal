@@ -1,4 +1,4 @@
 {
-  "presets": ["env", "react-app"],
+  "presets": ["env", "react"],
   "plugins": ["dynamic-import-node"]
 }
