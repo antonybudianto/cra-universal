@@ -1,20 +1,20 @@
 import { getLoadableState } from 'loadable-components/server';
 import thunk from 'redux-thunk';
 import { createReactAppExpress } from '@cra-express/core';
-import { getInitialData } from '@cra-express/redux-prefetcher'
-import routes from '../../src/routes';
+import { getInitialData } from '@cra-express/redux-prefetcher';
+import routes from '../src/routes';
 const path = require('path');
 const React = require('react');
 const ReactDOMServer = require('react-dom/server');
 const { Provider } = require('react-redux');
 const { StaticRouter } = require('react-router');
 const { matchPath } = require('react-router-dom');
-const { matchRoutes } = require('react-router-config')
+const { matchRoutes } = require('react-router-config');
 const { createStore, applyMiddleware } = require('redux');
 
-const { default: App } = require('../../src/App');
-const { default: reducer } = require('../../src/reducers');
-const clientBuildPath = path.resolve(__dirname, 'client');
+const { default: App } = require('../src/App');
+const { default: reducer } = require('../src/reducers');
+const clientBuildPath = path.resolve(__dirname, '../client');
 let tag = '';
 let store;
 const app = createReactAppExpress({

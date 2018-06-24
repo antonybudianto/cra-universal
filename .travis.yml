@@ -7,11 +7,10 @@ script:
   - npm t
   - cd ./docs
   - yarn
+  - npm link cra-universal
   - npm t
   - npm run build
-  - cd ./server
-  - yarn
-  - npm run build
+  - npm run crau:build
   - cd ../../templates
   - yarn
   - npm link cra-universal
