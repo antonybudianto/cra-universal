@@ -3,6 +3,8 @@
 [![npm version](https://badge.fury.io/js/cra-universal.svg)](https://badge.fury.io/js/cra-universal)
 [![Build Status](https://travis-ci.org/antonybudianto/cra-universal.svg?branch=master)](https://travis-ci.org/antonybudianto/cra-universal)
 
+<img width="848" alt="zero" src="https://user-images.githubusercontent.com/7658554/41818697-484facbc-77de-11e8-9add-7d969bd2682b.png">
+
 Create React App companion for universal app. No eject, zero config with custom, supports string and node stream API
 
 Please also visit [create-react-app-express](https://github.com/antonybudianto/create-react-app-express) monorepo for the core and addons packages.
