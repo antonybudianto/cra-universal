@@ -1,4 +1,5 @@
 const fs = require('fs');
+const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
 const StartServerPlugin = require('start-server-webpack-plugin');
 const chalk = require('chalk');
@@ -111,6 +112,7 @@ const config = {
     ...isProd(
       [],
       [
+        new webpack.HotModuleReplacementPlugin({}),
         new StartServerPlugin({
           bundleName: 'bundle.js'
         })
