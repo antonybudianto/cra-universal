@@ -21,8 +21,8 @@ Please also visit [create-react-app-express](https://github.com/antonybudianto/c
 ## Installation
 
 ```sh
-# Install global CLI (also works as a package)
-npm install -g cra-universal
+# Install on your CRA app
+npm install cra-universal
 ```
 
 ## Client code change
