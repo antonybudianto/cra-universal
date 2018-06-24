@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/cra-universal.svg)](https://badge.fury.io/js/cra-universal)
 [![Build Status](https://travis-ci.org/antonybudianto/cra-universal.svg?branch=master)](https://travis-ci.org/antonybudianto/cra-universal)
 
-Create React App companion for universal app. No eject, zero config, supports string and node stream API
+Create React App companion for universal app. No eject, zero config with custom, supports string and node stream API
 
 Please also visit [create-react-app-express](https://github.com/antonybudianto/create-react-app-express) monorepo for the core and addons packages.
 
@@ -12,10 +12,9 @@ Please also visit [create-react-app-express](https://github.com/antonybudianto/c
 ## Features:
 
 * **No [eject](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-run-eject)** needed!
-* **Zero config** by default and customizable
+* **Zero config** by default and **customizable**
 * **Server-side rendering** for your SEO
 * **Code-splitting** that works universally
-* Server code is given to you, **no black-box**
 * The core middleware is fully **unit-tested**
 
 ## Installation
