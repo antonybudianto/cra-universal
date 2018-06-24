@@ -31,8 +31,18 @@
     "prettier": "prettier --write \"{src,__{tests,mocks}__}/**/*.js\""
   },
   "betterScripts": {
-    "crau:start": "cra-universal start",
-    "crau:build": "cra-universal build",
+    "crau:start": {
+      "command": "cra-universal start",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "crau:build": {
+      "command": "cra-universal build",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
     "crau:clean": "cra-universal clean"
   }
 }
