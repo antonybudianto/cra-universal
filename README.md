@@ -5,7 +5,7 @@
 
 <img width="838" alt="zero" src="https://user-images.githubusercontent.com/7658554/41818741-0330390c-77df-11e8-82b2-7906b4facd4f.png">
 
-Create React App companion for universal app. No eject, zero config with custom, supports string and node stream API
+Create React App companion for universal app. No eject, zero config with customization, supports string and node stream API
 
 Please also visit [create-react-app-express](https://github.com/antonybudianto/create-react-app-express) monorepo for the core and addons packages.
 
