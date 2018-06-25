@@ -22,8 +22,16 @@ Please also visit [create-react-app-express](https://github.com/antonybudianto/c
 ## Installation
 
 ```sh
-# Install on your CRA app
-npm install cra-universal
+# Create new cra
+create-react-app myapp
+cd myapp
+
+# Install new cra-universal
+yarn add -D cra-universal@next
+
+# Start with no config at all!
+# npx is not required, you can also save the command as npm script
+npx cra-universal start
 ```
 
 ## Client code change
@@ -45,14 +53,14 @@ ReactDOM.hydrate(...)
 npm start
 
 ## Start CRA server, then you can open http://localhost:3001
-cra-universal start
+npx cra-universal start
 ```
 
 ## Production
 
 ```sh
 # Change directory to your project root first, and run:
-cra-universal build
+npx cra-universal build
 
 # This command will build both client and server and put them into `./dist`
 ```
