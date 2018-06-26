@@ -5,7 +5,7 @@ const { spawnSync } = require('child_process');
 const fs = require('fs-extra');
 const chalk = require('chalk');
 const webpack = require('webpack');
-const rimraf = require('rimraf');
+const del = require('del');
 
 const config = require('../config/webpack.config');
 const { log } = require('../util/log');
@@ -13,10 +13,11 @@ const { log } = require('../util/log');
 const cwd = process.cwd();
 const isWindows = process.platform === 'win32';
 const npm = isWindows ? 'npm.cmd' : 'npm';
+const paths = ['build', 'dist', 'server-build'];
 
 function cleanBuild(done) {
-  rimraf('server-build build dist', err => {
-    log('Build cleaned!');
+  del(paths).then(() => {
+    log('Build clean done.');
     done();
   });
 }

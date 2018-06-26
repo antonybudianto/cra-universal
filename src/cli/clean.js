@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
 var inquirer = require('inquirer');
-var rimraf = require('rimraf');
+var del = require('del');
 var chalk = require('chalk');
+const { log } = require('../util/log');
 
 const cwd = process.cwd();
 const paths = ['build', 'dist', 'server-build'];
@@ -17,10 +18,8 @@ inquirer
   ])
   .then(function(answers) {
     if (answers.ok) {
-      paths.forEach(path => {
-        rimraf(`${cwd}/${path}`, err => {
-          console.log(`${chalk.bgWhite(path)} cleaned!`);
-        });
+      del(paths).then(() => {
+        log('Build clean done.');
       });
     }
   });
