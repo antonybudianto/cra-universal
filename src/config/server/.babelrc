@@ -1,4 +1,4 @@
 {
   "presets": ["env", "react"],
-  "plugins": ["dynamic-import-node"]
+  "plugins": ["dynamic-import-node", "transform-object-rest-spread"]
 }

@@ -1,6 +1,6 @@
 {
   "name": "cra-universal",
-  "version": "3.0.0-6",
+  "version": "3.0.0-7",
   "description": "Create React App Universal CLI",
   "main": "src/index.js",
   "files": [
@@ -26,6 +26,7 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-dynamic-import-node": "^1.2.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-app": "^3.1.2",
