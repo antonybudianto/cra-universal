@@ -32,12 +32,14 @@ function buildServer(cb) {
       if (err.details) {
         console.error(err.details);
       }
+      throw err;
       return;
     }
 
     const info = stats.toJson();
 
     if (stats.hasErrors()) {
+      throw info.errors;
       console.error(info.errors);
     }
 
