@@ -87,7 +87,11 @@ function wireBundle() {
   }
 }
 
-buildClient();
-buildServer(() => {
-  wireBundle();
-});
+try {
+  buildClient();
+  buildServer(() => {
+    wireBundle();
+  });
+} catch (e) {
+  process.exit(1);
+}
