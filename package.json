@@ -11,7 +11,6 @@
     "cra-universal": "./src/index.js"
   },
   "scripts": {
-    "clean": "rimraf templates/build templates/dist templates/server/build",
     "release": "np",
     "test": "jest --config=jest-config.json --coverage"
   },
