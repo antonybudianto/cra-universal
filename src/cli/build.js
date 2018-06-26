@@ -5,26 +5,35 @@ const { spawnSync } = require('child_process');
 const fs = require('fs-extra');
 const chalk = require('chalk');
 const webpack = require('webpack');
+const rimraf = require('rimraf');
 
 const config = require('../config/webpack.config');
+const { log } = require('../util/log');
 
 const cwd = process.cwd();
 const isWindows = process.platform === 'win32';
 const npm = isWindows ? 'npm.cmd' : 'npm';
 
+function cleanBuild(done) {
+  rimraf('server-build build dist', err => {
+    log('Build cleaned!');
+    done();
+  });
+}
+
 function buildClient() {
-  console.log(chalk.bgCyan('Building CRA client...'));
+  log('Building CRA client...');
   const clientBuildResult = spawnSync(npm, ['run', 'build'], {
     stdio: 'inherit'
   });
   if (clientBuildResult.status !== 0) {
     throw 'Error building CRA client.';
   }
-  console.log('Done building CRA client!\n');
+  log('Done building CRA client!\n');
 }
 
 function buildServer(cb) {
-  console.log(chalk.bgCyan('Building CRA server...'));
+  log('Building CRA server...');
   const ins = webpack(config);
   ins.run((err, stats) => {
     if (err) {
@@ -52,7 +61,7 @@ function buildServer(cb) {
         colors: true // Shows colors in the console
       })
     );
-    console.log('Done building CRA server!');
+    log('Done building CRA server!');
     cb();
   });
 }
@@ -65,11 +74,10 @@ function wireBundle() {
   const srcServerPkg = path.resolve(cwd, 'package.json');
   const destServerPkg = path.resolve(cwd, 'dist', 'package.json');
 
-  try {
-    fs.copySync(srcClient, destClient);
-    fs.copySync(srcServer, destServer);
-    fs.copySync(srcServerPkg, destServerPkg);
-    console.log(`
+  fs.copySync(srcClient, destClient);
+  fs.copySync(srcServer, destServer);
+  fs.copySync(srcServerPkg, destServerPkg);
+  console.log(`
   CRA Universal build is done at folder:
    ${cwd + chalk.bgWhite('/dist')}
    /dist
@@ -84,16 +92,16 @@ function wireBundle() {
      'npm install --production'
    )} inside ${chalk.bgGreen('dist/')}
    - Finally you can bootup your server using your favorite Node process manager.`);
-  } catch (err) {
-    console.error(err);
-  }
 }
 
 try {
-  buildClient();
-  buildServer(() => {
-    wireBundle();
+  cleanBuild(() => {
+    buildClient();
+    buildServer(() => {
+      wireBundle();
+    });
   });
 } catch (e) {
+  console.error(e);
   process.exit(1);
 }

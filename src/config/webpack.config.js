@@ -2,12 +2,8 @@ const fs = require('fs');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
 const StartServerPlugin = require('start-server-webpack-plugin');
-const chalk = require('chalk');
 const { resolveCwd, resolveDir, pcwd } = require('../util/path');
-
-function log(...args) {
-  console.log(chalk.bgCyan(' crau > '), chalk.cyan(...args));
-}
+const { log } = require('../util/log');
 
 function isProd(valProd, valDev) {
   return process.env.NODE_ENV === 'production' ? valProd : valDev;
