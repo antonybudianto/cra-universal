@@ -17,6 +17,7 @@ const { default: reducer } = require('../src/reducers');
 const clientBuildPath = path.resolve(__dirname, '../client');
 let tag = '';
 let store;
+let AppClass = App;
 const app = createReactAppExpress({
   clientBuildPath,
   universalRender: handleUniversalRender,
@@ -43,7 +44,7 @@ function handleUniversalRender(req, res) {
       const app = (
         <StaticRouter location={req.url} context={context}>
           <Provider store={store}>
-            <App />
+            <AppClass />
           </Provider>
         </StaticRouter>
       );
@@ -56,6 +57,17 @@ function handleUniversalRender(req, res) {
       console.error(err);
       res.send(500);
     });
+}
+
+if (module.hot) {
+  module.hot.accept('../src/App', () => {
+    const { default: App } = require('../src/App');
+    AppClass = App;
+    console.log('✅ Server hot reloaded App');
+  });
+  module.hot.accept('../src/routes', () => {
+    console.log('✅ Server hot reloaded routes');
+  });
 }
 
 module.exports = app;

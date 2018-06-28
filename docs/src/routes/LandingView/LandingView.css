@@ -1,0 +1,12 @@
+.LandingView {
+  background-color: rgb(38, 84, 122);
+  color: white;
+  height: 100vh;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Futura-Medium';
+}

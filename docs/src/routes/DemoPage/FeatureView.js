@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchNews } from '../reducers/news';
+import { fetchNews } from '../../reducers/news';
 
 class FeatureView extends Component {
   componentDidMount() {

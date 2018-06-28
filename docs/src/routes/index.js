@@ -1,23 +1,13 @@
-import React from 'react';
-import loadable from 'loadable-components';
-
-import HomeView from './HomeView';
-
-const LoadableFeatView = loadable(() => import('./FeatureView'), {
-  modules: ['./FeatureView'],
-  LoadingComponent: props => <div>Loading...</div>,
-});
+import LandingView from './LandingView/LandingView';
+import { DemoRoute } from './DemoPage';
 
 const routes = [
   {
     path: '/',
     exact: true,
-    component: HomeView,
+    component: LandingView
   },
-  {
-    path: '/feature',
-    component: LoadableFeatView,
-  },
+  DemoRoute
 ];
 
 export default routes;

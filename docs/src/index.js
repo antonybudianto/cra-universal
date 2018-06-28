@@ -30,3 +30,7 @@ loadComponents().then(() => {
   );
   // registerServiceWorker();
 });
+
+if (module.hot) {
+  module.hot.accept();
+}
