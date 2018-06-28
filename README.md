@@ -27,7 +27,7 @@ create-react-app myapp
 cd myapp
 
 # Install new cra-universal
-yarn add -D cra-universal@next
+yarn add -D cra-universal
 
 # Start with no config at all!
 # npx is not required, you can also save the command as npm script
