@@ -9,17 +9,17 @@ import {
 const { default: App } = require('../src/App');
 const clientBuildPath = path.resolve(__dirname, 'client');
 
-let AppEl = App;
+let AppClass = App;
 
 const app = createReactAppExpress({
   clientBuildPath,
-  universalRender: () => handleUniversalRender(<AppEl />)()
+  universalRender: () => handleUniversalRender(<AppClass />)()
 });
 
 if (module.hot) {
   module.hot.accept('../src/App', () => {
     const { default: App } = require('../src/App');
-    AppEl = App;
+    AppClass = App;
     console.log('✅ Server hot reloaded App');
   });
 }
