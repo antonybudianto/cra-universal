@@ -17,7 +17,6 @@ function loadConfigOnBase(fileName) {
     log(`"${fileName}" found, will use this one.`);
     return configOnBase;
   }
-  log(`"${fileName}" not found, will use default config.`);
   return defaultConfig;
 }
 
