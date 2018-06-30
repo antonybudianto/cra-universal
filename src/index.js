@@ -4,6 +4,14 @@ var yargs = require('yargs');
 
 yargs
   .command(
+    'init',
+    'Initialize standalone CRA server',
+    () => {},
+    argv => {
+      require('./cli/init');
+    }
+  )
+  .command(
     'start',
     'Start CRA server',
     () => {},
