@@ -12,7 +12,7 @@ const dest = path.resolve(process.cwd(), 'server');
 const isWindows = process.platform === 'win32';
 const npm = isWindows ? 'npm.cmd' : 'npm';
 const hasYarnFlag = hasYarn(path.resolve(process.cwd()));
-const command = hasYarnFlag ? 'yarn' : 'npm';
+const command = hasYarnFlag ? 'yarn' : npm;
 const args = hasYarnFlag
   ? ['add', '@cra-express/core@2.2.5']
   : ['i', '-S', '@cra-express/core@2.2.5'];
