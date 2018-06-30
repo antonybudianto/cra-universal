@@ -1,6 +1,6 @@
 {
   "name": "cra-universal",
-  "version": "2.1.1",
+  "version": "3.0.1-2",
   "description": "Create React App Universal CLI",
   "main": "src/index.js",
   "files": [
@@ -11,7 +11,6 @@
     "cra-universal": "./src/index.js"
   },
   "scripts": {
-    "clean": "rimraf templates/build templates/dist templates/server/build",
     "release": "np",
     "test": "jest --config=jest-config.json --coverage"
   },
@@ -22,14 +21,30 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@cra-express/core": "^2.2.5",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-dynamic-import-node": "^2.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-app": "^3.1.2",
     "chalk": "^2.4.1",
+    "css-loader": "^0.28.11",
+    "del": "^3.0.0",
     "fs-extra": "6.0.1",
-    "inquirer": "^5.2.0",
-    "yargs": "11.0.0"
+    "has-yarn": "^1.0.0",
+    "inquirer": "^6.0.0",
+    "isomorphic-style-loader": "^4.0.0",
+    "null-loader": "^0.1.1",
+    "start-server-webpack-plugin": "beta",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.14.0",
+    "webpack-cli": "^3.0.8",
+    "webpack-node-externals": "^1.7.2",
+    "yargs": "12.0.1"
   },
   "devDependencies": {
-    "jest": "^22.4.4",
-    "np": "^3.0.4",
-    "rimraf": "2.6.2"
+    "jest": "^23.2.0"
   }
 }

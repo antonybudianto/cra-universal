@@ -3,18 +3,17 @@ node_js:
   - "8.0"
   - "7.0"
 script:
+  - npm link
   - npm t
   - cd ./docs
   - yarn
+  - npm link cra-universal
   - npm t
   - npm run build
-  - cd ./server
+  - npm run crau:build
+  - cd ../templates
   - yarn
-  - npm run build
-  - cd ../../templates
-  - yarn
+  - npm link cra-universal
   - npm t
   - npm run build
-  - cd ./server
-  - yarn
-  - npm run build
+  - npm run crau:build

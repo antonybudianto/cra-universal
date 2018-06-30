@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "cra-universal": "^2.1.0",
+    "better-npm-run": "^0.1.0",
+    "cra-universal": "next",
     "prettier": "1.12.1",
     "react-scripts": "1.1.4"
   },
   "dependencies": {
+    "@cra-express/redux-prefetcher": "2.2.4",
     "loadable-components": "2.1.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
@@ -18,11 +20,36 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
+    "crau:start": "better-npm-run crau:start",
+    "crau:build": "better-npm-run crau:build",
+    "crau:clean": "better-npm-run crau:clean",
     "start": "react-scripts start",
+    "start:prod": "better-npm-run start:prod",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "build:all": "cra-universal build",
     "prettier": "prettier --write \"{src,__{tests,mocks}__}/**/*.js\""
+  },
+  "betterScripts": {
+    "start:prod": {
+      "command": "node ./server/bundle",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "crau:start": {
+      "command": "cra-universal start",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "crau:build": {
+      "command": "cra-universal build",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "crau:clean": "cra-universal clean"
   }
 }
