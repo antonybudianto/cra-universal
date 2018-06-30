@@ -13,7 +13,7 @@ const npm = isWindows ? 'npm.cmd' : 'npm';
 
 function installDep() {
   log('Adding required dependencies...');
-  const result = spawnSync(npm, ['i', '-S', '@cra-express/core'], {
+  const result = spawnSync(npm, ['i', '-S', '@cra-express/core@2.2.5'], {
     stdio: 'inherit'
   });
   if (result.status !== 0) {
