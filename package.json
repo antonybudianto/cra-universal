@@ -21,7 +21,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@cra-express/core": "^2.2.4",
+    "@cra-express/core": "^2.2.5",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-dynamic-import-node": "^2.0.0",
@@ -39,10 +39,10 @@
     "null-loader": "^0.1.1",
     "start-server-webpack-plugin": "beta",
     "url-loader": "^1.0.1",
-    "webpack": "^4.12.1",
+    "webpack": "^4.14.0",
     "webpack-cli": "^3.0.8",
     "webpack-node-externals": "^1.7.2",
-    "yargs": "11.0.0"
+    "yargs": "12.0.1"
   },
   "devDependencies": {
     "jest": "^23.2.0"
