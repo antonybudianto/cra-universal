@@ -1,5 +1,10 @@
 #!/usr/bin/env node
 
+require('babel-register')({
+  presets: ['env'],
+  plugins: ['transform-object-rest-spread']
+});
+
 var yargs = require('yargs');
 
 yargs
