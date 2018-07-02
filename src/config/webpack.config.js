@@ -14,22 +14,13 @@ function loadConfigOnBase(fileName) {
   const defaultConfig = resolveDir('../config', fileName);
 
   if (fs.existsSync(configOnBase)) {
-    log(`"${fileName}" found, will use this one.`);
+    log(`"${fileName}" found, using this one.`);
     return configOnBase;
   }
   return defaultConfig;
 }
 
 log(`NODE_ENV is "${process.env.NODE_ENV}"`);
-
-/**
- * Context resolver
- */
-let ctx = resolveDir('../config');
-if (fs.existsSync(resolveCwd('./server'))) {
-  ctx = pcwd;
-  log('"server" folder found on CRA client, will use this one');
-}
 
 /**
  * crau.config.js loader
@@ -40,9 +31,18 @@ let crauDefaultConfig = {
 let crauConfig = crauDefaultConfig;
 const crauPath = resolveCwd('crau.config.js');
 if (fs.existsSync(crauPath)) {
-  log('crau.config.js exists. Configuration applied.');
+  log('crau.config.js found. Configuration is applied.');
   const crauUserConfig = require(crauPath);
   crauConfig = Object.assign({}, crauDefaultConfig, crauUserConfig);
+}
+
+/**
+ * Context resolver
+ */
+let ctx = resolveDir('../config');
+if (fs.existsSync(resolveCwd('./server'))) {
+  ctx = pcwd;
+  log('"server" folder found on CRA client, using this one');
 }
 
 /**
