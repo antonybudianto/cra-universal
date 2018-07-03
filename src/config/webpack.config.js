@@ -67,6 +67,8 @@ const config = {
   output: {
     path: resolveCwd('./server-build'),
     filename: 'bundle.js',
+    hotUpdateChunkFilename: '.hot/[id].[hash].hot-update.js',
+    hotUpdateMainFilename: '.hot/[hash].hot-update.json',
     chunkFilename: isProd('[id].[hash].chunk.js', '[id].chunk.js')
   },
   target: 'node',
