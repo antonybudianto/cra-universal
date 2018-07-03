@@ -80,7 +80,7 @@ function wireBundle() {
   fs.copySync(srcServerPkg, destServerPkg);
   console.log(`
   CRA Universal build is done at folder:
-   ${cwd + chalk.bgWhite('/dist')}
+   ${cwd + chalk.cyan('/dist')}
    /dist
     - /client -> Your CRA client build
     - /server -> Your CRA server build
