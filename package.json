@@ -10,6 +10,14 @@
   "bin": {
     "cra-universal": "./src/index.js"
   },
+  "keywords": [
+    "ssr",
+    "create-react-app",
+    "cra",
+    "universal",
+    "cli",
+    "express"
+  ],
   "scripts": {
     "release": "np",
     "test": "jest --config=jest-config.json --coverage"
