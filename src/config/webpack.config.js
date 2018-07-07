@@ -73,6 +73,10 @@ const config = {
   },
   target: 'node',
   externals: [nodeExternals()],
+  watchOptions: {
+    ignored: /node_modules/,
+    aggregateTimeout: 300
+  },
   node: {
     __dirname: false
   },
