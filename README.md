@@ -15,7 +15,7 @@ Please also visit [create-react-app-express](https://github.com/antonybudianto/c
 
 > [Live Demo](https://cra-universal.now.sh/), hosted by [Now](https://zeit.co/)
 
-## Features:
+## Features
 
 * **No [eject](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-run-eject)** needed!
 * **Zero config** by default and **customizable**
