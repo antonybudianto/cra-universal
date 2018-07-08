@@ -18,6 +18,7 @@ Please also visit [create-react-app-express](https://github.com/antonybudianto/c
 * **Server-side rendering** for your SEO
 * **Code-splitting** that works universally
 * The core middleware is fully **unit-tested**
+* Works alongside `react-scripts`, not as replacement
 
 ## Installation
 
