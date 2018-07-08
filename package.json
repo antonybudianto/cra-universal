@@ -31,7 +31,7 @@
   "dependencies": {
     "@cra-express/core": "^2.2.5",
     "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
+    "babel-loader": "^7.1.5",
     "babel-plugin-dynamic-import-node": "^2.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
