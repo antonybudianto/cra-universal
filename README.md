@@ -1,4 +1,5 @@
-# Create React App Universal CLI
+# cra-universal
+### Create React App Universal CLI
 
 [![npm version](https://badge.fury.io/js/cra-universal.svg)](https://badge.fury.io/js/cra-universal)
 [![Build Status](https://travis-ci.org/antonybudianto/cra-universal.svg?branch=master)](https://travis-ci.org/antonybudianto/cra-universal)
