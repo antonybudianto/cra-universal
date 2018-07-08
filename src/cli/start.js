@@ -15,6 +15,7 @@ cleanBuild().then(() => {
   const config = require('../config/webpack.config');
   const ins = webpack(config);
   ins.watch(config.watchOptions, (err, stats) => {
+    console.clear();
     if (err) {
       console.error(err.stack || err);
       if (err.details) {
