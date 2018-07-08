@@ -99,10 +99,7 @@ const config = {
         use: [
           'isomorphic-style-loader',
           {
-            loader: 'css-loader',
-            options: {
-              minimize: true
-            }
+            loader: 'css-loader'
           }
         ]
       }
