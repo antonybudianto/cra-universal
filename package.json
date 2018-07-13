@@ -19,7 +19,7 @@
     "express"
   ],
   "scripts": {
-    "release": "np",
+    "release": "np --no-yarn --yolo",
     "test": "jest --config=jest-config.json --coverage"
   },
   "author": "Antony Budianto <antonybudianto@gmail.com>",
