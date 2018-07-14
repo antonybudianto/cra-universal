@@ -19,9 +19,16 @@ yargs
   .command(
     'start',
     'Start CRA server',
-    () => {},
+    c => {
+      return c.options({
+        both: {
+          alias: 'b',
+          description: 'Start both CRA client and server (beta)'
+        }
+      });
+    },
     argv => {
-      require('./cli/start');
+      require('./cli/start')(argv);
     }
   )
   .command(
