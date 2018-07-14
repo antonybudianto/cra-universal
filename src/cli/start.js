@@ -13,7 +13,7 @@ function cleanBuild() {
 
 module.exports = argv => {
   if (argv.both) {
-    log('Running both client...');
+    log('Running both CRA client and server...');
     const mv = require('multiview')({
       efficient: true
     });
