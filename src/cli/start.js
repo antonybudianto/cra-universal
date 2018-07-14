@@ -18,7 +18,7 @@ module.exports = argv => {
       efficient: true
     });
     mv.spawn('npx', ['cra-universal', 'start']);
-    mv.spawn('npm', ['start']);
+    mv.spawn('npx', ['react-scripts', 'start']);
     return;
   }
   cleanBuild().then(() => {
