@@ -11,33 +11,44 @@ function cleanBuild() {
   });
 }
 
-cleanBuild().then(() => {
-  const config = require('../config/webpack.config');
-  const ins = webpack(config);
-  ins.watch(config.watchOptions, (err, stats) => {
-    console.clear();
-    if (err) {
-      console.error(err.stack || err);
-      if (err.details) {
-        console.error(err.details);
+module.exports = argv => {
+  if (argv.both) {
+    log('Running both CRA client and server...');
+    const mv = require('multiview')({
+      efficient: true
+    });
+    mv.spawn('npx', ['cra-universal', 'start']);
+    mv.spawn('npm', ['start']);
+    return;
+  }
+  cleanBuild().then(() => {
+    const config = require('../config/webpack.config');
+    const ins = webpack(config);
+    ins.watch(config.watchOptions, (err, stats) => {
+      console.clear();
+      if (err) {
+        console.error(err.stack || err);
+        if (err.details) {
+          console.error(err.details);
+        }
+        return;
       }
-      return;
-    }
 
-    const info = stats.toJson();
+      const info = stats.toJson();
 
-    if (stats.hasErrors()) {
-      console.error(info.errors);
-    }
+      if (stats.hasErrors()) {
+        console.error(info.errors);
+      }
 
-    if (stats.hasWarnings()) {
-      console.warn(info.warnings);
-    }
-    console.log(
-      stats.toString({
-        modules: false,
-        colors: true // Shows colors in the console
-      })
-    );
+      if (stats.hasWarnings()) {
+        console.warn(info.warnings);
+      }
+      console.log(
+        stats.toString({
+          modules: false,
+          colors: true // Shows colors in the console
+        })
+      );
+    });
   });
-});
+};

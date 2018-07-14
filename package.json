@@ -44,6 +44,7 @@
     "has-yarn": "^1.0.0",
     "inquirer": "^6.0.0",
     "isomorphic-style-loader": "^4.0.0",
+    "multiview": "^2.5.3",
     "null-loader": "^0.1.1",
     "start-server-webpack-plugin": "3.0.0-rc3",
     "url-loader": "^1.0.1",
