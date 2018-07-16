@@ -1,0 +1,29 @@
+{
+  "name": "@cra-express/redux-prefetcher",
+  "version": "2.2.4",
+  "description": "Redux Prefetcher for prefetching on server",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "babel src -d lib --ignore spec.js",
+    "test:ci": "jest --coverage"
+  },
+  "author": "Antony Budianto <antonybudianto@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react-router-config": "^1.0.0-beta.4"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-router": "*"
+  },
+  "devDependencies": {
+    "react": "^16.3.2",
+    "react-router": "^4.2.0"
+  }
+}

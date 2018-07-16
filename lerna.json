@@ -1,0 +1,12 @@
+{
+  "lerna": "2.11.0",
+  "packages": [
+    "packages/*",
+    "packages/cra-universal/templates"
+  ],
+  "version": "2.3.0",
+  "npmClient": "yarn",
+  "npmClientArgs": [
+    "--no-lockfile"
+  ]
+}
