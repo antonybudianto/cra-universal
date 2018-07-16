@@ -15,7 +15,7 @@
     "prerelease": "npm run build",
     "release": "lerna publish",
     "ls": "lerna ls",
-    "release:c": "npm run release -- --canary"
+    "release:next": "npm run release -- --npm-tag=next"
   },
   "repository": {
     "type": "git",
