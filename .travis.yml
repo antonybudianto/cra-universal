@@ -8,7 +8,7 @@ before_script:
 script:
   - npm test
   - yarn build
-  - cd packages/testground
+  - cd packages/cra-universal/templates
   - yarn crau:build
 after_script:
   - yarn global add codecov
