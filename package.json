@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "lerna run build",
+    "crau:build": "lerna run crau:build",
     "test": "lerna run test:ci",
     "watch": "lerna run --parallel watch",
     "test:ul": "lerna exec --scope @cra-express/universal-loader -- jest",
