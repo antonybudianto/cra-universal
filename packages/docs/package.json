@@ -4,11 +4,12 @@
   "private": true,
   "devDependencies": {
     "better-npm-run": "^0.1.0",
-    "cra-universal": "next",
+    "cra-universal": "3.2.1",
     "prettier": "1.12.1",
     "react-scripts": "1.1.4"
   },
   "dependencies": {
+    "@cra-express/core": "*",
     "@cra-express/redux-prefetcher": "2.2.4",
     "loadable-components": "2.1.0",
     "react": "^16.3.2",

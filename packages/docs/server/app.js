@@ -8,8 +8,6 @@ const React = require('react');
 const ReactDOMServer = require('react-dom/server');
 const { Provider } = require('react-redux');
 const { StaticRouter } = require('react-router');
-const { matchPath } = require('react-router-dom');
-const { matchRoutes } = require('react-router-config');
 const { createStore, applyMiddleware } = require('redux');
 
 const { default: App } = require('../src/App');
