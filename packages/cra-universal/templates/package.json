@@ -1,10 +1,10 @@
 {
   "name": "cra-template",
-  "version": "0.1.0",
+  "version": "4.0.0-0",
   "private": true,
   "devDependencies": {
     "better-npm-run": "^0.1.0",
-    "cra-universal": "3.2.1",
+    "cra-universal": "^4.0.0-0",
     "react-scripts": "1.1.4"
   },
   "dependencies": {
