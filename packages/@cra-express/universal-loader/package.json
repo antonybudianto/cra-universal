@@ -14,6 +14,6 @@
     "watch": "babel src -d lib --watch --ignore spec.js",
     "test:ci": "jest --coverage"
   },
-  "author": "",
+  "author": "Antony Budianto <antonybudianto@gmail.com>",
   "license": "MIT"
 }

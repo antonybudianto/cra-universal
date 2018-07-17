@@ -27,6 +27,6 @@
     "react": "*",
     "react-dom": "*"
   },
-  "author": "",
+  "author": "Antony Budianto <antonybudianto@gmail.com>",
   "license": "MIT"
 }

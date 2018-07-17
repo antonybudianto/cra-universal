@@ -14,7 +14,7 @@
     "build": "babel src -d lib --ignore spec.js",
     "test": "exit 0"
   },
-  "author": "",
+  "author": "Antony Budianto <antonybudianto@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
     "express": "4.16.2"
