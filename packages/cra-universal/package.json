@@ -1,0 +1,59 @@
+{
+  "name": "cra-universal",
+  "version": "4.0.0-0",
+  "description": "Create React App Universal CLI",
+  "main": "src/index.js",
+  "files": [
+    "src",
+    "templates/server"
+  ],
+  "bin": {
+    "cra-universal": "./src/index.js"
+  },
+  "keywords": [
+    "ssr",
+    "create-react-app",
+    "cra",
+    "universal",
+    "cli",
+    "express"
+  ],
+  "scripts": {
+    "release": "np --no-yarn --yolo",
+    "test": "jest --config=jest-config.json --coverage"
+  },
+  "author": "Antony Budianto <antonybudianto@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antonybudianto/cra-universal.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@cra-express/core": "^4.0.0-0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-dynamic-import-node": "^2.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-app": "^3.1.2",
+    "chalk": "^2.4.1",
+    "css-loader": "^1.0.0",
+    "del": "^3.0.0",
+    "fs-extra": "6.0.1",
+    "has-yarn": "^1.0.0",
+    "inquirer": "^6.0.0",
+    "isomorphic-style-loader": "^4.0.0",
+    "multiview": "^2.5.3",
+    "null-loader": "^0.1.1",
+    "start-server-webpack-plugin": "3.0.0-rc3",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-node-externals": "^1.7.2",
+    "yargs": "12.0.1"
+  },
+  "devDependencies": {
+    "jest": "^23.3.0"
+  }
+}

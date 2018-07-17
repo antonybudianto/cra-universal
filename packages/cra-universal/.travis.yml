@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - "8"
+  - "6"
+script:
+  - npm link
+  - npm t
+  - cd ./docs
+  - yarn
+  - npm link cra-universal
+  - npm t
+  - npm run build
+  - npm run crau:build
+  - cd ../templates
+  - yarn
+  - npm link cra-universal
+  - npm t
+  - npm run build
+  - npm run crau:build

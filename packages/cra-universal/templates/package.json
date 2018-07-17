@@ -1,10 +1,10 @@
 {
-  "name": "create-react-app-universal",
-  "version": "0.1.0",
+  "name": "cra-template",
+  "version": "4.0.0-0",
   "private": true,
   "devDependencies": {
     "better-npm-run": "^0.1.0",
-    "cra-universal": "next",
+    "cra-universal": "^4.0.0-0",
     "react-scripts": "1.1.4"
   },
   "dependencies": {
