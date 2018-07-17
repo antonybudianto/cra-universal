@@ -1,16 +1,16 @@
 {
   "name": "cra-universal-docs",
-  "version": "4.0.0-1",
+  "version": "4.0.0-2",
   "private": true,
   "devDependencies": {
     "better-npm-run": "^0.1.0",
-    "cra-universal": "^4.0.0-1",
+    "cra-universal": "^4.0.0-2",
     "prettier": "1.12.1",
     "react-scripts": "1.1.4"
   },
   "dependencies": {
-    "@cra-express/core": "^4.0.0-1",
-    "@cra-express/redux-prefetcher": "^4.0.0-1",
+    "@cra-express/core": "^4.0.0-2",
+    "@cra-express/redux-prefetcher": "^4.0.0-2",
     "loadable-components": "2.1.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
