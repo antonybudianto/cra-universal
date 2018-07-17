@@ -11,6 +11,7 @@
   },
   "scripts": {
     "build": "babel src -d lib --ignore spec.js",
+    "watch": "babel src -d lib --watch --ignore spec.js",
     "test": "exit 0"
   },
   "peerDependencies": {
