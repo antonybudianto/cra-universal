@@ -7,7 +7,7 @@ import {
 } from '@cra-express/core';
 
 const { default: App } = require('appbase/src/App');
-const clientBuildPath = path.resolve(__dirname, 'client');
+const clientBuildPath = path.resolve(__dirname, '../client');
 
 let AppEl = App;
 
