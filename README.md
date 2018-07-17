@@ -24,6 +24,11 @@ Please also visit [create-react-app-express](https://github.com/antonybudianto/c
 * The core middleware is fully **unit-tested**
 * Works alongside `react-scripts`, not as replacement
 
+## Prerequisites
+
+- Node >= 8.6 recommended
+- npx is required
+
 ## Installation
 
 ```sh

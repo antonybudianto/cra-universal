@@ -12,7 +12,7 @@ const { log } = require('../util/log');
 
 const cwd = process.cwd();
 const isWindows = process.platform === 'win32';
-const npm = isWindows ? 'npm.cmd' : 'npm';
+const npx = isWindows ? 'npx.cmd' : 'npx';
 const paths = ['build', 'dist', 'server-build'];
 
 function cleanBuild(done) {
@@ -24,7 +24,7 @@ function cleanBuild(done) {
 
 function buildClient() {
   log('Building CRA client...');
-  const clientBuildResult = spawnSync(npm, ['run', 'build'], {
+  const clientBuildResult = spawnSync(npx, ['react-scripts', 'build'], {
     stdio: 'inherit'
   });
   if (clientBuildResult.status !== 0) {
