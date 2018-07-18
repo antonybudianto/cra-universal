@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const http = require('http');
-const streamRenderer = require('./renderer/stream-renderer').default;
+const stringRenderer = require('./renderer/string-renderer').default;
 
 const CRA_CLIENT_PORT = process.env.CRA_CLIENT_PORT || 3000;
 
@@ -44,7 +44,7 @@ function createUniversalMiddleware(options) {
 }
 
 function processRequest(req, res, htmlData, options) {
-  const { universalRender, handleRender = streamRenderer } = options
+  const { universalRender, handleRender = stringRenderer } = options
   const data = universalRender(req, res);
 
   if (data === undefined) {

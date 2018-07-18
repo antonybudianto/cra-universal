@@ -1,4 +1,7 @@
-export default function stringRenderer(req, res, str, htmlData, options) {
+import { renderToString } from 'react-dom/server'
+
+export default function stringRenderer(req, res, reactEl, htmlData, options) {
+  const str = renderToString(reactEl)
   const segments = htmlData.split(`<div id="root">`);
   if (options.onEndReplace) {
     segments[1] = options.onEndReplace(segments[1])
