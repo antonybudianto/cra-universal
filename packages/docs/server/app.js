@@ -5,7 +5,6 @@ import { getInitialData } from '@cra-express/redux-prefetcher';
 import routes from '../src/routes';
 const path = require('path');
 const React = require('react');
-const ReactDOMServer = require('react-dom/server');
 const { Provider } = require('react-redux');
 const { StaticRouter } = require('react-router');
 const { createStore, applyMiddleware } = require('redux');
@@ -48,7 +47,7 @@ function handleUniversalRender(req, res) {
       );
       return getLoadableState(app).then(loadableState => {
         tag = loadableState.getScriptTag();
-        return ReactDOMServer.renderToNodeStream(app);
+        return app;
       });
     })
     .catch(err => {

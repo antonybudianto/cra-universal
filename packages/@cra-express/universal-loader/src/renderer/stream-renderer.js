@@ -1,4 +1,7 @@
-export default function streamRenderer(req, res, stream, htmlData, options) {
+import { renderToNodeStream } from 'react-dom/server'
+
+export default function streamRenderer(req, res, reactEl, htmlData, options) {
+  const stream = renderToNodeStream(reactEl)
   const segments = htmlData.split(`<div id="root">`);
   res.write(segments[0] + `<div id="root">`);
   stream.pipe(res, { end: false })
