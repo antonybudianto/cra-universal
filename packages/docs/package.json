@@ -9,6 +9,7 @@
     "react-scripts": "1.1.4"
   },
   "dependencies": {
+    "font-awesome": "4.7.0",
     "@cra-express/core": "^4.0.0-5",
     "@cra-express/redux-prefetcher": "^4.0.0-5",
     "basscss": "8.0.4",

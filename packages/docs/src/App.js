@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router';
 import routes from './routes';
 import './App.css';
 import 'basscss/css/basscss.css';
+import 'font-awesome/css/font-awesome.css';
 
 const RouteWithSubRoutes = route => (
   <Route
