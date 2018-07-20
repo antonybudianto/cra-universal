@@ -72,7 +72,11 @@ const config = {
     chunkFilename: isProd('[id].[hash].chunk.js', '[id].chunk.js')
   },
   target: 'node',
-  externals: [nodeExternals()],
+  externals: [
+    nodeExternals({
+      whitelist: [/\.(?!(?:jsx?|json)$).{1,5}$/i]
+    })
+  ],
   watchOptions: {
     ignored: /node_modules/,
     aggregateTimeout: 300
