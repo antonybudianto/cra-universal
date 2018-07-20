@@ -1,14 +1,14 @@
 {
   "name": "cra-template",
-  "version": "4.0.0-4",
+  "version": "4.0.0-5",
   "private": true,
   "devDependencies": {
     "better-npm-run": "^0.1.0",
-    "cra-universal": "^4.0.0-4",
+    "cra-universal": "^4.0.0-5",
     "react-scripts": "1.1.4"
   },
   "dependencies": {
-    "@cra-express/core": "^4.0.0-4",
+    "@cra-express/core": "^4.0.0-5",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   },
