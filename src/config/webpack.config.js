@@ -99,6 +99,10 @@ const config = {
         loaders: 'url-loader'
       },
       {
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        loaders: 'null-loader'
+      },
+      {
         test: /\.css$/,
         use: [
           'isomorphic-style-loader',
