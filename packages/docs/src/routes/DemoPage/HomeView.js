@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 const HomeView = ({ news }) => (
   <div>
     <h1>Home view</h1>
-    <div>Plain view without server fetch.</div>
+    <div>Plain view without server fetch.
+      <i className="fa fa-check fa-lg"></i>
+    </div>
     <div>
       Go back to <a href="/">cra-universal.now.sh</a>
     </div>
