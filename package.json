@@ -1,6 +1,6 @@
 {
   "name": "cra-universal",
-  "version": "3.2.3",
+  "version": "3.2.4",
   "description": "Create React App Universal CLI",
   "main": "src/index.js",
   "files": [
