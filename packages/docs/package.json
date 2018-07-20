@@ -9,6 +9,7 @@
     "react-scripts": "1.1.4"
   },
   "dependencies": {
+    "basscss": "8.0.4",
     "@cra-express/core": "^4.0.0-4",
     "@cra-express/redux-prefetcher": "^4.0.0-4",
     "loadable-components": "2.1.0",
