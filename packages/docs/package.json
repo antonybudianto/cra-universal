@@ -12,6 +12,7 @@
     "@cra-express/core": "^4.0.0-7",
     "@cra-express/redux-prefetcher": "^4.0.0-7",
     "basscss": "8.0.4",
+    "font-awesome": "4.7.0",
     "loadable-components": "2.1.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
