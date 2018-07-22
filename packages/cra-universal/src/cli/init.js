@@ -14,8 +14,8 @@ const npm = isWindows ? 'npm.cmd' : 'npm';
 const hasYarnFlag = hasYarn(path.resolve(process.cwd()));
 const command = hasYarnFlag ? 'yarn' : npm;
 const args = hasYarnFlag
-  ? ['add', '@cra-express/core@2.2.5']
-  : ['i', '-S', '@cra-express/core@2.2.5'];
+  ? ['add', '@cra-express/core@4']
+  : ['i', '-S', '@cra-express/core@4'];
 
 function installDep() {
   log(
