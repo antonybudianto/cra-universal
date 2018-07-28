@@ -80,9 +80,10 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html', language)}>Example Link</Button>
-            <Button href={docUrl('doc2.html', language)}>Example Link 2</Button>
+            <Button href="https://github.com/antonybudianto/cra-universal/">Github</Button>
+            <Button href="https://cra-universal.now.sh/">Demo</Button>
+            {/* <Button href={docUrl('doc1.html', language)}>Example Link</Button> */}
+            {/* <Button href={docUrl('doc2.html', language)}>Example Link 2</Button> */}
           </PromoSection>
         </div>
       </SplashContainer>
@@ -103,16 +104,22 @@ const Features = props => (
   <Block layout="fourColumn">
     {[
       {
-        content: 'This is the content of my feature',
+        content: 'No need to eject your precious create-react-app!',
         image: imgUrl('docusaurus.svg'),
         imageAlign: 'top',
-        title: 'Feature One',
+        title: 'No eject',
       },
       {
-        content: 'The content of my second feature',
+        content: 'No configuration needed by default, with customization support',
         image: imgUrl('docusaurus.svg'),
         imageAlign: 'top',
-        title: 'Feature Two',
+        title: 'Zero config',
+      },
+      {
+        content: 'Both client and server hot module reloading',
+        image: imgUrl('docusaurus.svg'),
+        imageAlign: 'top',
+        title: 'Full HMR',
       },
     ]}
   </Block>
@@ -122,8 +129,8 @@ const FeatureCallout = props => (
   <div
     className="productShowcaseSection paddingBottom"
     style={{textAlign: 'center'}}>
-    <h2>Feature Callout</h2>
-    <MarkdownBlock>These are features of this project</MarkdownBlock>
+    <h2>Fast and easy create-react-app</h2>
+    <MarkdownBlock>SSR, Lazy loading, Data Prefetching, Full HMR</MarkdownBlock>
   </div>
 );
 
@@ -206,9 +213,9 @@ class Index extends React.Component {
         <div className="mainContainer">
           <Features />
           <FeatureCallout />
-          <LearnHow />
-          <TryOut />
-          <Description />
+          {/* <LearnHow /> */}
+          {/* <TryOut /> */}
+          {/* <Description /> */}
           <Showcase language={language} />
         </div>
       </div>
