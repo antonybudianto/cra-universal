@@ -21,10 +21,10 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Test Site' /* title for your website */,
-  tagline: 'A website for testing',
-  url: 'https://your-docusaurus-test-site.com' /* your website url */,
-  baseUrl: '/' /* base url for your project */,
+  title: 'CRA Universal' /* title for your website */,
+  tagline: 'Create React App companion for universal app. No eject and Zero config.',
+  url: 'https://antonybudianto.github.io' /* your website url */,
+  baseUrl: '/cra-universal/' /* base url for your project */,
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
