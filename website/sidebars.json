@@ -5,6 +5,7 @@
     "Second Category": ["doc3"]
   },
   "docs-other": {
-    "First Category": ["doc4", "doc5"]
+    "cra-universal": ["cra-universal-cli"],
+    "@cra-express/core": ["cra-express-core-api"]
   }
 }
