@@ -1,8 +1,8 @@
 {
   "docs": {
-    "Docusaurus": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
+    "Introduction": ["intro-getting-started"],
+    "Guides": ["guide-deployment"],
+    "API": []
   },
   "docs-other": {
     "cra-universal": ["cra-universal-cli"],
