@@ -76,7 +76,7 @@ class HomeSplash extends React.Component {
     let language = this.props.language || '';
     return (
       <SplashContainer>
-        <Logo img_src={imgUrl('docusaurus.svg')} />
+        <Logo img_src={imgUrl('universal.png')} />
         <div className="inner">
           <ProjectTitle />
           <PromoSection>
@@ -105,21 +105,33 @@ const Features = props => (
     {[
       {
         content: 'No need to eject your precious create-react-app!',
-        image: imgUrl('docusaurus.svg'),
+        image: imgUrl('universal.png'),
         imageAlign: 'top',
         title: 'No eject',
       },
       {
         content: 'No configuration needed by default, with customization support',
-        image: imgUrl('docusaurus.svg'),
+        image: imgUrl('universal.png'),
         imageAlign: 'top',
         title: 'Zero config',
       },
       {
+        content: 'Supports code splitting, both lazy and eager',
+        image: imgUrl('universal.png'),
+        imageAlign: 'top',
+        title: 'Code-splitting',
+      },
+      {
         content: 'Both client and server hot module reloading',
-        image: imgUrl('docusaurus.svg'),
+        image: imgUrl('universal.png'),
         imageAlign: 'top',
         title: 'Full HMR',
+      },
+      {
+        content: 'Works as companion, not as "react-scripts" replacement',
+        image: imgUrl('universal.png'),
+        imageAlign: 'top',
+        title: 'Real companion',
       },
     ]}
   </Block>
@@ -129,8 +141,9 @@ const FeatureCallout = props => (
   <div
     className="productShowcaseSection paddingBottom"
     style={{textAlign: 'center'}}>
-    <h2>Fast and easy create-react-app</h2>
-    <MarkdownBlock>SSR, Lazy loading, Data Prefetching, Full HMR</MarkdownBlock>
+    <h2>Universal create-react-app made easy</h2>
+    <MarkdownBlock>Server-side Rendering, Code-splitting, Data Prefetching, Full HMR</MarkdownBlock>
+    <MarkdownBlock>**All-in-one** CLI</MarkdownBlock>
   </div>
 );
 
@@ -138,10 +151,10 @@ const LearnHow = props => (
   <Block background="light">
     {[
       {
-        content: 'Talk about learning how to use this',
-        image: imgUrl('docusaurus.svg'),
+        content: 'Make your create-react-app goes universal with these simple steps!',
+        image: 'https://user-images.githubusercontent.com/7658554/42420108-261a1c5a-82eb-11e8-8ac0-ce2e0245e0ff.png',
         imageAlign: 'right',
-        title: 'Learn How',
+        title: 'Getting started',
       },
     ]}
   </Block>
@@ -151,10 +164,10 @@ const TryOut = props => (
   <Block id="try">
     {[
       {
-        content: 'Talk about trying this out',
-        image: imgUrl('docusaurus.svg'),
+        content: 'Simple steps to get your create-react-app goes universal!',
+        image: 'https://user-images.githubusercontent.com/7658554/42420108-261a1c5a-82eb-11e8-8ac0-ce2e0245e0ff.png',
         imageAlign: 'left',
-        title: 'Try it Out',
+        title: 'Getting started',
       },
     ]}
   </Block>
@@ -212,8 +225,8 @@ class Index extends React.Component {
         <HomeSplash language={language} />
         <div className="mainContainer">
           <Features />
+          <LearnHow />
           <FeatureCallout />
-          {/* <LearnHow /> */}
           {/* <TryOut /> */}
           {/* <Description /> */}
           <Showcase language={language} />

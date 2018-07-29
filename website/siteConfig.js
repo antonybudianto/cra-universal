@@ -22,7 +22,7 @@ const users = [
 
 const siteConfig = {
   title: 'CRA Universal' /* title for your website */,
-  tagline: 'Create React App companion for universal app. No eject and Zero config.',
+  tagline: 'Create React App companion for universal app',
   url: 'https://antonybudianto.github.io' /* your website url */,
   baseUrl: '/cra-universal/' /* base url for your project */,
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -48,13 +48,13 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/docusaurus.svg',
-  footerIcon: 'img/docusaurus.svg',
+  headerIcon: 'img/universal.png',
+  footerIcon: 'img/universal.png',
   favicon: 'img/favicon.png',
 
   /* colors for website */
   colors: {
-    primaryColor: '#2E8555',
+    primaryColor: '#00aeef',
     secondaryColor: '#205C3B',
   },
 
@@ -88,12 +88,12 @@ const siteConfig = {
   onPageNav: 'separate',
 
   /* Open Graph and Twitter card images */
-  ogImage: 'img/docusaurus.png',
-  twitterImage: 'img/docusaurus.png',
+  ogImage: 'img/universal.png',
+  twitterImage: 'img/universal.png',
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-  //   repoUrl: 'https://github.com/facebook/test-site',
+    repoUrl: 'https://github.com/antonybudianto/cra-universal',
 };
 
 module.exports = siteConfig;
