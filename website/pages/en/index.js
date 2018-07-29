@@ -101,7 +101,7 @@ const Block = props => (
 );
 
 const Features = props => (
-  <Block layout="fourColumn">
+  <Block layout="threeColumn">
     {[
       {
         content: 'No need to eject your precious create-react-app!',
@@ -116,10 +116,10 @@ const Features = props => (
         title: 'Zero config',
       },
       {
-        content: 'Supports code splitting, both lazy and eager',
+        content: 'SSR, Code-splitting, Data prefetching',
         image: imgUrl('universal.png'),
         imageAlign: 'top',
-        title: 'Code-splitting',
+        title: 'Universal',
       },
       {
         content: 'Both client and server hot module reloading',
