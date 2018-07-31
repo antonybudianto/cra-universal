@@ -1,10 +1,11 @@
 {
   "docs": {
-    "Docusaurus": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
+    "Introduction": ["intro-getting-started"],
+    "Guides": ["guide-deployment"],
+    "API": []
   },
   "docs-other": {
-    "First Category": ["doc4", "doc5"]
+    "cra-universal": ["cra-universal-cli"],
+    "@cra-express/core": ["cra-express-core-api"]
   }
 }
