@@ -19,7 +19,7 @@ ___
 
 > I also published the full article on Medium, check it out [here](https://medium.com/@antonybudianto/server-side-rendering-with-react-and-firebase-functions-cd67fdb2b605)
 
-- Copy `./dist` inside your `./functions/` and rename it to `./functions/server`
+- Copy `./dist` inside your `./functions/` and rename it to `./functions/crau-dist`
 - Update your rewrite on `firebase.json`
   ```json
   {
@@ -27,18 +27,27 @@ ___
     "function": "app"
   }
   ```
-- Update your `webpack.config.js`
+- Update your `crau.config.js`
   ```js
   module.exports = {
-  // For Firebase function/package bundle
-  entry: './src/app.js', // Initially, it's ./src/index.js
+    modifyWebpack: config => {
+      const newConfig = {
+        ...config,
+        output: {
+          ...config.output,
+          libraryTarget: 'commonjs2'
+        },
+        entry: env ? './server/index.js' : './server/app.js'
+      };
+      return newConfig;
+    }
+  };
   ```
-- Update your `index.js`
+- Update your `./functions/index.js`
   ```js
   const functions = require('firebase-functions');
 
-  // Copy your `dist` into here and rename it into `server`
-  const app = require('./server/build/bundle');
+  const app = require('./crau-dist/server/bundle');
 
   exports.app = functions.https.onRequest(app);
   ```
