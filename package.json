@@ -7,15 +7,16 @@
     "crau:build": "lerna run crau:build",
     "test": "lerna run test:ci",
     "watch": "lerna run --parallel watch",
-    "test:ul": "lerna exec --scope @cra-express/universal-loader -- jest",
-    "test:rp": "lerna exec --scope @cra-express/redux-prefetcher -- jest",
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean",
     "clean:build": "lerna exec -- rimraf lib",
     "prerelease": "npm run build -- --ignore={cra-universal-docs,cra-template}",
     "release": "lerna publish",
     "ls": "lerna ls",
-    "release:next": "npm run release -- --npm-tag=next"
+    "release:next": "npm run release -- --npm-tag=next",
+    "exec:rp": "lerna exec --scope @cra-express/redux-prefetcher --",
+    "exec:ul": "lerna exec --scope @cra-express/universal-loader --",
+    "ul:test": "npm run exec:ul -- npm t --"
   },
   "repository": {
     "type": "git",
