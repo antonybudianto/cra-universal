@@ -1,7 +1,7 @@
 {
   "docs": {
     "Introduction": ["intro-getting-started"],
-    "Guides": ["guide-deployment"],
+    "Guides": ["guide-deployment", "guide-customization"],
     "API": []
   },
   "docs-other": {
