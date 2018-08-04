@@ -10,7 +10,7 @@
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean",
     "clean:build": "lerna exec -- rimraf lib",
-    "prerelease": "npm run build -- --ignore={cra-universal-docs,cra-template}",
+    "prerelease": "npm run build -- --ignore={cra-universal-demo,cra-template}",
     "release": "lerna publish",
     "ls": "lerna ls",
     "release:next": "npm run release -- --npm-tag=next",
