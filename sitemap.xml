@@ -6,7 +6,6 @@
 <url> <loc>https://antonybudianto.github.io/blog/2018/07/29/new-version-3.0.0.html</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://antonybudianto.github.io/docs/cra-express-core-api.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://antonybudianto.github.io/docs/cra-express-core-api.html" /> </url>
 <url> <loc>https://antonybudianto.github.io/docs/cra-universal-cli.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://antonybudianto.github.io/docs/cra-universal-cli.html" /> </url>
-<url> <loc>https://antonybudianto.github.io/docs/doc3.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://antonybudianto.github.io/docs/doc3.html" /> </url>
 <url> <loc>https://antonybudianto.github.io/docs/guide-deployment.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://antonybudianto.github.io/docs/guide-deployment.html" /> </url>
 <url> <loc>https://antonybudianto.github.io/docs/intro-getting-started.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://antonybudianto.github.io/docs/intro-getting-started.html" /> </url>
 </urlset>

@@ -38,23 +38,32 @@
 <p>I also published the full article on Medium, check it out <a href="https://medium.com/@antonybudianto/server-side-rendering-with-react-and-firebase-functions-cd67fdb2b605">here</a></p>
 </blockquote>
 <ul>
-<li>Copy <code>./dist</code> inside your <code>./functions/</code> and rename it to <code>./functions/server</code></li>
+<li>Copy <code>./dist</code> inside your <code>./functions/</code> and rename it to <code>./functions/crau-dist</code></li>
 <li>Update your rewrite on <code>firebase.json</code>
 <pre><code class="hljs css languages- json">{
   <span class="hljs-attr">"source"</span>: <span class="hljs-string">"**"</span>,
   <span class="hljs-attr">"function"</span>: <span class="hljs-string">"app"</span>
 }
 </code></pre></li>
-<li>Update your <code>webpack.config.js</code>
+<li>Update your <code>crau.config.js</code>
 <pre><code class="hljs css languages- js"><span class="hljs-built_in">module</span>.exports = {
-<span class="hljs-comment">// For Firebase function/package bundle</span>
-entry: <span class="hljs-string">'./src/app.js'</span>, <span class="hljs-comment">// Initially, it's ./src/index.js</span>
+  <span class="hljs-attr">modifyWebpack</span>: <span class="hljs-function"><span class="hljs-params">config</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> newConfig = {
+      ...config,
+      <span class="hljs-attr">output</span>: {
+        ...config.output,
+        <span class="hljs-attr">libraryTarget</span>: <span class="hljs-string">'commonjs2'</span>
+      },
+      <span class="hljs-attr">entry</span>: env ? <span class="hljs-string">'./server/index.js'</span> : <span class="hljs-string">'./server/app.js'</span>
+    };
+    <span class="hljs-keyword">return</span> newConfig;
+  }
+};
 </code></pre></li>
-<li>Update your <code>index.js</code>
+<li>Update your <code>./functions/index.js</code>
 <pre><code class="hljs css languages- js"><span class="hljs-keyword">const</span> functions = <span class="hljs-built_in">require</span>(<span class="hljs-string">'firebase-functions'</span>);
 
-<span class="hljs-comment">// Copy your `dist` into here and rename it into `server`</span>
-<span class="hljs-keyword">const</span> app = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./server/build/bundle'</span>);
+<span class="hljs-keyword">const</span> app = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./crau-dist/server/bundle'</span>);
 
 exports.app = functions.https.onRequest(app);
 </code></pre></li>
