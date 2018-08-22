@@ -42,7 +42,13 @@ yargs
   .command(
     'clean',
     'Clean build result',
-    () => {},
+    c => {
+      return c.options({
+        yes: {
+          describe: 'Clean without prompt'
+        }
+      });
+    },
     argv => {
       require('./cli/clean');
     }
