@@ -20,7 +20,7 @@ if (yesOption) {
     .prompt([
       {
         type: 'confirm',
-        message: 'Are yossu sure to clean the build result?',
+        message: 'Are you sure to clean the build result?',
         name: 'ok'
       }
     ])
