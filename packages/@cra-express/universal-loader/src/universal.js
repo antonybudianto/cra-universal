@@ -3,10 +3,11 @@ const fs = require('fs');
 const http = require('http');
 const stringRenderer = require('./renderer/string-renderer').default;
 
-const CRA_CLIENT_PORT = process.env.CRA_CLIENT_PORT || 3000;
+const craServiceName = process.env.CRA_SERVICE_NAME || 'localhost';
+const craClientPort = process.env.CRA_CLIENT_PORT || 3000;
 
 function handleDevMode(req, res, options) {
-  http.get(`http://localhost:${CRA_CLIENT_PORT}/index.html`, function (result) {
+  http.get(`http://${craServiceName}:${craClientPort}/index.html`, function (result) {
     result.setEncoding('utf8');
     let htmlData = '';
     result.on('data', (chunk) => { htmlData += chunk; });
