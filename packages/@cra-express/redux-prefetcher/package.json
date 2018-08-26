@@ -1,6 +1,6 @@
 {
   "name": "@cra-express/redux-prefetcher",
-  "version": "4.0.0-8",
+  "version": "4.0.0-9",
   "description": "Redux Prefetcher for prefetching on server",
   "main": "lib/index.js",
   "files": [
