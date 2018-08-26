@@ -13,8 +13,8 @@ function staticLoader(app, options) {
   if (process.env.NODE_ENV === "development") {
     // Connect proxy to Create React App dev server
     const proxy = require("http-proxy-middleware");
-    var craServiceName = process.env.CRA_SERVICE_NAME || 'localhost';
-    var craClientPort = process.env.CRA_CLIENT_PORT || 3000;
+    const craServiceName = process.env.CRA_SERVICE_NAME || 'localhost';
+    const craClientPort = process.env.CRA_CLIENT_PORT || 3000;
     app.use(
       ["**/*.*", "/static", "/sockjs-node"],
       proxy({
