@@ -35,9 +35,13 @@
     "url": "https://github.com/antonybudianto/cra-universal/issues"
   },
   "homepage": "https://github.com/antonybudianto/cra-universal#readme",
+  "resolutions": {
+    "babel-core": "7.0.0-bridge.0"
+  },
   "devDependencies": {
     "@babel/cli": "7.0.0",
     "@babel/core": "7.0.0",
+    "babel-core": "7.0.0-bridge.0",
     "@babel/preset-env": "7.0.0",
     "@babel/preset-react": "7.0.0",
     "jest": "^23.5.0",

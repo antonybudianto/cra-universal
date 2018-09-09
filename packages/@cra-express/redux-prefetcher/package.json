@@ -12,7 +12,7 @@
   "scripts": {
     "build": "babel src -d lib --ignore spec.js",
     "watch": "babel src -d lib --watch --ignore spec.js",
-    "test:ci": "jest --coverage"
+    "test:ci": "jest --config=jest-config.json --coverage"
   },
   "author": "Antony Budianto <antonybudianto@gmail.com>",
   "license": "MIT",
