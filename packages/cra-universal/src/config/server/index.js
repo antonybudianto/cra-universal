@@ -1,4 +1,4 @@
-const app = require('./app');
+const app = require('./app').default;
 
 const PORT = process.env.CRA_SERVER_PORT || 3001;
 
