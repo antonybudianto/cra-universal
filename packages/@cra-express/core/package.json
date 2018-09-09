@@ -21,7 +21,7 @@
   "dependencies": {
     "@cra-express/static-loader": "^4.0.0-9",
     "@cra-express/universal-loader": "^4.0.0-9",
-    "express": "4.16.2"
+    "express": "4.16.3"
   },
   "devDependencies": {
     "react": "*",
