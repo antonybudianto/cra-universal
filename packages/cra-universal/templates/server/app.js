@@ -17,4 +17,4 @@ if (module.hot) {
   });
 }
 
-module.exports = app;
+export default app;

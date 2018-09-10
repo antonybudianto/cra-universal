@@ -1,0 +1,54 @@
+Arguments: 
+  /Users/antony/.nvm/versions/node/v8.11.3/bin/node /usr/local/Cellar/yarn/1.9.4/libexec/bin/yarn.js install --mutex network:42424 --non-interactive --no-lockfile
+
+PATH: 
+  /Users/antony/Documents/Code/Web/cra-universal/packages/@cra-express/redux-prefetcher/node_modules/.bin:/Users/antony/Documents/Code/Web/cra-universal/packages/@cra-express/node_modules/.bin:/Users/antony/Documents/Code/Web/cra-universal/packages/node_modules/.bin:/Users/antony/Documents/Code/Web/cra-universal/node_modules/.bin:/Users/antony/Documents/Code/Web/node_modules/.bin:/Users/antony/Documents/Code/node_modules/.bin:/Users/antony/Documents/node_modules/.bin:/Users/antony/node_modules/.bin:/Users/node_modules/.bin:/node_modules/.bin:/Users/antony/.nvm/versions/node/v8.11.3/bin:/Users/antony/Documents/Code/Web/cra-universal/node_modules/.bin:/Users/antony/.config/yarn/link/node_modules/.bin:/Users/antony/Documents/Code/Web/cra-universal/node_modules/.bin:/Users/antony/.config/yarn/link/node_modules/.bin:/Users/antony/.nvm/versions/node/v8.11.3/libexec/lib/node_modules/npm/bin/node-gyp-bin:/Users/antony/.nvm/versions/node/v8.11.3/lib/node_modules/npm/bin/node-gyp-bin:/Users/antony/.nvm/versions/node/v8.11.3/bin/node_modules/npm/bin/node-gyp-bin:/Users/antony/.nvm/versions/node/v8.11.3/bin:/usr/local/bin:/Users/antony/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.config/yarn/global/node_modules/.bin:/Users/antony/.composer/vendor/bin:/usr/local/go/bin:/usr/local/git/bin
+
+Yarn version: 
+  1.9.4
+
+Node version: 
+  8.11.3
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/react-router-config: ETIMEDOUT
+      at Timeout._onTimeout (/usr/local/Cellar/yarn/1.9.4/libexec/lib/cli.js:138128:19)
+      at ontimeout (timers.js:498:11)
+      at tryOnTimeout (timers.js:323:5)
+      at Timer.listOnTimeout (timers.js:290:5)
+
+npm manifest: 
+  {
+  	"name": "@cra-express/redux-prefetcher",
+  	"version": "4.0.0-9",
+  	"description": "Redux Prefetcher for prefetching on server",
+  	"main": "lib/index.js",
+  	"files": [
+  		"lib"
+  	],
+  	"publishConfig": {
+  		"access": "public"
+  	},
+  	"author": "Antony Budianto <antonybudianto@gmail.com>",
+  	"license": "MIT",
+  	"dependencies": {
+  		"react-router-config": "^1.0.0-beta.4"
+  	},
+  	"peerDependencies": {
+  		"react": "*",
+  		"react-router": "*"
+  	},
+  	"devDependencies": {
+  		"react": "^16.3.2",
+  		"react-router": "^4.2.0"
+  	}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

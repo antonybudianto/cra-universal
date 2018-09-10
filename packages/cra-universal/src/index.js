@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-require('babel-register')({
-  presets: ['env'],
-  plugins: ['transform-object-rest-spread']
+require('@babel/register')({
+  presets: ['@babel/preset-env'],
+  plugins: ['@babel/plugin-proposal-object-rest-spread']
 });
 
 var yargs = require('yargs');
