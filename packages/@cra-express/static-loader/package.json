@@ -17,14 +17,14 @@
   "author": "Antony Budianto <antonybudianto@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "express": "4.16.2"
+    "express": "4.16.3"
   },
   "devDependencies": {
-    "express": "4.16.2",
-    "http-proxy-middleware": "^0.18.0"
+    "express": "4.16.3",
+    "http-proxy-middleware": "^0.19.0"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
-    "compression": "^1.7.2"
+    "compression": "^1.7.3"
   }
 }
