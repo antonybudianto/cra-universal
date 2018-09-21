@@ -49,6 +49,7 @@ if (fs.existsSync(resolveCwd('./server'))) {
  * Load 3rd party config
  */
 const babelPath = loadConfigOnBase('./server/.babelrc');
+const nodePath = process.env.NODE_PATH || 'src';
 
 const config = {
   context: ctx,
@@ -59,7 +60,7 @@ const config = {
     alias: {
       appbase: resolveCwd('')
     },
-    modules: ['node_modules', resolveCwd('')],
+    modules: ['node_modules', resolveCwd(nodePath)],
     extensions: ['.js', '.jsx']
   },
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
