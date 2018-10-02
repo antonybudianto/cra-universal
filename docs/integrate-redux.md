@@ -1,3 +1,8 @@
+---
+id: integrate-redux
+title: Integrate Redux
+---
+
 ```jsx
 // src/index.js
 

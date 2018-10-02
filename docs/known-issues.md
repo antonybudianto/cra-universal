@@ -1,3 +1,8 @@
+---
+id: known-issues
+title: Known Issues
+---
+
 List of known issues:
 - Importing svg/img file will cause runtime warning on development (asset import didn't re-hydrate properly due filename mismatch), but the errors are gone after production build
   - Solution: https://github.com/antonybudianto/cra-universal/issues/16#issuecomment-392305234

@@ -1,3 +1,8 @@
+---
+id: integrate-react-router
+title: Integrate React Router
+---
+
 This is how you integrate [React Router](https://github.com/ReactTraining/react-router) into server side rendering:
 
 ```js

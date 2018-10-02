@@ -1,3 +1,8 @@
+---
+id: integrade-typescript
+title: Integrate TypeScript
+---
+
 > Credits: @Zummer
 
 ```javascript
