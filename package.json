@@ -36,16 +36,16 @@
   },
   "homepage": "https://github.com/antonybudianto/cra-universal#readme",
   "resolutions": {
-    "babel-core": "7.0.0-bridge.0"
+    "babel-core": "*"
   },
   "devDependencies": {
-    "@babel/cli": "7.1.2",
-    "@babel/core": "7.1.2",
-    "@babel/preset-env": "7.1.0",
-    "@babel/preset-react": "7.0.0",
-    "babel-core": "7.0.0-bridge.0",
-    "jest": "^23.6.0",
-    "lerna": "^3.4.0",
-    "rimraf": "^2.6.2"
+    "@babel/cli": "*",
+    "@babel/core": "*",
+    "@babel/preset-env": "*",
+    "@babel/preset-react": "*",
+    "babel-core": "*",
+    "jest": "*",
+    "lerna": "*",
+    "rimraf": "*"
   }
 }
