@@ -1,7 +1,7 @@
 import { getLoadableState } from 'loadable-components/server';
 import thunk from 'redux-thunk';
 import { createReactAppExpress } from '@cra-express/core';
-import { getInitialData } from '@cra-express/redux-prefetcher';
+import { getInitialData } from '@cra-express/router-prefetcher';
 import routes from '../src/routes';
 const path = require('path');
 const React = require('react');
@@ -15,6 +15,7 @@ const clientBuildPath = path.resolve(__dirname, '../client');
 let tag = '';
 let store;
 let AppClass = App;
+let serverData;
 const app = createReactAppExpress({
   clientBuildPath,
   universalRender: handleUniversalRender,
@@ -27,6 +28,10 @@ const app = createReactAppExpress({
         /</g,
         '\\u003c'
       )};
+      window.__INITIAL_DATA__ = ${JSON.stringify(serverData).replace(
+        /</g,
+        '\\u003c'
+      )};
     </script>`
     );
   }
@@ -35,13 +40,13 @@ const app = createReactAppExpress({
 function handleUniversalRender(req, res) {
   const context = {};
   store = createStore(reducer, applyMiddleware(thunk));
-  const expressCtx = { req, res };
-  return getInitialData(expressCtx, store, routes)
-    .then(result => {
+  return getInitialData(req, res, routes)
+    .then(data => {
+      serverData = data;
       const app = (
         <StaticRouter location={req.url} context={context}>
           <Provider store={store}>
-            <AppClass />
+            <AppClass routes={routes} initialData={data} />
           </Provider>
         </StaticRouter>
       );

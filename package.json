@@ -16,6 +16,7 @@
     "ls": "lerna ls",
     "release:next": "npm run release -- --npm-tag=next",
     "exec:rp": "lerna exec --scope @cra-express/redux-prefetcher --",
+    "exec:rr": "lerna exec --scope @cra-express/router-prefetcher --",
     "exec:ul": "lerna exec --scope @cra-express/universal-loader --",
     "ul:test": "npm run exec:ul -- npm t --"
   },

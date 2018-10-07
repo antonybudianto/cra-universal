@@ -9,6 +9,7 @@ import { loadComponents } from 'loadable-components';
 import './index.css';
 import App from './App';
 import reducer from './reducers';
+import routes from './routes';
 // import registerServiceWorker from './registerServiceWorker';
 
 // Grab the state from a global variable injected into the server-generated HTML
@@ -19,11 +20,13 @@ delete window.__PRELOADED_STATE__;
 
 const store = createStore(reducer, preloadedState, applyMiddleware(thunk));
 
+const data = window.__INITIAL_DATA__;
+
 loadComponents().then(() => {
   ReactDOM.hydrate(
     <Provider store={store}>
       <BrowserRouter>
-        <App />
+        <App routes={routes} initialData={data} />
       </BrowserRouter>
     </Provider>,
     document.getElementById('root')

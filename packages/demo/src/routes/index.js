@@ -1,5 +1,5 @@
 import LandingView from './LandingView/LandingView';
-import { DemoRoute } from './DemoPage';
+import { demoRoutes } from './DemoPage/routes';
 
 const routes = [
   {
@@ -7,7 +7,7 @@ const routes = [
     exact: true,
     component: LandingView
   },
-  DemoRoute
+  ...demoRoutes
 ];
 
 export default routes;
