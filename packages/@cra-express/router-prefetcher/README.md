@@ -14,7 +14,14 @@
 npm i @cra-express/router-prefetcher
 ```
 
-## Use
+## Setup and Usage
+
+- Add `{{SCRIPT}}` to public/index.html
+
+```html
+<div id="root"></div>
+{{SCRIPT}}
+```
 
 ```js
 // server/app.js
@@ -28,7 +35,6 @@ const { StaticRouter } = require('react-router');
 
 const { default: App } = require('../src/App');
 const clientBuildPath = path.resolve(__dirname, '../client');
-let tag = '';
 let AppClass = App;
 let serverData;
 const app = createReactAppExpress({
@@ -38,12 +44,12 @@ const app = createReactAppExpress({
     const state = store.getState();
     return html.replace(
       '{{SCRIPT}}',
-      `${tag}<script>
-      window.__INITIAL_DATA__ = ${JSON.stringify(serverData).replace(
-        /</g,
-        '\\u003c'
-      )};
-    </script>`
+      `<script>
+        window.__INITIAL_DATA__ = ${JSON.stringify(serverData).replace(
+          /</g,
+          '\\u003c'
+        )};
+      </script>`
     );
   }
 });
@@ -93,8 +99,6 @@ const App = ({ routes, initialData }) => {
   return (
     <Switch>
       {routes.map((route, index) => {
-        // pass in the initialData from the server or window.DATA for this
-        // specific route
         return (
           <Route
             key={index}
@@ -121,7 +125,6 @@ const App = ({ routes, initialData }) => {
 import React from 'react';
 
 import withSSR from '../../components/withSSR';
-import withDemoLayout from './withDemoLayout';
 
 class AboutView extends React.Component {
   static getInitialData({ match, req, res }) {
@@ -150,10 +153,10 @@ This text is ALSO server rendered if and only if it's the initial render.
   }
 }
 
-export default withSSR(withDemoLayout(AboutView));
+export default withSSR(AboutView);
 ```
 
-Please get the `withSSR` [here](https://github.com/jaredpalmer/react-router-nextjs-like-data-fetching/blob/master/src/components/withSSR.js)
+Please get the `withSSR` code [here](https://github.com/jaredpalmer/react-router-nextjs-like-data-fetching/blob/master/src/components/withSSR.js)
 
 ## License
 
