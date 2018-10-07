@@ -1,7 +1,10 @@
 # @cra-express/router-prefetcher
 
-> Alpha stage, API may change, don't use on production yet!
 > Simple utility to map your routes and prefetch your data on server
+
+> :warning: **Alpha** stage. API may change, don't use on production yet!
+
+> You might want to wait for React Suspense, [demo](https://github.com/acdlite/suspense-ssr-demo/)
 
 ## Prerequisites
 
