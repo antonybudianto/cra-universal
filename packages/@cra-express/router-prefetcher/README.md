@@ -2,7 +2,7 @@
 
 > Simple utility to map your routes and prefetch your data on server
 
-> You might want to wait for React Suspense, [demo](https://github.com/acdlite/suspense-ssr-demo/)
+> Instead of using this, you might want to wait for React Suspense, [demo](https://github.com/acdlite/suspense-ssr-demo/)
 
 > :warning: **Alpha** stage. API may change, don't use on production yet!
 
