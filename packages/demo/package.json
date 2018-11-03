@@ -12,6 +12,7 @@
     "@cra-express/core": "^4.0.0",
     "@cra-express/redux-prefetcher": "^4.0.0",
     "@cra-express/router-prefetcher": "^4.0.0",
+    "react-helmet-async": "0.1.0",
     "basscss": "8.0.4",
     "font-awesome": "4.7.0",
     "loadable-components": "2.2.3",

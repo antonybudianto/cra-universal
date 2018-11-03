@@ -2,6 +2,8 @@ import { getLoadableState } from 'loadable-components/server';
 import thunk from 'redux-thunk';
 import { createReactAppExpress } from '@cra-express/core';
 import { getInitialData } from '@cra-express/router-prefetcher';
+import { HelmetProvider } from 'react-helmet-async';
+
 import routes from '../src/routes';
 const path = require('path');
 const React = require('react');
@@ -16,9 +18,20 @@ let tag = '';
 let store;
 let AppClass = App;
 let serverData;
+let helmetCtx;
 const app = createReactAppExpress({
   clientBuildPath,
   universalRender: handleUniversalRender,
+  onFinish(req, res, html) {
+    const { helmet } = helmetCtx;
+    const helmetTitle = helmet.title.toString();
+    const helmetMeta = helmet.meta.toString();
+    const newHtml = html
+      .replace('{{HELMET_TITLE}}', helmetTitle)
+      .replace('{{HELMET_META}}', helmetMeta);
+    console.log('>>', helmetTitle, helmetMeta);
+    res.send(newHtml);
+  },
   onEndReplace(html) {
     const state = store.getState();
     return html.replace(
@@ -39,16 +52,19 @@ const app = createReactAppExpress({
 
 function handleUniversalRender(req, res) {
   const context = {};
+  helmetCtx = {};
   store = createStore(reducer, applyMiddleware(thunk));
   return getInitialData(req, res, routes)
     .then(data => {
       serverData = data;
       const app = (
-        <StaticRouter location={req.url} context={context}>
-          <Provider store={store}>
-            <AppClass routes={routes} initialData={data} />
-          </Provider>
-        </StaticRouter>
+        <HelmetProvider context={helmetCtx}>
+          <StaticRouter location={req.url} context={context}>
+            <Provider store={store}>
+              <AppClass routes={routes} initialData={data} />
+            </Provider>
+          </StaticRouter>
+        </HelmetProvider>
       );
       return getLoadableState(app).then(loadableState => {
         tag = loadableState.getScriptTag();

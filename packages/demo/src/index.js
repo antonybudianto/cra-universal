@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { loadComponents } from 'loadable-components';
+import { HelmetProvider } from 'react-helmet-async';
 
 import './index.css';
 import App from './App';
@@ -24,11 +25,13 @@ const data = window.__INITIAL_DATA__;
 
 loadComponents().then(() => {
   ReactDOM.hydrate(
-    <Provider store={store}>
-      <BrowserRouter>
-        <App routes={routes} initialData={data} />
-      </BrowserRouter>
-    </Provider>,
+    <HelmetProvider>
+      <Provider store={store}>
+        <BrowserRouter>
+          <App routes={routes} initialData={data} />
+        </BrowserRouter>
+      </Provider>
+    </HelmetProvider>,
     document.getElementById('root')
   );
   // registerServiceWorker();
