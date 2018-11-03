@@ -29,7 +29,6 @@ const app = createReactAppExpress({
     const newHtml = html
       .replace('{{HELMET_TITLE}}', helmetTitle)
       .replace('{{HELMET_META}}', helmetMeta);
-    console.log('>>', helmetTitle, helmetMeta);
     res.send(newHtml);
   },
   onEndReplace(html) {
