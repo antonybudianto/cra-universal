@@ -19,9 +19,8 @@ cd myapp
 # Install new cra-universal
 yarn add -D cra-universal
 
-# Start with no config at all!
-# npx is not required, you can also save the command as npm script
-npx cra-universal start
+# Install peer dependency
+yarn add @cra-express/core
 ```
 
 ### Client code change
@@ -39,10 +38,10 @@ ReactDOM.hydrate(...)
 ## Development
 
 ```sh
-# Start your CRA client
+# Start CRA client
 npm start
 
-## Start CRA server, then you can open http://localhost:3001
+## Start CRA server, then open http://localhost:3001 in your browser
 npx cra-universal start
 ```
 

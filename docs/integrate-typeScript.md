@@ -1,6 +1,6 @@
 ---
-id: integrade-typescript
-title: Integrate TypeScript
+id: integrate-typescript
+title: TypeScript
 ---
 
 > Credits: @Zummer

@@ -1,6 +1,6 @@
 ---
 id: integrate-redux
-title: Integrate Redux
+title: Redux
 ---
 
 ```jsx
@@ -20,27 +20,26 @@ const store = createStore(
 ```
 
 ```js
-// server/src/app.js
+// server/app.js
 
 import path from "path";
 import React from "react";
-import { renderToNodeStream } from "react-dom/server";
 import { Provider } from "react-redux";
 import { createReactAppExpress } from "@cra-express/core";
 
-import App from "../../src/App";
-import configureStore from "../../src/store/index.js";
-const clientBuildPath = path.resolve(__dirname, "client");
+import App from "../src/App";
+import configureStore from "../src/store/index.js";
+const clientBuildPath = path.resolve(__dirname, "../client");
 
 function handleUniversalRender(req, res) {
   const initialState = {};
   const store = configureStore(initialState);
-  const stream = renderToNodeStream(
+  const appEl = (
     <Provider store={store}>
       <App />
     </Provider>
   );
-  return stream;
+  return appEl;
 }
 
 const app = createReactAppExpress({
@@ -55,7 +54,7 @@ const app = createReactAppExpress({
   }
 });
 
-module.exports = app;
+export default app;
 ```
 
 References:
