@@ -1,7 +1,8 @@
 {
   "docs": {
     "Introduction": ["intro-getting-started"],
-    "Guides": ["guide-deployment", "guide-customization"],
+    "Guides": ["guide-deployment", "guide-customization", "code-splitting", "prefetching"],
+    "Integration": ["integrate-react-router", "integrate-redux", "integrate-typescript"],
     "API": []
   },
   "docs-other": {
