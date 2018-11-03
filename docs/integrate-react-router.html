@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>React Router · CRA Universal</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="This is how you integrate [React Router](https://github.com/ReactTraining/react-router) into server side rendering:"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="React Router · CRA Universal"/><meta property="og:type" content="website"/><meta property="og:url" content="https://antonybudianto.github.io/cra-universal/index.html"/><meta property="og:description" content="This is how you integrate [React Router](https://github.com/ReactTraining/react-router) into server side rendering:"/><meta property="og:image" content="https://antonybudianto.github.io/cra-universal/img/universal.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://antonybudianto.github.io/cra-universal/img/universal.png"/><link rel="shortcut icon" href="/cra-universal/img/universal.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://antonybudianto.github.io/cra-universal/blog/atom.xml" title="CRA Universal Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://antonybudianto.github.io/cra-universal/blog/feed.xml" title="CRA Universal Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/cra-universal/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/cra-universal/"><img class="logo" src="/cra-universal/img/universal.png" alt="CRA Universal"/><h2 class="headerTitleWithLogo">CRA Universal</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/cra-universal/docs/intro-getting-started.html" target="_self">Docs</a></li><li class=""><a href="/cra-universal/docs/cra-universal-cli.html" target="_self">API</a></li><li class=""><a href="/cra-universal/en/help.html" target="_self">Help</a></li><li class=""><a href="/cra-universal/blog" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Integration</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul><li class="navListItem"><a class="navItem" href="/cra-universal/docs/intro-getting-started.html">Getting started</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Guides</h3><ul><li class="navListItem"><a class="navItem" href="/cra-universal/docs/guide-deployment.html">Deployment</a></li><li class="navListItem"><a class="navItem" href="/cra-universal/docs/guide-customization.html">Customization</a></li><li class="navListItem"><a class="navItem" href="/cra-universal/docs/code-splitting.html">Code Splitting</a></li><li class="navListItem"><a class="navItem" href="/cra-universal/docs/prefetching.html">Prefetching</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integration</h3><ul><li class="navListItem navListItemActive"><a class="navItem" href="/cra-universal/docs/integrate-react-router.html">React Router</a></li><li class="navListItem"><a class="navItem" href="/cra-universal/docs/integrate-redux.html">Redux</a></li><li class="navListItem"><a class="navItem" href="/cra-universal/docs/integrate-typescript.html">TypeScript</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">React Router</h1></header><article><div><span><p>This is how you integrate <a href="https://github.com/ReactTraining/react-router">React Router</a> into server side rendering:</p>
+<pre><code class="hljs css languages- js"><span class="hljs-comment">// server/app.js</span>
+
+<span class="hljs-comment">// you can use `async` function too</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleUniversalRender</span>(<span class="hljs-params">req, res</span>) </span>{
+  <span class="hljs-keyword">const</span> context = {};
+  <span class="hljs-keyword">const</span> stream = ReactDOMServer.renderToNodeStream(
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">StaticRouter</span> <span class="hljs-attr">location</span>=<span class="hljs-string">{req.url}</span> <span class="hljs-attr">context</span>=<span class="hljs-string">{context}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">StaticRouter</span>&gt;</span></span>
+  );
+
+  <span class="hljs-keyword">if</span> (context.url) {
+    res.redirect(<span class="hljs-number">301</span>, context.url);
+    <span class="hljs-keyword">return</span>;
+  }
+
+  <span class="hljs-keyword">return</span> stream;
+}
+
+<span class="hljs-keyword">const</span> app = createReactAppExpress({
+  clientBuildPath,
+  <span class="hljs-attr">universalRender</span>: handleUniversalRender
+});
+</code></pre>
+<p><strong>Note:</strong> Make sure <code>App.js</code> didn't render <code>BrowserRouter</code>, but put it on <code>src/index.js</code> or outer files</p>
+<pre><code class="hljs css languages- js"><span class="hljs-comment">// src/index.js</span>
+
+ReactDOM.hydrate(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">BrowserRouter</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">BrowserRouter</span>&gt;</span></span>,
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'root'</span>)
+);
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/cra-universal/docs/prefetching.html">← Prefetching</a><a class="docs-next button" href="/cra-universal/docs/integrate-redux.html">Redux →</a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/cra-universal/" class="nav-home"><img src="/cra-universal/img/universal.png" alt="CRA Universal" width="66" height="58"/></a><div><h5>Docs</h5><a href="/cra-universal/docs/intro-getting-started.html">Getting Started</a><a href="/cra-universal/docs/guide-deployment.html">Deployment Guide</a><a href="/cra-universal/docs/cra-universal-cli.html">API Reference</a></div><div><h5>Community</h5><a href="http://stackoverflow.com/questions/tagged/cra-universal" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://spectrum.chat/cra-universal" target="_blank" rel="noreferrer noopener">Spectrum</a><a href="https://twitter.com/antonybudianto" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/cra-universal/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/antonybudianto/cra-universal" data-icon="octicon-star" data-count-href="/antonybudianto/cra-universal/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 Antony Budianto</section></footer></div></body></html>

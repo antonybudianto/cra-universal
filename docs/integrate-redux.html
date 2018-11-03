@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Redux · CRA Universal</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="```jsx"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Redux · CRA Universal"/><meta property="og:type" content="website"/><meta property="og:url" content="https://antonybudianto.github.io/cra-universal/index.html"/><meta property="og:description" content="```jsx"/><meta property="og:image" content="https://antonybudianto.github.io/cra-universal/img/universal.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://antonybudianto.github.io/cra-universal/img/universal.png"/><link rel="shortcut icon" href="/cra-universal/img/universal.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://antonybudianto.github.io/cra-universal/blog/atom.xml" title="CRA Universal Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://antonybudianto.github.io/cra-universal/blog/feed.xml" title="CRA Universal Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/cra-universal/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/cra-universal/"><img class="logo" src="/cra-universal/img/universal.png" alt="CRA Universal"/><h2 class="headerTitleWithLogo">CRA Universal</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/cra-universal/docs/intro-getting-started.html" target="_self">Docs</a></li><li class=""><a href="/cra-universal/docs/cra-universal-cli.html" target="_self">API</a></li><li class=""><a href="/cra-universal/en/help.html" target="_self">Help</a></li><li class=""><a href="/cra-universal/blog" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Integration</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul><li class="navListItem"><a class="navItem" href="/cra-universal/docs/intro-getting-started.html">Getting started</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Guides</h3><ul><li class="navListItem"><a class="navItem" href="/cra-universal/docs/guide-deployment.html">Deployment</a></li><li class="navListItem"><a class="navItem" href="/cra-universal/docs/guide-customization.html">Customization</a></li><li class="navListItem"><a class="navItem" href="/cra-universal/docs/code-splitting.html">Code Splitting</a></li><li class="navListItem"><a class="navItem" href="/cra-universal/docs/prefetching.html">Prefetching</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integration</h3><ul><li class="navListItem"><a class="navItem" href="/cra-universal/docs/integrate-react-router.html">React Router</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/cra-universal/docs/integrate-redux.html">Redux</a></li><li class="navListItem"><a class="navItem" href="/cra-universal/docs/integrate-typescript.html">TypeScript</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Redux</h1></header><article><div><span><pre><code class="hljs css languages- jsx"><span class="hljs-comment">// src/index.js</span>
+
+<span class="hljs-comment">// Grab the state from a global variable injected into the server-generated HTML</span>
+<span class="hljs-keyword">const</span> preloadedState = <span class="hljs-built_in">window</span>.__PRELOADED_STATE__
+
+<span class="hljs-comment">// Allow the passed state to be garbage-collected</span>
+<span class="hljs-keyword">delete</span> <span class="hljs-built_in">window</span>.__PRELOADED_STATE__
+
+<span class="hljs-keyword">const</span> store = createStore(
+  reducer,
+  preloadedState,
+  applyMiddleware(thunk)
+)
+</code></pre>
+<pre><code class="hljs css languages- js"><span class="hljs-comment">// server/app.js</span>
+
+<span class="hljs-keyword">import</span> path <span class="hljs-keyword">from</span> <span class="hljs-string">"path"</span>;
+<span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> { Provider } <span class="hljs-keyword">from</span> <span class="hljs-string">"react-redux"</span>;
+<span class="hljs-keyword">import</span> { createReactAppExpress } <span class="hljs-keyword">from</span> <span class="hljs-string">"@cra-express/core"</span>;
+
+<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">"../src/App"</span>;
+<span class="hljs-keyword">import</span> configureStore <span class="hljs-keyword">from</span> <span class="hljs-string">"../src/store/index.js"</span>;
+<span class="hljs-keyword">const</span> clientBuildPath = path.resolve(__dirname, <span class="hljs-string">"../client"</span>);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleUniversalRender</span>(<span class="hljs-params">req, res</span>) </span>{
+  <span class="hljs-keyword">const</span> initialState = {};
+  <span class="hljs-keyword">const</span> store = configureStore(initialState);
+  <span class="hljs-keyword">const</span> appEl = (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Provider</span> <span class="hljs-attr">store</span>=<span class="hljs-string">{store}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span></span>
+  );
+  <span class="hljs-keyword">return</span> appEl;
+}
+
+<span class="hljs-keyword">const</span> app = createReactAppExpress({
+  clientBuildPath,
+  <span class="hljs-attr">universalRender</span>: handleUniversalRender,
+  onFinish(req, res, html) {
+    <span class="hljs-keyword">const</span> state = store.getState();
+    <span class="hljs-keyword">const</span> finalHtml = html.replace(<span class="hljs-string">'{{SCRIPT}}'</span>, <span class="hljs-string">`&lt;script&gt;
+      window.__PRELOADED_STATE__ = <span class="hljs-subst">${<span class="hljs-built_in">JSON</span>.stringify(state).replace(<span class="hljs-regexp">/&lt;/g</span>, <span class="hljs-string">'\\u003c'</span>)}</span>;
+    &lt;/script&gt;`</span>);
+    <span class="hljs-keyword">return</span> finalHtml;
+  }
+});
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> app;
+</code></pre>
+<p>References:
+<a href="https://redux.js.org/recipes/server-rendering">https://redux.js.org/recipes/server-rendering</a></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/cra-universal/docs/integrate-react-router.html">← React Router</a><a class="docs-next button" href="/cra-universal/docs/integrate-typescript.html">TypeScript →</a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/cra-universal/" class="nav-home"><img src="/cra-universal/img/universal.png" alt="CRA Universal" width="66" height="58"/></a><div><h5>Docs</h5><a href="/cra-universal/docs/intro-getting-started.html">Getting Started</a><a href="/cra-universal/docs/guide-deployment.html">Deployment Guide</a><a href="/cra-universal/docs/cra-universal-cli.html">API Reference</a></div><div><h5>Community</h5><a href="http://stackoverflow.com/questions/tagged/cra-universal" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://spectrum.chat/cra-universal" target="_blank" rel="noreferrer noopener">Spectrum</a><a href="https://twitter.com/antonybudianto" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/cra-universal/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/antonybudianto/cra-universal" data-icon="octicon-star" data-count-href="/antonybudianto/cra-universal/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 Antony Budianto</section></footer></div></body></html>
