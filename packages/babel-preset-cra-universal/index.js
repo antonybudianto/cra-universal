@@ -19,9 +19,7 @@ var preset = {
       }
     ],
     // Adds syntax support for import()
-    require.resolve('@babel/plugin-syntax-dynamic-import'),
-    // Add support for async/await
-    require.resolve('@babel/plugin-transform-runtime')
+    require.resolve('@babel/plugin-syntax-dynamic-import')
   ]
 };
 
@@ -61,4 +59,8 @@ if (env === 'production') {
   ]);
 }
 
-module.exports = preset;
+module.exports = function() {
+  return {
+    presets: [preset]
+  };
+};
