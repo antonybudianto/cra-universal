@@ -6,8 +6,5 @@
     "packages/cra-universal/templates"
   ],
   "version": "4.1.0",
-  "npmClient": "yarn",
-  "npmClientArgs": [
-    "--no-lockfile"
-  ]
+  "npmClient": "yarn"
 }
