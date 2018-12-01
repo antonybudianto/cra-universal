@@ -1,0 +1,27 @@
+{
+  "name": "babel-preset-cra-universal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "Babel preset for cra-universal",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antonybudianto/cra-universal.git"
+  },
+  "author": "Antony Budianto, Kirin Patel",
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "@babel/preset-env": "7.1.6",
+    "@babel/preset-react": "7.0.0",
+    "@babel/plugin-transform-react-jsx-source": "7.0.0",
+    "@babel/plugin-transform-modules-commonjs": "7.1.0",
+    "babel-plugin-dynamic-import-node": "2.2.0",
+    "@babel/plugin-syntax-dynamic-import": "7.0.0",
+    "@babel/plugin-proposal-class-properties": "7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.0.0",
+    "babel-plugin-transform-react-remove-prop-types": "0.4.20",
+    "@babel/plugin-transform-runtime": "7.1.0"
+  }
+}
