@@ -14,9 +14,14 @@ First, [install Babel](https://babeljs.io/docs/setup/).
 
 Then create a file named `.babelrc` with following contents in the root folder of your project:
 
-  ```js
+  ```json
   {
-    "presets": ["cra-universal"]
+    "presets": ["cra-universal", "@babel/preset-env", "@babel/preset-react"],
+    "plugins": [
+      "dynamic-import-node",
+      "@babel/plugin-proposal-object-rest-spread",
+      "@babel/plugin-proposal-class-properties"
+    ]
   }
   ```
 
