@@ -2,6 +2,7 @@ node_modules
 coverage
 lib
 lerna-debug.log
+yarn-error.log
 
 .DS_Store
 
