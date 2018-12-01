@@ -1,6 +1,6 @@
 {
   "name": "@cra-express/router-prefetcher",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "Router Prefetcher for prefetching on server",
   "main": "lib/index.js",
   "files": [
