@@ -11,7 +11,7 @@ This is how you integrate [React Router](https://github.com/ReactTraining/react-
 // you can use `async` function too
 function handleUniversalRender(req, res) {
   const context = {};
-  const stream = ReactDOMServer.renderToNodeStream(
+  const el = (
     <StaticRouter location={req.url} context={context}>
       <App />
     </StaticRouter>
@@ -22,7 +22,7 @@ function handleUniversalRender(req, res) {
     return;
   }
 
-  return stream;
+  return el;
 }
 
 const app = createReactAppExpress({
