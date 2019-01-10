@@ -73,10 +73,20 @@ function wireBundle() {
   const destServer = path.resolve(cwd, 'dist', 'server');
   const srcServerPkg = path.resolve(cwd, 'package.json');
   const destServerPkg = path.resolve(cwd, 'dist', 'package.json');
+  const srcServerPkgLock = path.resolve(cwd, 'package-lock.json');
+  const destServerPkgLock = path.resolve(cwd, 'dist', 'package-lock.json');
+  const srcServerYarnLock = path.resolve(cwd, 'yarn.lock');
+  const destServerYarnLock = path.resolve(cwd, 'dist', 'yarn.lock');
 
   fs.copySync(srcClient, destClient);
   fs.copySync(srcServer, destServer);
   fs.copySync(srcServerPkg, destServerPkg);
+  if (fs.existsSync(srcServerPkgLock)) {
+    fs.copySync(srcServerPkgLock, destServerPkgLock);
+  }
+  if (fs.existsSync(srcServerYarnLock)) {
+    fs.copySync(srcServerYarnLock, destServerYarnLock);
+  }
   console.log(`
   CRA Universal build is done at folder:
    ${cwd + chalk.cyan('/dist')}
