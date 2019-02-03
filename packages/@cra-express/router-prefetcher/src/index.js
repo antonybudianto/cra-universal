@@ -2,7 +2,8 @@ import { matchPath } from 'react-router-dom';
 
 export function getInitialData(req, res, routes) {
   const matches = routes.map((route, index) => {
-    const match = matchPath(req.url, route.path, route);
+    const { path, exact, strict } = route;
+    const match = matchPath(req.url, { path, exact, strict });
     if (match) {
       const obj = {
         route,
