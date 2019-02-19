@@ -6,8 +6,17 @@ const stringRenderer = require('./renderer/string-renderer').default;
 const craServiceName = process.env.CRA_SERVICE_NAME || 'localhost';
 const craClientPort = process.env.CRA_CLIENT_PORT || 3000;
 
+function resolveHtmlFilenameByRequest(req, options) {
+  if(!options.resolveHtmlFilenameByRequest) {
+    return 'index.html';
+  }
+
+  return options.resolveHtmlFilenameByRequest(req);
+}
+
 function handleDevMode(req, res, options) {
-  http.get(`http://${craServiceName}:${craClientPort}/index.html`, function (result) {
+  var url = `http://${craServiceName}:${craClientPort}/${resolveHtmlFilenameByRequest(req, options)}`;
+  http.get(url, function (result) {
     result.setEncoding('utf8');
     let htmlData = '';
     result.on('data', (chunk) => { htmlData += chunk; });
@@ -29,7 +38,7 @@ function createUniversalMiddleware(options) {
       return;
     }
 
-    const filePath = path.resolve(clientBuildPath, 'index.html');
+    const filePath = path.resolve(clientBuildPath, resolveHtmlFilenameByRequest(req, options));
 
     fs.readFile(filePath, 'utf8', (err, htmlData) => {
       if (err) {
