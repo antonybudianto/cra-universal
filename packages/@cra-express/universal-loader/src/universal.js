@@ -7,11 +7,12 @@ const craServiceName = process.env.CRA_SERVICE_NAME || 'localhost';
 const craClientPort = process.env.CRA_CLIENT_PORT || 3000;
 
 function resolveHtmlFilenameByRequest(req, options) {
+  var defaultHtml = 'index.html';
   if(!options.resolveHtmlFilenameByRequest) {
-    return 'index.html';
+    return defaultHtml;
   }
 
-  return options.resolveHtmlFilenameByRequest(req);
+  return options.resolveHtmlFilenameByRequest(req) || defaultHtml;
 }
 
 function handleDevMode(req, res, options) {

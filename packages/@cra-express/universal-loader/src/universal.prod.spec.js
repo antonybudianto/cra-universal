@@ -6,6 +6,7 @@ process.env.NODE_ENV = 'production';
 
 jest.mock('fs');
 const fs = require('fs');
+const path = require('path');
 
 test('have correct env', () => {
   expect(process.env.NODE_ENV).toBe('production');
@@ -30,6 +31,55 @@ test('read index.html file correctly', () => {
   const middleware = universalMiddleware(config);
   middleware();
   expect(fs.readFile).toHaveBeenCalledTimes(1);
+});
+
+test('read multiple html files correctly', () => {
+  // Define dummie request
+  const dummieReqRoot = { url: '/' };
+  const dummieReqApp  = { url: '/app' };
+  const dummieReqBlog = { url: '/blog' };
+  const config = {
+    handleRender: jest.fn(),
+    resolveHtmlFilenameByRequest: (req) => {
+      // Example of return by url but can be by device and other things
+      if(req.url.startsWith('/app')) {
+        return 'app.html'
+      } else if(req.url.startsWith('/blog')) {
+        return 'blog.html'
+      }
+
+      return 'index.html'
+    },
+    clientBuildPath: 'test',
+    universalRender: () => <div>a</div>
+  };
+  const currentPath = path.join(__dirname, '..', config.clientBuildPath);
+
+  const middleware = universalMiddleware(config);
+
+  middleware(dummieReqRoot);
+
+  expect(fs.readFile)
+  .toHaveBeenCalledWith(
+    path.join(currentPath, 'index.html'),
+    expect.any(String), expect.any(Function)
+  );
+
+  middleware(dummieReqApp);
+
+  expect(fs.readFile)
+  .toHaveBeenCalledWith(
+    path.join(currentPath, 'app.html'),
+    expect.any(String), expect.any(Function)
+  );
+
+  middleware(dummieReqBlog);
+
+  expect(fs.readFile)
+  .toHaveBeenCalledWith(
+    path.join(currentPath, 'blog.html'),
+    expect.any(String), expect.any(Function)
+  );
 });
 
 test('handle read error correctly', () => {
