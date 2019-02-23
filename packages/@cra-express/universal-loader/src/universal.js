@@ -5,14 +5,14 @@ const stringRenderer = require('./renderer/string-renderer').default;
 
 const craServiceName = process.env.CRA_SERVICE_NAME || 'localhost';
 const craClientPort = process.env.CRA_CLIENT_PORT || 3000;
+const defaultHtmlFilename = 'index.html';
 
 function resolveHtmlFilenameByRequest(req, options) {
-  var defaultHtml = 'index.html';
   if(!options.resolveHtmlFilenameByRequest) {
-    return defaultHtml;
+    return defaultHtmlFilename;
   }
 
-  return options.resolveHtmlFilenameByRequest(req) || defaultHtml;
+  return options.resolveHtmlFilenameByRequest(req) || defaultHtmlFilename;
 }
 
 function handleDevMode(req, res, options) {
