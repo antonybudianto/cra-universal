@@ -61,7 +61,7 @@ const config = {
       appbase: resolveCwd('')
     },
     modules: ['node_modules', resolveCwd(nodePath)],
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.json']
   },
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   entry: './server/index.js',
