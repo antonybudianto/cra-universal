@@ -1,6 +1,6 @@
 {
   "name": "cra-universal",
-  "version": "4.2.1",
+  "version": "4.3.0",
   "description": "Create React App Universal CLI",
   "main": "src/index.js",
   "files": [
@@ -30,9 +30,9 @@
   "dependencies": {
     "@babel/core": "7.1.6",
     "@babel/register": "7.0.0",
-    "@cra-express/core": "^4.2.1",
+    "@cra-express/core": "^4.3.0",
     "babel-loader": "^8.0.4",
-    "babel-preset-cra-universal": "^4.2.1",
+    "babel-preset-cra-universal": "^4.3.0",
     "chalk": "^2.4.1",
     "css-loader": "^1.0.1",
     "del": "^3.0.0",
