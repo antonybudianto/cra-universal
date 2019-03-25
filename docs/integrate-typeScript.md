@@ -3,80 +3,100 @@ id: integrate-typescript
 title: TypeScript
 ---
 
-> Credits: @Zummer
+> Credits: @Zummer, @janjachacz
 
-```javascript
-// package.json
-  "scripts": {
-     "u-init": "cra-universal init"
-  }
-```
+Installation
 
-Extract server folder for customization
 ```sh
-npm run u-init
+# Create new cra
+yarn create react-app my-app --typescript
+cd my-app
+
+# Install new cra-universal
+yarn add -D cra-universal
+
+# Install peer dependency
+yarn add @cra-express/core
+
 ```
 
 Install required dep:
+
 ```sh
-npm install -D webpack-merge ts-loader
+yarn add -D webpack-merge
 ```
 
-Create crau.config.js in cra root folder 
+Create `crau.config.js` in cra root folder
+
 ```
 touch crau.config.js
 ```
 
-```javascript
-// crau.config.js
-const webpackMerge = require('webpack-merge');
+In `crau.config.js`
 
-const myCustomConfig = {
-    resolve: {
-        extensions: ['.ts', '.tsx']
-    },
-    module: {
-        rules: [
-            {
-                test: /\.(ts|tsx)$/,
-                exclude: [/node_modules/],
-                use: [
-                    {
-                        loader: 'ts-loader'
-                    }
-                ]
-            },
-        ]
-    }
+```ts
+const webpackMerge = require("webpack-merge");
+
+const tsConfig = {
+  resolve: {
+    extensions: [".ts", ".tsx"]
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(ts|tsx)$/,
+        loaders: "babel-loader",
+        options: {
+          babelrc: false,
+          extends: "./node_modules/cra-universal/src/config/server/.babelrc"
+        }
+      }
+    ]
+  }
 };
 
 module.exports = {
-    webpackPlugins: [],
-    modifyWebpack: (config) => webpackMerge(config, myCustomConfig)
+  webpackPlugins: [],
+  modifyWebpack: config => webpackMerge(config, tsConfig)
 };
 ```
 
-``` javascript
-// tslint.json
-{
-...
-  "rules": {
-    "no-console": false
-  }
-}
+Update your render method on `src/index.js`
+
+```ts
+// before
+ReactDOM.render(...)
+
+// after
+ReactDOM.hydrate(...)
 ```
 
-```javascript
-// tsconfig.json
-{
-  "compilerOptions": {
- ...
-   "rootDirs": ["src", "server"],
-    ...
-  },
-  "exclude": [
-    "server-build",
-    ...
-  ]
-}
+Fix image hydratation waring in `src/App.tsx`'s image, add `suppressHydrationWarning`
+
+```tsx
+// before
+...
+<img src={logo} className="App-logo" alt="logo" />
+
+// after
+...
+<img suppressHydrationWarning src={logo} className="App-logo" alt="logo" />
+```
+
+Prevent React from openning browser on server start
+
+```sh
+echo "BROWSER=none" >> .env.local
+```
+
+Run the servers
+
+```sh
+yarn cra-universal start --both
+```
+
+Open the browser
+
+```sh
+open http://localhost:3001
 ```
