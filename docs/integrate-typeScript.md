@@ -92,7 +92,7 @@ echo "BROWSER=none" >> .env.local
 Run the servers
 
 ```sh
-npx cra-universal start --both
+yarn cra-universal start --both
 ```
 
 Open the browser
