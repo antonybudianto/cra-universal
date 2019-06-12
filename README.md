@@ -80,7 +80,7 @@ npx cra-universal build
 
 ## Credit
 
-* Create React App https://github.com/facebookincubator/create-react-app
+* Create React App https://github.com/facebook/create-react-app
 * Thanks for https://github.com/ayroblu/ssr-create-react-app-v2 for the base!
 
 ## Support
