@@ -87,6 +87,10 @@ npx cra-universal build
 
 If you like this project, please kindly support it by becoming a patron at my [Patreon](https://www.patreon.com/antonybudianto) page. Thanks!
 
+## Sponsors
+
+- Stan Day (stan@auraside.com)
+
 ## License
 
 MIT
