@@ -2,7 +2,7 @@
 ### Create React App Universal CLI
 
 [![npm version](https://badge.fury.io/js/cra-universal.svg)](https://badge.fury.io/js/cra-universal)
-[![Build Status](https://travis-ci.org/antonybudianto/cra-universal.svg?branch=master)](https://travis-ci.org/antonybudianto/cra-universal)
+[![Build Status](https://travis-ci.org/antonybudianto/cra-universal.svg?branch=master)](https://travis-ci.org/antonybudianto/cra-universal) [![Greenkeeper badge](https://badges.greenkeeper.io/antonybudianto/cra-universal.svg)](https://greenkeeper.io/)
 
 <p align="center">
 <img width="500" height="350" alt="zero" src="https://user-images.githubusercontent.com/7658554/42420108-261a1c5a-82eb-11e8-8ac0-ce2e0245e0ff.png">

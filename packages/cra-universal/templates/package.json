@@ -5,7 +5,7 @@
   "devDependencies": {
     "better-npm-run": "^0.1.1",
     "cra-universal": "^4.3.0",
-    "react-scripts": "1.1.5"
+    "react-scripts": "3.1.1"
   },
   "dependencies": {
     "@cra-express/core": "^4.3.0",
@@ -29,5 +29,17 @@
         "NODE_ENV": "production"
       }
     }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
