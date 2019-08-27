@@ -28,29 +28,29 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "7.1.6",
-    "@babel/register": "7.0.0",
+    "@babel/core": "7.5.5",
+    "@babel/register": "7.5.5",
     "@cra-express/core": "^4.3.0",
     "babel-loader": "^8.0.4",
     "babel-preset-cra-universal": "^4.3.0",
     "chalk": "^2.4.1",
-    "css-loader": "^1.0.1",
-    "del": "^3.0.0",
-    "file-loader": "2.0.0",
-    "fs-extra": "7.0.1",
-    "has-yarn": "^1.0.0",
-    "inquirer": "^6.2.0",
-    "isomorphic-style-loader": "^4.0.0",
-    "multiview": "^2.5.3",
-    "null-loader": "^0.1.1",
+    "css-loader": "^3.2.0",
+    "del": "^5.1.0",
+    "file-loader": "4.2.0",
+    "fs-extra": "8.1.0",
+    "has-yarn": "^2.1.0",
+    "inquirer": "^7.0.0",
+    "isomorphic-style-loader": "^5.1.0",
+    "multiview": "^3.0.0",
+    "null-loader": "^3.0.0",
     "start-server-webpack-plugin": "3.0.0-rc3",
-    "url-loader": "^1.1.2",
+    "url-loader": "^2.1.0",
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2",
     "webpack-node-externals": "^1.7.2",
-    "yargs": "12.0.2"
+    "yargs": "14.0.0"
   },
   "devDependencies": {
-    "jest": "^23.6.0"
+    "jest": "^24.9.0"
   }
 }
