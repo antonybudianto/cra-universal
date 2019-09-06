@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "@cra-express/core": "^4.3.0",
-    "react": "^16.5.0",
-    "react-dom": "^16.5.0"
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
   },
   "scripts": {
     "crau:start": "cra-universal start",
