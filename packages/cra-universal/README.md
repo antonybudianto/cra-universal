@@ -70,6 +70,9 @@ npx cra-universal start
 npx cra-universal build
 
 # This command will build both client and server and put them into `./dist`
+# Run locally:
+# $ node --preserve-symlinks dist/server/bundle.js
+# You only need `--preserve-symlinks` on local, since we only do symlinks on development.
 ```
 
 ## Deployment

@@ -20,7 +20,8 @@
     "exec:ul": "lerna exec --scope @cra-express/universal-loader --",
     "ul:test": "npm run exec:ul -- npm t --",
     "demo:start:client": "lerna exec --scope cra-universal-demo -- npm start",
-    "demo:start:server": "lerna exec --scope cra-universal-demo -- yarn crau:start"
+    "demo:start:server": "lerna exec --scope cra-universal-demo -- yarn crau:start",
+    "demo:build": "lerna exec --scope cra-universal-demo -- yarn crau:build"
   },
   "repository": {
     "type": "git",
