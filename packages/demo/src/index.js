@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import { loadComponents } from 'loadable-components';
 import { HelmetProvider } from 'react-helmet-async';
 
 import './index.css';
@@ -23,19 +22,17 @@ const store = createStore(reducer, preloadedState, applyMiddleware(thunk));
 
 const data = window.__INITIAL_DATA__;
 
-loadComponents().then(() => {
-  ReactDOM.hydrate(
-    <HelmetProvider>
-      <Provider store={store}>
-        <BrowserRouter>
-          <App routes={routes} initialData={data} />
-        </BrowserRouter>
-      </Provider>
-    </HelmetProvider>,
-    document.getElementById('root')
-  );
-  // registerServiceWorker();
-});
+ReactDOM.hydrate(
+  <HelmetProvider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App routes={routes} initialData={data} />
+      </BrowserRouter>
+    </Provider>
+  </HelmetProvider>,
+  document.getElementById('root')
+);
+// registerServiceWorker();
 
 if (module.hot) {
   module.hot.accept();

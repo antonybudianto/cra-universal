@@ -9,10 +9,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "devDependencies": {
-    "react": "*",
-    "react-dom": "*"
-  },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"

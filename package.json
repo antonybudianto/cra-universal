@@ -18,7 +18,9 @@
     "exec:rp": "lerna exec --scope @cra-express/redux-prefetcher --",
     "exec:rr": "lerna exec --scope @cra-express/router-prefetcher --",
     "exec:ul": "lerna exec --scope @cra-express/universal-loader --",
-    "ul:test": "npm run exec:ul -- npm t --"
+    "ul:test": "npm run exec:ul -- npm t --",
+    "demo:start:client": "lerna exec --scope cra-universal-demo -- npm start",
+    "demo:start:server": "lerna exec --scope cra-universal-demo -- yarn crau:start"
   },
   "repository": {
     "type": "git",
