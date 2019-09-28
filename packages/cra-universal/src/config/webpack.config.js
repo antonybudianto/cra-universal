@@ -100,7 +100,7 @@ const config = {
         loaders: 'url-loader',
         options: {
           limit: 10000,
-          name: "/static/media/[name].[hash:8].[ext]"
+          name: '/static/media/[name].[hash:8].[ext]'
         }
       },
       {
@@ -124,6 +124,7 @@ const config = {
       [
         new webpack.HotModuleReplacementPlugin({}),
         new StartServerPlugin({
+          nodeArgs: ['--preserve-symlinks'],
           bundleName: 'bundle.js'
         })
       ]

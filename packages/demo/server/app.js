@@ -1,4 +1,3 @@
-import { getLoadableState } from 'loadable-components/server';
 import thunk from 'redux-thunk';
 import { createReactAppExpress } from '@cra-express/core';
 import { getInitialData } from '@cra-express/router-prefetcher';
@@ -65,10 +64,7 @@ function handleUniversalRender(req, res) {
           </StaticRouter>
         </HelmetProvider>
       );
-      return getLoadableState(app).then(loadableState => {
-        tag = loadableState.getScriptTag();
-        return app;
-      });
+      return app;
     })
     .catch(err => {
       console.error(err);

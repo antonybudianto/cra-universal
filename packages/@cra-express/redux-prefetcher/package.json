@@ -22,9 +22,5 @@
   "peerDependencies": {
     "react": "*",
     "react-router": "*"
-  },
-  "devDependencies": {
-    "react": "^16.5.0",
-    "react-router": "^5.0.1"
   }
 }
