@@ -4,7 +4,7 @@
   "moduleDirectories": [
     "src",
     "node_modules",
-    "../../demo/node_modules"
+    "../../cra-universal/templates/node_modules"
   ],
   "collectCoverageFrom": ["src/**/*.{js}"],
   "testRegex": "(src)/.*\\.spec\\.js$"
