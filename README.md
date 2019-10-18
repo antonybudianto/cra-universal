@@ -1,7 +1,7 @@
 # cra-universal
 ### Create React App Universal CLI
 
-[![npm version](https://badge.fury.io/js/cra-universal.svg)](https://badge.fury.io/js/cra-universal)
+[![Financial Contributors on Open Collective](https://opencollective.com/cra-universal/all/badge.svg?label=financial+contributors)](https://opencollective.com/cra-universal) [![npm version](https://badge.fury.io/js/cra-universal.svg)](https://badge.fury.io/js/cra-universal)
 [![Build Status](https://travis-ci.org/antonybudianto/cra-universal.svg?branch=master)](https://travis-ci.org/antonybudianto/cra-universal) [![Greenkeeper badge](https://badges.greenkeeper.io/antonybudianto/cra-universal.svg)](https://greenkeeper.io/)
 
 <p align="center">
@@ -93,6 +93,36 @@ If you like this project, please kindly support it by becoming a patron at my [P
 ## Sponsors
 
 - Stan Day (stan@auraside.com)
+
+## Contributors
+
+### Code Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+<a href="https://github.com/antonybudianto/cra-universal/graphs/contributors"><img src="https://opencollective.com/cra-universal/contributors.svg?width=890&button=false" /></a>
+
+### Financial Contributors
+
+Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/cra-universal/contribute)]
+
+#### Individuals
+
+<a href="https://opencollective.com/cra-universal"><img src="https://opencollective.com/cra-universal/individuals.svg?width=890"></a>
+
+#### Organizations
+
+Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/cra-universal/contribute)]
+
+<a href="https://opencollective.com/cra-universal/organization/0/website"><img src="https://opencollective.com/cra-universal/organization/0/avatar.svg"></a>
+<a href="https://opencollective.com/cra-universal/organization/1/website"><img src="https://opencollective.com/cra-universal/organization/1/avatar.svg"></a>
+<a href="https://opencollective.com/cra-universal/organization/2/website"><img src="https://opencollective.com/cra-universal/organization/2/avatar.svg"></a>
+<a href="https://opencollective.com/cra-universal/organization/3/website"><img src="https://opencollective.com/cra-universal/organization/3/avatar.svg"></a>
+<a href="https://opencollective.com/cra-universal/organization/4/website"><img src="https://opencollective.com/cra-universal/organization/4/avatar.svg"></a>
+<a href="https://opencollective.com/cra-universal/organization/5/website"><img src="https://opencollective.com/cra-universal/organization/5/avatar.svg"></a>
+<a href="https://opencollective.com/cra-universal/organization/6/website"><img src="https://opencollective.com/cra-universal/organization/6/avatar.svg"></a>
+<a href="https://opencollective.com/cra-universal/organization/7/website"><img src="https://opencollective.com/cra-universal/organization/7/avatar.svg"></a>
+<a href="https://opencollective.com/cra-universal/organization/8/website"><img src="https://opencollective.com/cra-universal/organization/8/avatar.svg"></a>
+<a href="https://opencollective.com/cra-universal/organization/9/website"><img src="https://opencollective.com/cra-universal/organization/9/avatar.svg"></a>
 
 ## License
 
