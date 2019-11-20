@@ -40,6 +40,22 @@ yarn add -D cra-universal
 # Install peer dependency
 yarn add @cra-express/core
 ```
+## Existing Projects
+
+```sh
+
+# Install new cra-universal
+yarn add -D cra-universal
+
+# Install peer dependency
+yarn add @cra-express/core
+
+# init
+yarn run cra-universal init
+
+#This will copy ./templates/server into the current directory (it should be run on CRA client root)
+
+```
 
 ## Client code change
 
