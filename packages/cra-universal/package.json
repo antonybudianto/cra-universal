@@ -33,7 +33,7 @@
     "@cra-express/core": "^4.3.1",
     "babel-loader": "^8.0.6",
     "babel-preset-cra-universal": "^4.3.1",
-    "chalk": "^2.4.2",
+    "chalk": "^3.0.0",
     "css-loader": "^3.2.0",
     "del": "^5.1.0",
     "file-loader": "4.2.0",
