@@ -97,3 +97,48 @@ test('should render correctly with onEndReplace', () => {
   </html>
   `);
 });
+
+test('should return 500 when the render is failed', () => {
+  const htmlData = `
+  <html>
+    <body>
+      <div id="root"></div>
+      <div id="script"></div>
+    </body>
+  </html>
+  `;
+
+  const el = <div>{(new Error('Error thrown'))}</div>;
+
+  const req = {};
+  const res = {
+    send: jest.fn()
+  };
+
+  stringRenderer(req, res, el, htmlData, {});
+
+  expect(res.send).toHaveBeenCalledWith(500);
+});
+
+
+test('should render the client app when the render is failed and the renderClientOnError flag is set', () => {
+  const htmlData = `
+  <html>
+    <body>
+      <div id="root"></div>
+      <div id="script"></div>
+    </body>
+  </html>
+  `;
+
+  const el = <div>{(new Error('Error thrown'))}</div>;
+
+  const req = {};
+  const res = {
+    send: jest.fn()
+  };
+
+  stringRenderer(req, res, el, htmlData, { renderClientOnError: true });
+
+  expect(res.send).toHaveBeenCalledWith(htmlData);
+});

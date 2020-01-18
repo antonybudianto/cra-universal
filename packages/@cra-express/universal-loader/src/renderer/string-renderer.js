@@ -1,7 +1,18 @@
-import { renderToString } from 'react-dom/server'
+import { renderToString } from 'react-dom/server';
 
 export default function stringRenderer(req, res, reactEl, htmlData, options) {
-  const str = renderToString(reactEl)
+  let str
+  try {
+    str = renderToString(reactEl)
+  } catch (err) {
+    if (options.renderClientOnError) {
+      str = ''
+    } else {
+      console.error('Error ocurred during the rendered execution', err);
+      res.send(500);
+      return
+    }
+  }
   const segments = htmlData.split(`<div id="root">`);
   if (options.onEndReplace) {
     segments[1] = options.onEndReplace(segments[1])
