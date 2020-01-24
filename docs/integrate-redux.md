@@ -50,7 +50,7 @@ const app = createReactAppExpress({
     const finalHtml = html.replace('{{SCRIPT}}', `<script>
       window.__PRELOADED_STATE__ = ${JSON.stringify(state).replace(/</g, '\\u003c')};
     </script>`);
-    return finalHtml;
+    res.send(finalHtml);
   }
 });
 
