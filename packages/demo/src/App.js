@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
-import Helmet from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 
 import './App.css';
 import 'basscss/css/basscss.css';
