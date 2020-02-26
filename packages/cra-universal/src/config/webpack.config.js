@@ -92,7 +92,23 @@ const config = {
         loaders: 'babel-loader',
         options: {
           babelrc: false,
-          extends: babelPath
+          extends: babelPath,
+          plugins: [
+            [
+              require.resolve('babel-plugin-named-asset-import'),
+              {
+                loaderMap: {
+                  svg: {
+                    ReactComponent:
+                      '@svgr/webpack?-svgo,+titleProp,+ref![path]',
+                  },
+                },
+              },
+            ],
+          ],
+          cacheDirectory: true,
+          cacheCompression: false,
+          compact: isProd(true, false),
         }
       },
       {
