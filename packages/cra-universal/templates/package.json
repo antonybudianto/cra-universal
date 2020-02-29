@@ -17,7 +17,7 @@
     "crau:build": "cra-universal build",
     "crau:clean": "cra-universal clean",
     "start:prod": "better-npm-run start:prod",
-    "start": "cra-universal start --both",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
