@@ -1,6 +1,6 @@
 {
   "name": "cra-universal",
-  "version": "4.3.2",
+  "version": "4.4.0",
   "description": "Create React App Universal CLI",
   "main": "src/index.js",
   "files": [
@@ -31,7 +31,9 @@
     "@babel/core": "7.6.0",
     "@babel/register": "7.6.0",
     "@cra-express/core": "^4.3.2",
+    "@svgr/webpack": "5.2.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-named-asset-import": "0.3.6",
     "babel-preset-cra-universal": "^4.3.2",
     "chalk": "^2.4.2",
     "css-loader": "^3.2.0",
@@ -48,9 +50,7 @@
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.8",
     "webpack-node-externals": "^1.7.2",
-    "yargs": "14.0.0",
-    "@svgr/webpack": "5.2.0",
-    "babel-plugin-named-asset-import": "0.3.6"
+    "yargs": "14.0.0"
   },
   "devDependencies": {
     "jest": "^24.9.0"
