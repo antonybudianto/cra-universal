@@ -61,7 +61,7 @@ const config = {
       appbase: resolveCwd('')
     },
     modules: ['node_modules', resolveCwd(nodePath)],
-    extensions: ['.js', '.jsx', '.json']
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
   },
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   entry: './server/index.js',
@@ -88,7 +88,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(j|t)sx?$/,
         loaders: 'babel-loader',
         options: {
           babelrc: false,
@@ -99,16 +99,15 @@ const config = {
               {
                 loaderMap: {
                   svg: {
-                    ReactComponent:
-                      '@svgr/webpack?-svgo,+titleProp,+ref![path]',
-                  },
-                },
-              },
-            ],
+                    ReactComponent: '@svgr/webpack?-svgo,+titleProp,+ref![path]'
+                  }
+                }
+              }
+            ]
           ],
           cacheDirectory: true,
           cacheCompression: false,
-          compact: isProd(true, false),
+          compact: isProd(true, false)
         }
       },
       {
