@@ -50,7 +50,7 @@
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.8",
     "webpack-node-externals": "^1.7.2",
-    "yargs": "14.0.0"
+    "yargs": "15.2.0"
   },
   "devDependencies": {
     "jest": "^24.9.0"
