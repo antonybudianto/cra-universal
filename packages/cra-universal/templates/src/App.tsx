@@ -12,7 +12,7 @@ class App extends Component {
         </div>
         <ReactSVG width={200} height={200} />
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
       </div>
     );
