@@ -24,7 +24,7 @@ Create React App companion for universal app. No eject, zero config with customi
 
 ## Prerequisites
 
-- Node >= 8.6 recommended
+- Node >= 12.16.1 LTS recommended
 - npx is required
 
 ## Installation
