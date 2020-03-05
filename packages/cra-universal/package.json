@@ -29,7 +29,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/core": "7.8.7",
-    "@babel/register": "7.6.0",
+    "@babel/register": "7.8.6",
     "@cra-express/core": "^4.3.2",
     "@svgr/webpack": "5.2.0",
     "babel-loader": "^8.0.6",
