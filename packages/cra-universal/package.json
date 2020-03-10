@@ -41,7 +41,7 @@
     "file-loader": "4.2.0",
     "fs-extra": "8.1.0",
     "has-yarn": "^2.1.0",
-    "inquirer": "^7.0.0",
+    "inquirer": "^7.1.0",
     "isomorphic-style-loader": "^5.1.0",
     "multiview": "^3.0.0",
     "null-loader": "^3.0.0",
