@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "express": "4.17.1",
-    "http-proxy-middleware": "0.20.0"
+    "http-proxy-middleware": "1.0.3"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
