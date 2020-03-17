@@ -38,7 +38,7 @@
     "chalk": "^2.4.2",
     "css-loader": "^3.2.0",
     "del": "^5.1.0",
-    "file-loader": "4.2.0",
+    "file-loader": "6.0.0",
     "fs-extra": "8.1.0",
     "has-yarn": "^2.1.0",
     "inquirer": "^7.0.0",
