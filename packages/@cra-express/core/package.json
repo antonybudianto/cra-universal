@@ -16,7 +16,7 @@
   },
   "peerDependencies": {
     "react": ">=16.13.1",
-    "react-dom": "*"
+    "react-dom": ">=16.13.1"
   },
   "dependencies": {
     "@cra-express/static-loader": "^4.3.2",
