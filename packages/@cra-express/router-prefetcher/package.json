@@ -18,7 +18,7 @@
   "author": "Antony Budianto <antonybudianto@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "react": "*",
+    "react": ">=16.13.1",
     "react-router-dom": "*"
   }
 }
