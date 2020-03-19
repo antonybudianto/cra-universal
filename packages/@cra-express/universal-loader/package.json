@@ -11,7 +11,7 @@
   },
   "peerDependencies": {
     "react": ">=16.13.1",
-    "react-dom": "*"
+    "react-dom": ">=16.13.1"
   },
   "scripts": {
     "build": "babel src -d lib --ignore spec.js",
