@@ -20,7 +20,7 @@
     "react-router-config": "^5.0.1"
   },
   "peerDependencies": {
-    "react": "*",
+    "react": ">=16.13.1",
     "react-router": "*"
   }
 }
