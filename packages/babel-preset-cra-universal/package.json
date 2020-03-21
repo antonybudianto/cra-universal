@@ -24,7 +24,7 @@
     "babel-plugin-transform-react-remove-prop-types": "0.4.24"
   },
   "peerDependencies": {
-    "@babel/core": "7.6.0"
+    "@babel/core": "7.9.0"
   },
   "devDependencies": {
     "@babel/core": "7.9.0"
