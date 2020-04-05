@@ -31,7 +31,7 @@
     "@babel/core": "7.6.0",
     "@babel/register": "7.6.0",
     "@cra-express/core": "^4.3.2",
-    "@svgr/webpack": "5.2.0",
+    "@svgr/webpack": "5.3.1",
     "babel-loader": "^8.0.6",
     "babel-plugin-named-asset-import": "0.3.6",
     "babel-preset-cra-universal": "^4.3.2",
