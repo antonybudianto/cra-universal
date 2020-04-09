@@ -2393,10 +2393,18 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.9.23":
+"@types/react@*":
   version "16.9.23"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.23.tgz#1a66c6d468ba11a8943ad958a8cb3e737568271c"
   integrity sha512-SsGVT4E7L2wLN3tPYLiF20hmZTPGuzaayVunfgXzUn1x4uHVsKH6QDJQ/TdpHqwsTLd4CwrmQ2vOgxN7gE24gw==
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
+
+"@types/react@^16.9.34":
+  version "16.9.34"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.34.tgz#f7d5e331c468f53affed17a8a4d488cd44ea9349"
+  integrity sha512-8AJlYMOfPe1KGLKyHpflCg5z46n0b5DbRfqDksxBLBTUpB75ypDBAO9eCUcjNwE6LCUslwTz00yyG/X9gaVtow==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
@@ -4183,10 +4191,10 @@ cosmiconfig@^6.0.0:
     path-type "^4.0.0"
     yaml "^1.7.2"
 
-cra-universal@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/cra-universal/-/cra-universal-4.4.0.tgz#d7c570a3ff0765fb3b8374097e75717be09fc426"
-  integrity sha512-dJ/16nnYoG8VehrFUBqkUqK1sPm6GIpc2xhsEM8Y5kJZq65SdP6aepMSMQBkEGxYPcIIa+J6JOLEeyJ5zWyaww==
+cra-universal@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/cra-universal/-/cra-universal-4.5.0.tgz#66eb5010143be88a6578a76970b7e0893850038d"
+  integrity sha512-PIFZwRv9Tj+wWI016wtFJvXnmzfy0rG7gO2w/dx7+Lyb+S24T9Yj3MT2bpf1rnfCuTerz0hCi5DVMzh0kbHVUg==
   dependencies:
     "@babel/core" "7.6.0"
     "@babel/register" "7.6.0"
