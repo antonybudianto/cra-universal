@@ -36,7 +36,7 @@
     "babel-plugin-named-asset-import": "0.3.6",
     "babel-preset-cra-universal": "^4.3.2",
     "chalk": "^2.4.2",
-    "css-loader": "^3.2.0",
+    "css-loader": "^3.5.2",
     "del": "^5.1.0",
     "file-loader": "4.2.0",
     "fs-extra": "8.1.0",
