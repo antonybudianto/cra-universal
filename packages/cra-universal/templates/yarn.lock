@@ -2406,10 +2406,10 @@
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
   integrity sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
 
-"@types/webpack-env@1.15.1":
-  version "1.15.1"
-  resolved "https://registry.yarnpkg.com/@types/webpack-env/-/webpack-env-1.15.1.tgz#c8e84705e08eed430b5e15b39c65b0944e4d1422"
-  integrity sha512-eWN5ElDTeBc5lRDh95SqA8x18D0ll2pWudU3uWiyfsRmIZcmUXpEsxPU+7+BsdCrO2vfLRC629u/MmjbmF+2tA==
+"@types/webpack-env@1.15.2":
+  version "1.15.2"
+  resolved "https://registry.yarnpkg.com/@types/webpack-env/-/webpack-env-1.15.2.tgz#927997342bb9f4a5185a86e6579a0a18afc33b0a"
+  integrity sha512-67ZgZpAlhIICIdfQrB5fnDvaKFcDxpKibxznfYRVAT4mQE41Dido/3Ty+E3xGBmTogc5+0Qb8tWhna+5B8z1iQ==
 
 "@types/yargs-parser@*":
   version "13.0.0"
@@ -4183,10 +4183,10 @@ cosmiconfig@^6.0.0:
     path-type "^4.0.0"
     yaml "^1.7.2"
 
-cra-universal@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/cra-universal/-/cra-universal-4.4.0.tgz#d7c570a3ff0765fb3b8374097e75717be09fc426"
-  integrity sha512-dJ/16nnYoG8VehrFUBqkUqK1sPm6GIpc2xhsEM8Y5kJZq65SdP6aepMSMQBkEGxYPcIIa+J6JOLEeyJ5zWyaww==
+cra-universal@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/cra-universal/-/cra-universal-4.5.0.tgz#66eb5010143be88a6578a76970b7e0893850038d"
+  integrity sha512-PIFZwRv9Tj+wWI016wtFJvXnmzfy0rG7gO2w/dx7+Lyb+S24T9Yj3MT2bpf1rnfCuTerz0hCi5DVMzh0kbHVUg==
   dependencies:
     "@babel/core" "7.6.0"
     "@babel/register" "7.6.0"
