@@ -2386,10 +2386,10 @@
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
   integrity sha512-ce5d3q03Ex0sy4R14722Rmt6MT07Ua+k4FwDfdcToYJcMKNtRVQvJ6JCAPdAmAnbRb6CsX6aYb9m96NGod9uTw==
 
-"@types/react-dom@^16.9.5":
-  version "16.9.5"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.9.5.tgz#5de610b04a35d07ffd8f44edad93a71032d9aaa7"
-  integrity sha512-BX6RQ8s9D+2/gDhxrj8OW+YD4R+8hj7FEM/OJHGNR0KipE1h1mSsf39YeyC81qafkq+N3rU3h3RFbLSwE5VqUg==
+"@types/react-dom@^16.9.7":
+  version "16.9.7"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.9.7.tgz#60844d48ce252d7b2dccf0c7bb937130e27c0cd2"
+  integrity sha512-GHTYhM8/OwUCf254WO5xqR/aqD3gC9kSTLpopWGpQLpnw23jk44RvMHsyUSEplvRJZdHxhJGMMLF0kCPYHPhQA==
   dependencies:
     "@types/react" "*"
 
@@ -4183,10 +4183,10 @@ cosmiconfig@^6.0.0:
     path-type "^4.0.0"
     yaml "^1.7.2"
 
-cra-universal@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/cra-universal/-/cra-universal-4.4.0.tgz#d7c570a3ff0765fb3b8374097e75717be09fc426"
-  integrity sha512-dJ/16nnYoG8VehrFUBqkUqK1sPm6GIpc2xhsEM8Y5kJZq65SdP6aepMSMQBkEGxYPcIIa+J6JOLEeyJ5zWyaww==
+cra-universal@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/cra-universal/-/cra-universal-4.5.0.tgz#66eb5010143be88a6578a76970b7e0893850038d"
+  integrity sha512-PIFZwRv9Tj+wWI016wtFJvXnmzfy0rG7gO2w/dx7+Lyb+S24T9Yj3MT2bpf1rnfCuTerz0hCi5DVMzh0kbHVUg==
   dependencies:
     "@babel/core" "7.6.0"
     "@babel/register" "7.6.0"
