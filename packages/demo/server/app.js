@@ -13,7 +13,7 @@ const { createStore, applyMiddleware } = require('redux');
 const { default: App } = require('../src/App');
 const { default: reducer } = require('../src/reducers');
 const clientBuildPath = path.resolve(__dirname, '../client');
-let tag = '';
+
 let store;
 let AppClass = App;
 let serverData;
@@ -22,29 +22,27 @@ const app = createReactAppExpress({
   clientBuildPath,
   universalRender: handleUniversalRender,
   onFinish(req, res, html) {
+    const state = store.getState();
     const { helmet } = helmetCtx;
     const helmetTitle = helmet.title.toString();
     const helmetMeta = helmet.meta.toString();
     const newHtml = html
-      .replace('{{HELMET_TITLE}}', helmetTitle)
-      .replace('{{HELMET_META}}', helmetMeta);
+      .replace(' <script class="helmet-title"></script>', helmetTitle)
+      .replace(' <script class="helmet-meta"></script>', helmetMeta)
+      .replace(
+        '<script class="initial-data"></script>',
+        `<script>
+          window.__PRELOADED_STATE__ = ${JSON.stringify(state).replace(
+            /</g,
+            '\\u003c'
+          )};
+          window.__INITIAL_DATA__ = ${JSON.stringify(serverData).replace(
+            /</g,
+            '\\u003c'
+          )};
+        </script>`);
+
     res.send(newHtml);
-  },
-  onEndReplace(html) {
-    const state = store.getState();
-    return html.replace(
-      '{{SCRIPT}}',
-      `${tag}<script>
-      window.__PRELOADED_STATE__ = ${JSON.stringify(state).replace(
-        /</g,
-        '\\u003c'
-      )};
-      window.__INITIAL_DATA__ = ${JSON.stringify(serverData).replace(
-        /</g,
-        '\\u003c'
-      )};
-    </script>`
-    );
   }
 });
 
