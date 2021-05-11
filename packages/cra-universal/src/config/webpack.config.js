@@ -2,6 +2,7 @@ const fs = require('fs');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
 const StartServerPlugin = require('start-server-webpack-plugin');
+const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent')
 const { resolveCwd, resolveDir, pcwd } = require('../util/path');
 const { log } = require('../util/log');
 
@@ -123,7 +124,12 @@ const config = {
         use: [
           'isomorphic-style-loader',
           {
-            loader: 'css-loader'
+            loader: 'css-loader',
+            options: {
+              modules: {
+                getLocalIdent: getCSSModuleLocalIdent
+              }
+            },
           }
         ]
       },
