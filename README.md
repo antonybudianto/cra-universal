@@ -2,7 +2,7 @@
 
 ### Create React App Universal CLI
 
-[![Financial Contributors on Open Collective](https://opencollective.com/cra-universal/all/badge.svg?label=financial+contributors)](https://opencollective.com/cra-universal) [![npm version](https://badge.fury.io/js/cra-universal.svg)](https://badge.fury.io/js/cra-universal))
+[![Financial Contributors on Open Collective](https://opencollective.com/cra-universal/all/badge.svg?label=financial+contributors)](https://opencollective.com/cra-universal) [![npm version](https://badge.fury.io/js/cra-universal.svg)](https://badge.fury.io/js/cra-universal)
 
 <p align="center">
 <img width="500" height="350" alt="zero" src="https://user-images.githubusercontent.com/7658554/42420108-261a1c5a-82eb-11e8-8ac0-ce2e0245e0ff.png">
@@ -50,7 +50,7 @@ yarn add -D cra-universal
 # Install peer dependency
 yarn add @cra-express/core express@4.18.1
 
-# init
+# init custom server (optional)
 yarn run cra-universal init
 
 #This will copy ./templates/server into the current directory (it should be run on CRA client root)
