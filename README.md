@@ -10,7 +10,7 @@
 
 Create React App companion for universal app. No eject, zero config with customization, supports string and node stream API
 
-> [Live Demo](https://cra-universal.now.sh/) | [Official Doc](https://antonybudianto.github.io/cra-universal)
+> [Live Demo](https://codesandbox.io/s/cra-universal-demo-9wnwb7) | [Official Doc](https://antonybudianto.github.io/cra-universal)
 
 ## Features
 
