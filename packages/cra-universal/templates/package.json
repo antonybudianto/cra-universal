@@ -27,15 +27,14 @@
     "crau:start": "cra-universal start",
     "crau:build": "cra-universal build",
     "crau:clean": "cra-universal clean",
-    "start:prod": "better-npm-run start:prod",
+    "serve": "better-npm-run serve",
     "start": "BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "serve": "npm run start:prod"
+    "eject": "react-scripts eject"
   },
   "betterScripts": {
-    "start:prod": {
+    "serve": {
       "command": "node ./server/bundle",
       "env": {
         "NODE_ENV": "production"

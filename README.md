@@ -2,8 +2,7 @@
 
 ### Create React App Universal CLI
 
-[![Financial Contributors on Open Collective](https://opencollective.com/cra-universal/all/badge.svg?label=financial+contributors)](https://opencollective.com/cra-universal) [![npm version](https://badge.fury.io/js/cra-universal.svg)](https://badge.fury.io/js/cra-universal)
-[![Build Status](https://travis-ci.org/antonybudianto/cra-universal.svg?branch=master)](https://travis-ci.org/antonybudianto/cra-universal) [![Greenkeeper badge](https://badges.greenkeeper.io/antonybudianto/cra-universal.svg)](https://greenkeeper.io/)
+[![Financial Contributors on Open Collective](https://opencollective.com/cra-universal/all/badge.svg?label=financial+contributors)](https://opencollective.com/cra-universal) [![npm version](https://badge.fury.io/js/cra-universal.svg)](https://badge.fury.io/js/cra-universal))
 
 <p align="center">
 <img width="500" height="350" alt="zero" src="https://user-images.githubusercontent.com/7658554/42420108-261a1c5a-82eb-11e8-8ac0-ce2e0245e0ff.png">
@@ -64,10 +63,11 @@ Please update your render method on `src/index.js`
 
 ```js
 // before
-ReactDOM.render(...)
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
 
 // after
-ReactDOM.hydrate(...)
+ReactDOM.hydrateRoot(document.getElementById('root'), <App />);
 ```
 
 ## Development
@@ -89,7 +89,7 @@ npx cra-universal build
 # This command will build both client and server and put them into `./dist`
 # Run locally:
 # $ cd dist && npm i
-# $ npm run start:prod
+# $ npm run serve
 ```
 
 ## Deployment
