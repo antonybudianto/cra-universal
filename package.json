@@ -3,7 +3,7 @@
   "description": "CRA Universal Monorepo",
   "private": true,
   "scripts": {
-    "test": "pnpm run test:ci",
+    "test": "pnpm run test:ci --filter=@cra-express/*",
     "bs": "pnpm recursive install && npm run build:lib",
     "bootstrap": "pnpm recursive install",
     "ls": "pnpm -r --filter=!cra-universal-monorepo exec pwd",

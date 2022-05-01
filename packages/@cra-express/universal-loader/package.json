@@ -13,6 +13,9 @@
     "react": "*",
     "react-dom": "*"
   },
+  "devDependencies": {
+    "@jest-mock/express": "1.4.5"
+  },
   "scripts": {
     "build": "babel src -d lib --ignore spec.js",
     "watch": "babel src -d lib --watch --ignore spec.js",
