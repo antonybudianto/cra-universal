@@ -1,19 +1,23 @@
-# @cra-express/redux-prefetcher
+# @cra-express/redux-prefetcher (deprecated)
 
+> DEPRECATED! No support/PR accepted for this package anymore.
 > Alpha stage, API may change, don't use on production yet!
 > Simple utility to map your routes and prefetch your data on server using Redux as store
 
 ## Prerequisites
+
 - Redux
 - React Router with array config
 - Promise support
 
 ## Start
+
 ```
 npm i @cra-express/redux-prefetcher
 ```
 
 ## Use
+
 ```js
 // server.js
 import { getInitialData } from '@cra-express/redux-prefetcher'
@@ -34,38 +38,37 @@ function handleUniversalRender (req, res) {
 
 ```js
 // MyView.js
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import { fetchTodo } from './my-todo-reducer'
+import { fetchTodo } from './my-todo-reducer';
 
 class MyView extends Component {
   static loadData({ ctx, store, match }) {
     // ctx is object containing express req and res objects
     // store is redux store
     // match is router match information, you can get params here
-    return store.dispatch(fetchTodo())
+    return store.dispatch(fetchTodo());
   }
 
   render() {
     return (
       <ul>
-        {
-          this.props.todo.data.map((t, i) => (
-            <li key={i}>{t}</li>
-          ))
-        }
+        {this.props.todo.data.map((t, i) => (
+          <li key={i}>{t}</li>
+        ))}
       </ul>
-    )
+    );
   }
 }
 
-const mapStateToProps = state => ({
-  todo: state.todo
-})
+const mapStateToProps = (state) => ({
+  todo: state.todo,
+});
 
-export default connect(mapStateToProps)(MyView)
+export default connect(mapStateToProps)(MyView);
 ```
 
 ## License
+
 MIT

@@ -1,6 +1,6 @@
 {
   "name": "@cra-express/router-prefetcher",
-  "version": "4.3.2",
+  "version": "5.0.1",
   "description": "Router Prefetcher for prefetching on server",
   "main": "lib/index.js",
   "files": [
@@ -13,7 +13,7 @@
     "build": "babel src -d lib --ignore spec.js",
     "watch": "babel src -d lib --watch --ignore spec.js",
     "test": "jest --watch --config=jest-config.json",
-    "test:ci": "jest --config=jest-config.json --coverage"
+    "test:ci1": "jest --config=jest-config.json --coverage"
   },
   "author": "Antony Budianto <antonybudianto@gmail.com>",
   "license": "MIT",

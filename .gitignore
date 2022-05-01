@@ -1,8 +1,8 @@
 node_modules
 coverage
 lib
-lerna-debug.log
-yarn-error.log
+pnpm-lock.yaml
+.pnpm-debug.log
 
 .DS_Store
 

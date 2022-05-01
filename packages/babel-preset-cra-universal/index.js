@@ -3,7 +3,7 @@
 var preset = {
   presets: [
     [require.resolve('@babel/preset-env'), { modules: false }],
-    require.resolve('@babel/preset-react')
+    [require.resolve('@babel/preset-react'), { runtime: 'automatic' }],
   ],
   plugins: [
     // class { handleThing = () => { } }
@@ -15,12 +15,12 @@ var preset = {
     [
       require.resolve('@babel/plugin-proposal-object-rest-spread'),
       {
-        useBuiltIns: true
-      }
+        useBuiltIns: true,
+      },
     ],
     // Adds syntax support for import()
-    require.resolve('@babel/plugin-syntax-dynamic-import')
-  ]
+    require.resolve('@babel/plugin-syntax-dynamic-import'),
+  ],
 };
 
 var env = process.env.BABEL_ENV || process.env.NODE_ENV;
@@ -37,7 +37,7 @@ if (env !== 'development' && env !== 'test' && env !== 'production') {
 if (env === 'development' || env === 'test') {
   preset.plugins.push.apply(preset.plugins, [
     // Adds component stack to warning messages
-    require.resolve('@babel/plugin-transform-react-jsx-source')
+    require.resolve('@babel/plugin-transform-react-jsx-source'),
   ]);
 }
 
@@ -48,19 +48,19 @@ if (env === 'test') {
     // Transform ES modules to commonjs for Jest support
     [
       require.resolve('@babel/plugin-transform-modules-commonjs'),
-      { loose: true }
-    ]
+      { loose: true },
+    ],
   ]);
 }
 
 if (env === 'production') {
   preset.plugins.push.apply(preset.plugins, [
-    require.resolve('babel-plugin-transform-react-remove-prop-types')
+    require.resolve('babel-plugin-transform-react-remove-prop-types'),
   ]);
 }
 
-module.exports = function() {
+module.exports = function () {
   return {
-    presets: [preset]
+    presets: [preset],
   };
 };

@@ -1,6 +1,6 @@
 {
   "name": "@cra-express/universal-loader",
-  "version": "4.3.2",
+  "version": "5.0.1",
   "description": "Universal loader",
   "main": "lib/index.js",
   "files": [
@@ -12,6 +12,9 @@
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
+  },
+  "devDependencies": {
+    "@jest-mock/express": "1.4.5"
   },
   "scripts": {
     "build": "babel src -d lib --ignore spec.js",

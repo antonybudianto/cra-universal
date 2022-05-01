@@ -14,15 +14,15 @@ const npm = isWindows ? 'npm.cmd' : 'npm';
 const hasYarnFlag = hasYarn(path.resolve(process.cwd()));
 const command = hasYarnFlag ? 'yarn' : npm;
 const args = hasYarnFlag
-  ? ['add', '@cra-express/core@4']
-  : ['i', '-S', '@cra-express/core@4'];
+  ? ['add', '@cra-express/core@5 express@4']
+  : ['i', '-S', '@cra-express/core@5 express@4'];
 
 function installDep() {
   log(
     `Installing required dependencies using ${hasYarnFlag ? 'yarn' : 'npm'}...`
   );
   const result = spawnSync(command, args, {
-    stdio: 'inherit'
+    stdio: 'inherit',
   });
   if (result.status !== 0) {
     throw 'Error installing dependencies.';

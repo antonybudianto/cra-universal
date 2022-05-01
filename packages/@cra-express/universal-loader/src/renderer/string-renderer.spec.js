@@ -14,14 +14,14 @@ test('should render without options correctly', () => {
 
   const req = {};
   const res = {
-    send: jest.fn()
+    send: jest.fn(),
   };
 
   stringRenderer(req, res, element, htmlData, {});
   expect(res.send).toHaveBeenCalledWith(`
   <html>
     <body>
-      <div id=\"root\"><div data-reactroot=\"\">Hello</div></div>
+      <div id=\"root\"><div>Hello</div></div>
     </body>
   </html>
   `);
@@ -41,7 +41,7 @@ test('should render correctly with onFinish', () => {
 
   const req = {};
   const res = {
-    send: jest.fn()
+    send: jest.fn(),
   };
 
   stringRenderer(req, res, el, htmlData, {
@@ -51,12 +51,12 @@ test('should render correctly with onFinish', () => {
         '<script>window.hello=1</script>'
       );
       res1.send(finalHtml);
-    }
+    },
   });
   expect(res.send).toHaveBeenCalledWith(`
   <html>
     <body>
-      <div id=\"root\"><div data-reactroot=\"\">Hello</div></div>
+      <div id=\"root\"><div>Hello</div></div>
       <script>window.hello=1</script>
     </body>
   </html>
@@ -77,21 +77,21 @@ test('should render correctly with onEndReplace', () => {
 
   const req = {};
   const res = {
-    send: jest.fn()
+    send: jest.fn(),
   };
 
   stringRenderer(req, res, el, htmlData, {
-    onEndReplace: data => {
+    onEndReplace: (data) => {
       return data.replace(
         '<div id="script"></div>',
         '<script>window.hello=1</script>'
       );
-    }
+    },
   });
   expect(res.send).toHaveBeenCalledWith(`
   <html>
     <body>
-      <div id=\"root\"><div data-reactroot=\"\">Hello</div></div>
+      <div id=\"root\"><div>Hello</div></div>
       <script>window.hello=1</script>
     </body>
   </html>
@@ -108,18 +108,17 @@ test('should return 500 when the render is failed', () => {
   </html>
   `;
 
-  const el = <div>{(new Error('Error thrown'))}</div>;
+  const el = <div>{new Error('Error thrown')}</div>;
 
   const req = {};
   const res = {
-    send: jest.fn()
+    send: jest.fn(),
   };
 
   stringRenderer(req, res, el, htmlData, {});
 
   expect(res.send).toHaveBeenCalledWith(500);
 });
-
 
 test('should render the client app when the render is failed and the renderClientOnError flag is set', () => {
   const htmlData = `
@@ -131,11 +130,11 @@ test('should render the client app when the render is failed and the renderClien
   </html>
   `;
 
-  const el = <div>{(new Error('Error thrown'))}</div>;
+  const el = <div>{new Error('Error thrown')}</div>;
 
   const req = {};
   const res = {
-    send: jest.fn()
+    send: jest.fn(),
   };
 
   stringRenderer(req, res, el, htmlData, { renderClientOnError: true });
