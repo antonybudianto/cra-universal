@@ -1,6 +1,6 @@
 {
   "name": "@cra-express/core",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Core module for cra-universal server",
   "main": "lib/index.js",
   "files": [

@@ -1,6 +1,6 @@
 {
   "name": "@cra-express/static-loader",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Static loader",
   "main": "lib/index.js",
   "files": [
@@ -19,10 +19,9 @@
   "peerDependencies": {
     "express": "^4"
   },
-  "devDependencies": {
-    "http-proxy-middleware": "0.20.0"
-  },
+  "devDependencies": {},
   "dependencies": {
+    "http-proxy-middleware": "0.20.0",
     "compression": "^1.7.4"
   }
 }
