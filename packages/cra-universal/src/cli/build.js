@@ -25,7 +25,7 @@ function cleanBuild(done) {
 function buildClient() {
   log('Building CRA client...');
   const clientBuildResult = spawnSync(npm, ['run', 'build'], {
-    stdio: 'inherit'
+    stdio: 'inherit',
   });
   if (clientBuildResult.status !== 0) {
     throw 'Error building CRA client.';
@@ -58,7 +58,7 @@ function buildServer(cb) {
     console.log(
       stats.toString({
         modules: false,
-        colors: true // Shows colors in the console
+        colors: true, // Shows colors in the console
       })
     );
     log('Done building CRA server!');
@@ -97,11 +97,13 @@ function wireBundle() {
       - *.chunk.js -> Other chunk(s) files if you use code splitting
     - package.json -> Your production dependencies
 
-   - Now you can upload ${chalk.bgGreen('dist')} into your hosting server
-   - After that, you can run ${chalk.bgGreen(
+   1. Now you can upload ${chalk.bgGreen('dist')} into your hosting server
+   2. After that, you can run ${chalk.bgGreen(
      'npm install --production'
    )} inside ${chalk.bgGreen('dist/')}
-   - Finally you can bootup your server using your favorite Node process manager.`);
+   3. Finally you can boot-up your server using your favorite Node process manager:
+      - $ node server/bundle.js
+      - $ pm2 start server/bundle.js`);
 }
 
 try {

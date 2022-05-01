@@ -3,29 +3,21 @@
   "description": "CRA Universal Monorepo",
   "private": true,
   "scripts": {
-    "build": "lerna run build",
-    "crau:build": "lerna run crau:build",
-    "test": "lerna run test:ci",
-    "watch": "lerna run --parallel watch",
-    "bootstrap": "lerna bootstrap",
-    "clean": "lerna clean",
-    "clean:build": "lerna exec -- rimraf lib",
-    "build:lib": "npm run build -- --ignore={cra-universal-demo,cra-template}",
+    "test": "pnpm run test:ci",
+    "bs": "pnpm recursive install && npm run build:lib",
+    "bootstrap": "pnpm recursive install",
+    "ls": "pnpm -r --filter=!cra-universal-monorepo exec pwd",
+    "clean": "npm run clean2 && npm run clean:lib && rimraf node_modules",
+    "clean2": "pnpm -r --filter=!cra-universal-monorepo exec rimraf node_modules",
+    "clean:lib": "pnpm -r --filter=@cra-express/* exec rimraf lib",
+    "build:lib": "pnpm run build --filter=@cra-express/*",
     "prerelease": "npm run build:lib",
-    "release": "lerna publish",
-    "ls": "lerna ls",
-    "release:next": "npm run release -- --npm-tag=next",
-    "exec:rp": "lerna exec --scope @cra-express/redux-prefetcher --",
-    "exec:rr": "lerna exec --scope @cra-express/router-prefetcher --",
-    "exec:ul": "lerna exec --scope @cra-express/universal-loader --",
+    "release": "pnpm -r --filter=@cra-express/* --filter=cra-universal --filter=babel-preset-cra-universal exec npm publish",
+    "release:beta": "npm run release -- --npm-tag=beta",
     "ul:test": "npm run exec:ul -- npm t --",
-    "temp:exec": "lerna exec --scope cra-template --",
-    "temp:start:client": "lerna exec --scope cra-template -- npm start",
-    "temp:start:server": "lerna exec --scope cra-template -- yarn crau:start",
-    "temp:build": "lerna exec --scope cra-template -- yarn crau:build",
-    "demo:start:client": "lerna exec --scope cra-universal-demo -- npm start",
-    "demo:start:server": "lerna exec --scope cra-universal-demo -- yarn crau:start",
-    "demo:build": "lerna exec --scope cra-universal-demo -- yarn crau:build"
+    "temp:start:client": "pnpm run start --filter=cra-template",
+    "temp:start:server": "pnpm run crau:start --filter=cra-template",
+    "temp:build": "pnpm run crau:build --filter=cra-template"
   },
   "repository": {
     "type": "git",
@@ -43,17 +35,12 @@
     "url": "https://github.com/antonybudianto/cra-universal/issues"
   },
   "homepage": "https://github.com/antonybudianto/cra-universal#readme",
-  "resolutions": {
-    "babel-core": "7.0.0-bridge.0"
-  },
   "devDependencies": {
-    "@babel/cli": "7.6.0",
-    "@babel/core": "7.6.0",
-    "@babel/preset-env": "7.6.0",
-    "@babel/preset-react": "7.0.0",
-    "babel-core": "7.0.0-bridge.0",
+    "@babel/cli": "7.17.10",
+    "@babel/core": "7.17.10",
+    "@babel/preset-env": "7.17.10",
+    "@babel/preset-react": "7.16.7",
     "jest": "24.9.0",
-    "lerna": "3.16.4",
     "rimraf": "^3.0.0"
   }
 }

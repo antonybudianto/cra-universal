@@ -1,14 +1,15 @@
 const path = require('path');
 const fs = require('fs');
 const http = require('http');
-const stringRenderer = require('./renderer/string-renderer').default;
+// const stringRenderer = require('./renderer/string-renderer').default;
+const pipeStreamRenderer = require('./renderer/pipe-stream-renderer').default;
 
 const craServiceName = process.env.CRA_SERVICE_NAME || 'localhost';
 const craClientPort = process.env.CRA_CLIENT_PORT || 3000;
 const defaultHtmlFilename = 'index.html';
 
 function resolveHtmlFilenameByRequest(req, options) {
-  if(!options.resolveHtmlFilenameByRequest) {
+  if (!options.resolveHtmlFilenameByRequest) {
     return defaultHtmlFilename;
   }
 
@@ -16,18 +17,25 @@ function resolveHtmlFilenameByRequest(req, options) {
 }
 
 function handleDevMode(req, res, options) {
-  var url = `http://${craServiceName}:${craClientPort}/${resolveHtmlFilenameByRequest(req, options)}`;
-  http.get(url, function (result) {
-    result.setEncoding('utf8');
-    let htmlData = '';
-    result.on('data', (chunk) => { htmlData += chunk; });
-    result.on('end', () => {
-      processRequest(req, res, htmlData, options);
+  var url = `http://${craServiceName}:${craClientPort}/${resolveHtmlFilenameByRequest(
+    req,
+    options
+  )}`;
+  http
+    .get(url, function (result) {
+      result.setEncoding('utf8');
+      let htmlData = '';
+      result.on('data', (chunk) => {
+        htmlData += chunk;
+      });
+      result.on('end', () => {
+        processRequest(req, res, htmlData, options);
+      });
+    })
+    .on('error', function (e) {
+      console.error(e.message);
+      return res.status(404).end();
     });
-  }).on('error', function(e) {
-    console.error(e.message);
-    return res.status(404).end();
-  });
 }
 
 function createUniversalMiddleware(options) {
@@ -39,7 +47,10 @@ function createUniversalMiddleware(options) {
       return;
     }
 
-    const filePath = path.resolve(clientBuildPath, resolveHtmlFilenameByRequest(req, options));
+    const filePath = path.resolve(
+      clientBuildPath,
+      resolveHtmlFilenameByRequest(req, options)
+    );
 
     fs.readFile(filePath, 'utf8', (err, htmlData) => {
       if (err) {
@@ -55,7 +66,7 @@ function createUniversalMiddleware(options) {
 }
 
 function processRequest(req, res, htmlData, options) {
-  const { universalRender, handleRender = stringRenderer } = options
+  const { universalRender, handleRender = pipeStreamRenderer } = options;
   const data = universalRender(req, res);
 
   if (data === undefined) {

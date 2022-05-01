@@ -11,11 +11,11 @@ function cleanBuild() {
   });
 }
 
-module.exports = argv => {
+module.exports = (argv) => {
   if (argv.both) {
     log('Running both CRA client and server...');
     const mv = require('multiview')({
-      efficient: true
+      efficient: true,
     });
     mv.spawn('npx', ['cra-universal', 'start']);
     mv.spawn('npx', ['react-scripts', 'start']);
@@ -46,7 +46,7 @@ module.exports = argv => {
       console.log(
         stats.toString({
           modules: false,
-          colors: true // Shows colors in the console
+          colors: true, // Shows colors in the console
         })
       );
     });

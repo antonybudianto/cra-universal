@@ -1,7 +1,7 @@
 {
   "name": "@cra-express/core",
-  "version": "4.3.2",
-  "description": "",
+  "version": "5.0.0",
+  "description": "Core module for cra-universal server",
   "main": "lib/index.js",
   "files": [
     "lib"
@@ -16,12 +16,12 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-dom": "*"
+    "react-dom": "*",
+    "express": "^4.18.1"
   },
   "dependencies": {
-    "@cra-express/static-loader": "^4.3.2",
-    "@cra-express/universal-loader": "^4.3.2",
-    "express": "4.17.1"
+    "@cra-express/static-loader": "^5",
+    "@cra-express/universal-loader": "^5"
   },
   "author": "Antony Budianto <antonybudianto@gmail.com>",
   "license": "MIT"

@@ -1,4 +1,5 @@
 # cra-universal
+
 ### Create React App Universal CLI
 
 [![Financial Contributors on Open Collective](https://opencollective.com/cra-universal/all/badge.svg?label=financial+contributors)](https://opencollective.com/cra-universal) [![npm version](https://badge.fury.io/js/cra-universal.svg)](https://badge.fury.io/js/cra-universal)
@@ -8,23 +9,22 @@
 <img width="500" height="350" alt="zero" src="https://user-images.githubusercontent.com/7658554/42420108-261a1c5a-82eb-11e8-8ac0-ce2e0245e0ff.png">
 </p>
 
-
 Create React App companion for universal app. No eject, zero config with customization, supports string and node stream API
 
 > [Live Demo](https://cra-universal.now.sh/) | [Official Doc](https://antonybudianto.github.io/cra-universal)
 
 ## Features
 
-* **No [eject](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-run-eject)** needed!
-* **Zero config** by default and **customizable**
-* **Server-side rendering** for your SEO
-* **Code-splitting** that works universally
-* The core middleware is fully **unit-tested**
-* Works alongside `react-scripts`, not as replacement
+- **No [eject](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-run-eject)** needed!
+- **Zero config** by default and **customizable**
+- **Server-side rendering** for your SEO
+- **Code-splitting** that works universally
+- The core middleware is fully **unit-tested**
+- Works alongside `react-scripts`, not as replacement
 
 ## Prerequisites
 
-- Node >= 12.16.1 LTS recommended
+- Node >= 14.17.5 LTS recommended
 - npx is required
 
 ## Installation
@@ -38,8 +38,9 @@ cd myapp
 yarn add -D cra-universal
 
 # Install peer dependency
-yarn add @cra-express/core
+yarn add @cra-express/core express@4.18.1
 ```
+
 ## Existing Projects
 
 ```sh
@@ -48,7 +49,7 @@ yarn add @cra-express/core
 yarn add -D cra-universal
 
 # Install peer dependency
-yarn add @cra-express/core
+yarn add @cra-express/core express@4.18.1
 
 # init
 yarn run cra-universal init
@@ -87,8 +88,8 @@ npx cra-universal build
 
 # This command will build both client and server and put them into `./dist`
 # Run locally:
-# $ node --preserve-symlinks dist/server/bundle.js
-# You only need `--preserve-symlinks` on local, since we only do symlinks on development.
+# $ cd dist && npm i
+# $ npm run start:prod
 ```
 
 ## Deployment
@@ -99,8 +100,8 @@ npx cra-universal build
 
 ## Credit
 
-* Create React App https://github.com/facebook/create-react-app
-* Thanks for https://github.com/ayroblu/ssr-create-react-app-v2 for the base!
+- Create React App https://github.com/facebook/create-react-app
+- Thanks for https://github.com/ayroblu/ssr-create-react-app-v2 for the base!
 
 ## Support
 

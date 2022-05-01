@@ -1,7 +1,8 @@
 const fs = require('fs');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
-const StartServerPlugin = require('start-server-webpack-plugin');
+const { RunScriptWebpackPlugin } = require('run-script-webpack-plugin');
+
 const { resolveCwd, resolveDir, pcwd } = require('../util/path');
 const { log } = require('../util/log');
 
@@ -26,7 +27,7 @@ log(`NODE_ENV is "${process.env.NODE_ENV}"`);
  * crau.config.js loader
  */
 let crauDefaultConfig = {
-  webpackPlugins: []
+  webpackPlugins: [],
 };
 let crauConfig = crauDefaultConfig;
 const crauPath = resolveCwd('crau.config.js');
@@ -48,20 +49,29 @@ if (fs.existsSync(resolveCwd('./server'))) {
 /**
  * Load 3rd party config
  */
-const babelPath = loadConfigOnBase('./server/.babelrc');
 const nodePath = process.env.NODE_PATH || 'src';
 
 const config = {
   context: ctx,
   resolveLoader: {
-    modules: [resolveDir('../../node_modules'), 'node_modules']
+    modules: [
+      'node_modules',
+      resolveDir('../../node_modules'),
+      resolveDir('../../../../../node_modules'),
+      resolveCwd('node_modules'),
+    ],
   },
   resolve: {
     alias: {
-      appbase: resolveCwd('')
+      appbase: resolveCwd(''),
     },
-    modules: ['node_modules', resolveCwd(nodePath)],
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
+    modules: [
+      'node_modules',
+      resolveDir('../../node_modules'),
+      resolveDir('../../../../../node_modules'),
+      resolveCwd('node_modules'),
+    ],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
   },
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   entry: './server/index.js',
@@ -70,82 +80,98 @@ const config = {
     filename: 'bundle.js',
     hotUpdateChunkFilename: '.hot/[id].[hash].hot-update.js',
     hotUpdateMainFilename: '.hot/[hash].hot-update.json',
-    chunkFilename: isProd('[id].[hash].chunk.js', '[id].chunk.js')
+    chunkFilename: isProd('[id].[hash].chunk.js', '[id].chunk.js'),
   },
   target: 'node',
-  externals: [
-    nodeExternals({
-      whitelist: [/\.(?!(?:jsx?|json)$).{1,5}$/i]
-    })
-  ],
+  externalsPresets: { node: true }, // in order to ignore built-in modules like path, fs, etc.
+  externals: [nodeExternals()],
   watchOptions: {
     ignored: /node_modules/,
-    aggregateTimeout: 300
+    aggregateTimeout: 300,
   },
   node: {
-    __dirname: false
+    __dirname: false,
   },
   module: {
     rules: [
+      /**
+       * svg CRA reference:
+       * https://github.com/facebook/create-react-app/blob/v5.0.1/packages/react-scripts/config/webpack.config.js#L389
+       */
       {
-        test: /\.(j|t)sx?$/,
-        loaders: 'babel-loader',
-        options: {
-          babelrc: false,
-          extends: babelPath,
-          plugins: [
-            [
-              require.resolve('babel-plugin-named-asset-import'),
-              {
-                loaderMap: {
-                  svg: {
-                    ReactComponent: '@svgr/webpack?-svgo,+titleProp,+ref![path]'
-                  }
-                }
-              }
-            ]
-          ],
-          cacheDirectory: true,
-          cacheCompression: false,
-          compact: isProd(true, false)
-        }
+        test: /\.svg$/,
+        use: [
+          {
+            loader: require.resolve('@svgr/webpack'),
+            options: {
+              prettier: false,
+              svgo: false,
+              svgoConfig: {
+                plugins: [{ removeViewBox: false }],
+              },
+              titleProp: true,
+              ref: true,
+            },
+          },
+          {
+            loader: require.resolve('file-loader'),
+            options: {
+              name: 'static/media/[name].[hash].[ext]',
+            },
+          },
+        ],
+        issuer: {
+          and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
+        },
       },
       {
-        test: /\.(png|jpe?g|gif|bmp|svg)?$/,
-        loaders: 'url-loader',
+        test: /\.(j|t)sx?$/,
+        loader: 'babel-loader',
+        options: {
+          babelrc: false,
+          presets: [require.resolve('babel-preset-cra-universal')],
+          cacheDirectory: true,
+          cacheCompression: false,
+          compact: isProd(true, false),
+        },
+      },
+      {
+        test: /\.(png|jpe?g|gif|bmp)?$/,
+        loader: 'url-loader',
         options: {
           limit: 10000,
-          name: '/static/media/[name].[hash:8].[ext]'
-        }
+          name: '/static/media/[name].[hash:8].[ext]',
+        },
       },
       {
         test: /\.css$/,
         use: [
           'isomorphic-style-loader',
           {
-            loader: 'css-loader'
-          }
-        ]
+            loader: 'css-loader',
+          },
+        ],
       },
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        loaders: 'null-loader'
-      }
-    ]
+        loader: 'null-loader',
+      },
+    ],
   },
   plugins: [
     ...isProd(
       [],
       [
         new webpack.HotModuleReplacementPlugin({}),
-        new StartServerPlugin({
-          nodeArgs: ['--preserve-symlinks'],
-          bundleName: 'bundle.js'
-        })
+        new RunScriptWebpackPlugin({
+          name: 'bundle.js',
+          // nodeArgs: ['--preserve-symlinks'],
+          cwd: pcwd,
+        }),
       ]
     ),
-    ...crauConfig.webpackPlugins
-  ]
+    ...crauConfig.webpackPlugins,
+  ],
 };
 
 let finalConfig = config;
