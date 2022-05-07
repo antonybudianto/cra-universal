@@ -1,6 +1,6 @@
 {
   "name": "@cra-express/static-loader",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "Static loader",
   "main": "lib/index.js",
   "files": [

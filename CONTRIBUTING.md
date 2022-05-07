@@ -44,17 +44,19 @@ Since we need a way to test the cra-universal locally and seamlessly, we have a 
 
 ## Running CRA Universal locally
 
-Use `temp:start:client` to run client and server locally.
+- Run `npm run temp:start:client` to run client locally.
+- Run `npm run temp:start:server` to run server locally.
 
 - Normal CRA starts at http://localhost:3000
-- Server-rendered CRA Universal starts at http://localhost:3001
+- Server-rendered CRA Universal starts at http://localhost:3001 (you'll mostly use this for development)
 
 To run a production build of this app, preserving local CRA Universal, use these commands:
 
 ```sh
-yarn temp:build
-cd packages/cra-universal/templates
-node --preserve-symlinks dist/server/bundle.js
+npm run temp:build
+cd packages/cra-universal/templates/dist
+pnpm i
+npm run serve
 ```
 
 ### Webpack versions mismatch

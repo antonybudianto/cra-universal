@@ -1,13 +1,13 @@
 {
   "name": "cra-template",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "private": true,
   "devDependencies": {
     "better-npm-run": "^0.1.1",
-    "cra-universal": "^5.0.1"
+    "cra-universal": "^5.0.2"
   },
   "dependencies": {
-    "@cra-express/core": "^5.0.1",
+    "@cra-express/core": "^5.0.2",
     "@types/webpack-env": "1.15.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
@@ -16,12 +16,13 @@
     "@types/node": "^16.11.32",
     "@types/react": "^18.0.8",
     "@types/react-dom": "^18.0.3",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "react": "18.2.0-next-e531a4a62-20220505",
+    "react-dom": "18.2.0-next-e531a4a62-20220505",
     "react-scripts": "5.0.1",
     "typescript": "^4.6.4",
     "web-vitals": "^2.1.4",
-    "express": "4.18.1"
+    "express": "4.18.1",
+    "react-error-boundary": "3.1.4"
   },
   "scripts": {
     "crau:start": "cra-universal start",

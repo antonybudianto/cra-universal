@@ -1,5 +1,5 @@
-const path = require('path');
-const React = require('react');
+import path from 'path';
+import React from 'react';
 import { createReactAppExpress } from '@cra-express/core';
 
 let App = require('../src/App').default;
@@ -7,7 +7,7 @@ const clientBuildPath = path.resolve(__dirname, '../client');
 
 const app = createReactAppExpress({
   clientBuildPath,
-  universalRender: (req, res) => <App />
+  universalRender: (req, res) => <App />,
 });
 
 if (module.hot) {
