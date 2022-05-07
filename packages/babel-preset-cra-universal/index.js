@@ -4,6 +4,7 @@ var preset = {
   presets: [
     [require.resolve('@babel/preset-env'), { modules: false }],
     [require.resolve('@babel/preset-react'), { runtime: 'automatic' }],
+    require.resolve('@babel/preset-typescript'),
   ],
   plugins: [
     // class { handleThing = () => { } }
