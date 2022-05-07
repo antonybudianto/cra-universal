@@ -20,6 +20,20 @@ export default function pipeStreamRenderer(
   let str;
   let error;
   const segments = htmlData.split(`<div id="root">`);
+  const streaming = reactEl.props.streaming || false;
+
+  const processStream = (res, stream) => {
+    res.statusCode = error ? 500 : 200;
+    res.setHeader('Content-type', 'text/html');
+
+    const errorScript = error
+      ? '<script type="text/javascript">window.__ssrError=true;</script>'
+      : '';
+
+    res.write(segments[0] + errorScript + '<div id="root">');
+
+    stream.pipe(res);
+  };
 
   try {
     const stream = renderToPipeableStream(reactEl, {
@@ -28,22 +42,18 @@ export default function pipeStreamRenderer(
           return options.onShellReady({ req, res, htmlData, error, stream });
         }
 
-        res.statusCode = error ? 500 : 200;
-        res.setHeader('Content-type', 'text/html');
-
-        const errorScript = error
-          ? '<script type="text/javascript">window.__ssrError=true;</script>'
-          : '';
-
-        res.write(segments[0] + errorScript + '<div id="root">');
-
-        stream.pipe(res);
+        if (streaming) {
+          processStream(res, stream);
+        }
       },
       onAllReady() {
         if (typeof options.onAllReady === 'function') {
           return options.onAllReady({ req, res, htmlData, error, stream });
         }
 
+        if (!streaming) {
+          processStream(res, stream);
+        }
         res.write(segments[1]);
       },
       onError(e) {

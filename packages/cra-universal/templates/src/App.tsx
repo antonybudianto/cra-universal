@@ -28,4 +28,8 @@ const App = () => {
   );
 };
 
+App.defaultProps = {
+  streaming: true,
+};
+
 export default App;
