@@ -1,5 +1,15 @@
 import { renderToPipeableStream } from 'react-dom/server';
 
+/**
+ * Reference:
+ * https://reactjs.org/docs/react-dom-server.html#rendertopipeablestream
+ * @param {Request} req
+ * @param {Response} res
+ * @param {JSX.Element} reactEl
+ * @param {string} htmlData
+ * @param {any} options
+ */
+
 export default function pipeStreamRenderer(
   req,
   res,
@@ -9,49 +19,44 @@ export default function pipeStreamRenderer(
 ) {
   let str;
   let error;
+  const segments = htmlData.split(`<div id="root">`);
 
   try {
-    const { pipe } = renderToPipeableStream(reactEl, {
-      onAllReady() {
-        /**
-         * Allows full customization
-         */
-        if (typeof options.onAllReady === 'function') {
-          return options.onAllReady({ req, res, htmlData, error, pipe });
+    const stream = renderToPipeableStream(reactEl, {
+      onShellReady() {
+        if (typeof options.onShellReady === 'function') {
+          return options.onShellReady({ req, res, htmlData, error, stream });
         }
 
         res.statusCode = error ? 500 : 200;
         res.setHeader('Content-type', 'text/html');
 
-        const segments = htmlData.split(`<div id="root">`);
         const errorScript = error
           ? '<script type="text/javascript">window.__ssrError=true;</script>'
           : '';
 
-        /**
-         * Return fallback when error
-         */
-        if (error) {
-          res.send(
-            `${segments[0]}${errorScript}\n<div id="root">${segments[1]}`
-          );
-          return;
-        }
-
         res.write(segments[0] + errorScript + '<div id="root">');
 
-        pipe(res);
-
-        if (typeof options.onEndReplace === 'function') {
-          segments[1] = options.onEndReplace(segments[1]);
+        stream.pipe(res);
+      },
+      onAllReady() {
+        if (typeof options.onAllReady === 'function') {
+          return options.onAllReady({ req, res, htmlData, error, stream });
         }
 
         res.write(segments[1]);
-        res.end();
+      },
+      onError(e) {
+        error = true;
+        console.error('crau/ssr-on-error', e.message);
       },
       onShellError(x) {
-        console.error('crau/ssr-shell-error: ', x.message);
+        /**
+         * Return fallback when error
+         */
         error = true;
+        console.error('crau/ssr-on-shell-error: ', x.message);
+        res.send(`${segments[0]}${errorScript}\n<div id="root">${segments[1]}`);
       },
     });
   } catch (e) {
