@@ -43,6 +43,7 @@ export default function pipeStreamRenderer(
         }
 
         if (streaming) {
+          console.log('debug stream');
           processStream(res, stream);
         }
       },

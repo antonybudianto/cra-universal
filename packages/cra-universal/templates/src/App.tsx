@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 
-import './App.css';
+// import './App.css';
 import { ReactComponent as ReactSVG } from './react.svg';
 import LazyContent1 from './Content/lazy1';
 import LazyContent2 from './Content/lazy2';
