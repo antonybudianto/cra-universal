@@ -1,13 +1,13 @@
 {
   "name": "cra-template",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "private": true,
   "devDependencies": {
     "better-npm-run": "^0.1.1",
-    "cra-universal": "^5.0.1"
+    "cra-universal": "^5.0.2"
   },
   "dependencies": {
-    "@cra-express/core": "^5.0.1",
+    "@cra-express/core": "^5.0.2",
     "@types/webpack-env": "1.15.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",

@@ -1,6 +1,6 @@
 {
   "name": "babel-preset-cra-universal",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "main": "index.js",
   "description": "Babel preset for cra-universal",
   "repository": {
