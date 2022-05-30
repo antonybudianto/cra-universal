@@ -30,7 +30,11 @@ export default function pipeStreamRenderer(
       ? '<script type="text/javascript">window.__ssrError=true;</script>'
       : '';
 
-    res.write(segments[0] + errorScript + '<div id="root">');
+    res.write(
+      segments[0] +
+        errorScript +
+        `<div id="root" data-streaming="${streaming ? 1 : 0}">`
+    );
 
     stream.pipe(res);
   };
