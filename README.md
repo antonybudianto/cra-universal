@@ -79,6 +79,40 @@ npm start
 ## Start CRA server, then open http://localhost:3001 in your browser
 npx cra-universal start
 ```
+#### add StaticRouter
+```js
+The client uses BrowserRouter or HashRouter but the server needs to use StaticRouter.
+
+So the app needs to be handled separately, non-ssr go normal app if it is
+/server/app.js
+
+let App = require('../src/server').default;
+Needs to be modified separately
+Equivalent to a separate app for quoting
+eg:
+Client.
+
+    <HashRouter>
+        <App/>
+    </HashRouter>
+
+Service side.
+
+    <StaticRouter>
+      <App/>
+    </StaticRouter>
+
+And one of the apps is available with the redux Provider
+so that it can be used
+
+PS:
+There is also an issue that needs to be officially changed
+
+is that if my normal webpack uses an alias like @ being relative to src . /views/home @/views/home, etc., the alias is not supported when using ssr.
+
+
+```
+
 
 ## Production
 
